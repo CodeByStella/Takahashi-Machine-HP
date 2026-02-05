@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9efe1"/>
+      <stop offset="1" stop-color="#f7f2ea"/>
+    </linearGradient>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6e8b3d" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#caa670" stop-opacity=".75"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#g)"/>
+  <rect x="120" y="140" width="1360" height="720" rx="42" fill="#ffffff" opacity=".85"/>
+  <rect x="170" y="210" width="820" height="520" rx="34" fill="#1f1f1f" opacity=".10"/>
+  <rect x="1030" y="210" width="400" height="120" rx="26" fill="url(#a)"/>
+  <rect x="1030" y="355" width="400" height="34" rx="17" fill="#111" opacity=".12"/>
+  <rect x="1030" y="410" width="360" height="34" rx="17" fill="#111" opacity=".10"/>
+  <rect x="1030" y="465" width="320" height="34" rx="17" fill="#111" opacity=".08"/>
+  <rect x="1030" y="545" width="220" height="58" rx="29" fill="#6e8b3d" opacity=".95"/>
+  <rect x="1260" y="545" width="170" height="58" rx="29" fill="#ffffff" opacity=".92"/>
+  <text x="200" y="505" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="40" fill="#2b2b2b" opacity=".55">
+    HERO IMAGE PLACEHOLDER
+  </text>
+</svg>

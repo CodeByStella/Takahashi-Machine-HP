@@ -1,0 +1,14 @@
+/*
+Theme Name: MyTheme
+Theme URI: https://example.com/
+Author: Aesop
+Author URI: https://example.com/
+Description: Custom theme for the Takahashi site.
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mytheme
+Tags: custom, responsive, clean
+*/
+
+/* Keep this file for theme metadata. Main styles are enqueued from assets/css/main.css */

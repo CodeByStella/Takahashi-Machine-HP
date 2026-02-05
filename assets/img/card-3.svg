@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f2ea"/>
+      <stop offset="1" stop-color="#e8edf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <rect x="80" y="90" width="1040" height="570" rx="40" fill="#ffffff" opacity=".75"/>
+  <path d="M170 520 C260 420 340 560 430 460 C520 360 610 560 700 450 C790 340 880 520 1030 380 L1030 560 L170 560 Z" fill="#6e8b3d" opacity=".22"/>
+  <rect x="200" y="230" width="820" height="38" rx="19" fill="#111" opacity=".12"/>
+  <rect x="200" y="290" width="620" height="38" rx="19" fill="#111" opacity=".10"/>
+  <rect x="200" y="350" width="520" height="38" rx="19" fill="#111" opacity=".08"/>
+  <text x="110" y="680" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="28" fill="#2b2b2b" opacity=".55">
+    CARD IMAGE 3
+  </text>
+</svg>
