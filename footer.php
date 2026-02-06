@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Footer template.
  *
@@ -8,32 +9,85 @@
 
 </main>
 
-<footer class="site-footer">
-	<div class="container site-footer__inner">
-		<div>
-			<p style="margin:0 0 6px; font-weight:800; letter-spacing:.02em;"><?php bloginfo( 'name' ); ?></p>
-			<p class="site-footer__muted" style="margin:0 0 12px;"><?php bloginfo( 'description' ); ?></p>
-			<p class="site-footer__muted" style="margin:0;">
-				<?php esc_html_e( 'This is a custom theme scaffold. Replace placeholder text/images with your real content.', 'mytheme' ); ?>
-			</p>
+<footer class="site-footer bg-white">
+	<div class="mx-auto w-full max-w-[1600px] px-6 lg:px-[200px] pt-[60px] lg:pt-[90px] pb-[40px] lg:pb-[60px]">
+		<div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-[40px]">
+			<div>
+				<img
+					src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/header/logo.svg'); ?>"
+					alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+					class="w-[240px] h-[50px]"
+					width="240"
+					height="50"
+					loading="lazy"
+				>
+
+				<address class="not-italic text-[14px] text-black/70 leading-[1.8] mt-[49px]">
+					<p class="m-0"><?php esc_html_e('〒578-0983', 'mytheme'); ?></p>
+					<p class="m-0"><?php esc_html_e('大阪府東大阪市吉田下島14番25号', 'mytheme'); ?></p>
+				</address>
+
+				<div class="mt-[17px] flex flex-col gap-[10px] w-fit">
+					<a
+						class="cta-pill cta-pill--download lg:w-[200px] lg:h-[40px] lg:rounded-full"
+						href="https://www.google.com/maps"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span class="w-full text-center"><?php esc_html_e('Google Map で見る', 'mytheme'); ?></span>
+					</a>
+
+					<a class="cta-pill cta-pill--phone lg:w-[200px] lg:h-[40px] lg:rounded-full" href="tel:0729619975">
+						<span class="w-full text-center">072-961-9975</span>
+					</a>
+				</div>
+
+				<p class="text-[12px] text-black/50 mt-[10px] mb-0 lg:w-[200px] text-center">
+					<?php esc_html_e('平日 9:00〜18:00', 'mytheme'); ?>
+				</p>
+			</div>
+
+			<div class="flex flex-col items-start lg:items-end">
+				<nav class="footer-nav" aria-label="<?php esc_attr_e('Footer menu', 'mytheme'); ?>">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'footer',
+							'container' => false,
+							'menu_id' => 'footer-menu',
+							'menu_class' => 'footer-menu grid grid-cols-[205px_205px] gap-y-[20px] text-[14px] text-black/70',
+							'depth' => 1,
+							'fallback_cb' => '__return_false',
+						)
+					);
+					?>
+				</nav>
+			</div>
 		</div>
 
-		<nav class="footer-nav" aria-label="<?php esc_attr_e( 'Footer menu', 'mytheme' ); ?>">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'footer',
-					'container'      => false,
-					'fallback_cb'    => '__return_false',
-				)
-			);
-			?>
-		</nav>
-	</div>
+		<div class="mt-[60px] flex flex-col gap-[14px] lg:flex-row lg:items-center lg:justify-between">
+			<div class="flex items-center gap-[16px]" aria-label="<?php esc_attr_e('Social links', 'mytheme'); ?>">
+				<a href="#" class="inline-flex w-[31px] h-[31px] items-center justify-center" aria-label="Facebook">
+					<img
+						src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/footer/facebook.svg'); ?>"
+						alt=""
+						class="w-[31px] h-[31px]"
+						width="31"
+						height="31"
+						loading="lazy"
+					>
+				</a>
+				<a href="#" class="inline-flex w-[28px] h-[28px] items-center justify-center" aria-label="Instagram">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+  <image id="ico_instagram01" width="28" height="28" xlink:href="data:image/png;base64,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"/>
+</svg>
 
-	<div class="container footer-bottom">
-		<div>
-			&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>
+				</a>
+			</div>
+
+			<p class="text-[12px] m-0 text-left lg:text-right text-[#1F1C1A] opacity-50">
+				<?php echo esc_html('Copyright © TAKAHASHI PACKAGING MACHINES All rights reserved.'); ?>
+			</p>
 		</div>
 	</div>
 </footer>
