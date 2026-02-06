@@ -57,6 +57,23 @@ function mytheme_enqueue_assets()
 {
   $theme_version = wp_get_theme()->get('Version');
 
+  // TailwindCSS (CDN).
+  // Note: CDN mode is great for prototyping; for production, a build step is recommended.
+  wp_register_script(
+    'mytheme-tailwind',
+    'https://cdn.tailwindcss.com',
+    array(),
+    null,
+    false
+  );
+  // Optional: disable Tailwind preflight to avoid overriding theme/base styles.
+  wp_add_inline_script(
+    'mytheme-tailwind',
+    'tailwind.config = { corePlugins: { preflight: false } };',
+    'before'
+  );
+  wp_enqueue_script('mytheme-tailwind');
+
   wp_enqueue_style(
     'mytheme-style',
     get_stylesheet_uri(),
@@ -71,6 +88,43 @@ function mytheme_enqueue_assets()
     array('mytheme-style'),
     file_exists($main_css_path) ? filemtime($main_css_path) : $theme_version
   );
+
+  // Page-specific CSS (optional).
+  $enqueue_page_css = static function ($handle, $relative_path) use ($theme_version) {
+    $abs = get_template_directory() . $relative_path;
+    wp_enqueue_style(
+      $handle,
+      get_template_directory_uri() . $relative_path,
+      array('mytheme-main'),
+      file_exists($abs) ? filemtime($abs) : $theme_version
+    );
+  };
+
+  if (is_front_page()) {
+    $enqueue_page_css('mytheme-front', '/assets/css/pages/front-page.css');
+  }
+
+  if (is_page()) {
+    $enqueue_page_css('mytheme-page', '/assets/css/pages/page.css');
+
+    if (is_page('about')) {
+      $enqueue_page_css('mytheme-about', '/assets/css/pages/about.css');
+    }
+    if (is_page('support')) {
+      $enqueue_page_css('mytheme-support', '/assets/css/pages/support.css');
+    }
+    if (is_page('used-product') || is_page('used_product')) {
+      $enqueue_page_css('mytheme-used-product', '/assets/css/pages/used-product.css');
+    }
+    if (is_page('contact')) {
+      $enqueue_page_css('mytheme-contact', '/assets/css/pages/contact.css');
+    }
+  }
+
+  // News (posts index + post detail + archives).
+  if (is_home() || is_singular('post') || is_archive()) {
+    $enqueue_page_css('mytheme-news', '/assets/css/pages/news.css');
+  }
 
   $main_js_path = get_template_directory() . '/assets/js/main.js';
   wp_enqueue_script(

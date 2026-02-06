@@ -183,6 +183,12 @@ a {
   min-width: 220px;
 }
 
+.site-brand__logo {
+  height: auto;
+  width: auto;
+  max-height: 45px;
+}
+
 .site-header__right {
   display: flex;
   align-items: center;
@@ -313,7 +319,7 @@ a {
 
 /* Hero */
 .hero {
-  padding: 0 0 113px;
+  padding: 18px 0 40px;
 }
 .hero__panel {
   position: relative;
