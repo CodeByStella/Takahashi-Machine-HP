@@ -135,6 +135,24 @@ function mytheme_enqueue_assets()
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_assets');
 
 /**
+ * Return asset URL from /assets/img/top with fallback.
+ */
+if (!function_exists('mytheme_top_asset')) {
+  function mytheme_top_asset(string $base): string
+  {
+    $dir = get_template_directory() . '/assets/img/top/';
+    $uri = get_template_directory_uri() . '/assets/img/top/';
+
+    $matches = glob($dir . $base . '.*');
+    if ($matches && is_file($matches[0])) {
+      return $uri . basename($matches[0]);
+    }
+
+    return get_template_directory_uri() . '/assets/img/hero-placeholder.svg';
+  }
+}
+
+/**
  * Register widget areas.
  */
 function mytheme_widgets_init()
