@@ -72,6 +72,56 @@ function mytheme_enqueue_assets()
     file_exists($main_css_path) ? filemtime($main_css_path) : $theme_version
   );
 
+  /* Page-specific CSS (after main so header/footer base styles load first) */
+  if (is_front_page()) {
+    $front_css_path = get_template_directory() . '/assets/css/pages/front-page.css';
+    wp_enqueue_style(
+      'mytheme-front-page',
+      get_template_directory_uri() . '/assets/css/pages/front-page.css',
+      array('mytheme-main'),
+      file_exists($front_css_path) ? filemtime($front_css_path) : $theme_version
+    );
+  } elseif (is_page()) {
+    $page_slugs = array(
+      'page-about.php' => 'about',
+      'page-contact.php' => 'contact',
+      'page-support.php' => 'support',
+      'page-used-product.php' => 'used-product',
+      'page-used_product.php' => 'used-product',
+      'page.php' => 'page',
+    );
+    $template = get_page_template_slug();
+    if ($template === '') {
+      $template = 'page.php';
+    }
+    if (isset($page_slugs[$template])) {
+      $slug = $page_slugs[$template];
+      $path = get_template_directory() . '/assets/css/pages/' . $slug . '.css';
+      if (file_exists($path)) {
+        wp_enqueue_style(
+          'mytheme-page-' . $slug,
+          get_template_directory_uri() . '/assets/css/pages/' . $slug . '.css',
+          array('mytheme-main'),
+          filemtime($path)
+        );
+      }
+    }
+  }
+
+  /* Tailwind CSS (Play CDN) – loads in footer so DOM is ready when it scans for utility classes */
+  wp_enqueue_script(
+    'tailwindcss',
+    'https://cdn.tailwindcss.com',
+    array(),
+    null,
+    true
+  );
+  wp_add_inline_script(
+    'tailwindcss',
+    'tailwind.config = { corePlugins: { preflight: false } };',
+    'before'
+  );
+
   $main_js_path = get_template_directory() . '/assets/js/main.js';
   wp_enqueue_script(
     'mytheme-main',
