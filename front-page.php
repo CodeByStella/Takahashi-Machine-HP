@@ -36,12 +36,12 @@ get_header();
 						<a class="btn btn--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 							<?php esc_html_e( 'Contact', 'mytheme' ); ?>
 						</a>
-						<a class="btn btn--ghost" href="<?php echo esc_url( home_url( '/company/' ) ); ?>">
-							<?php esc_html_e( 'Company', 'mytheme' ); ?>
+						<a class="btn btn--ghost" href="<?php echo esc_url( home_url( '/about/' ) ); ?>">
+							<?php esc_html_e( 'About', 'mytheme' ); ?>
 						</a>
 					</div>
 					<div class="hero__note">
-						<?php esc_html_e( 'Tip: put your real hero image in /assets/img/hero-placeholder.jpg (or change the path).', 'mytheme' ); ?>
+						<?php esc_html_e( 'Tip: replace /assets/img/hero-placeholder.svg with your real hero image.', 'mytheme' ); ?>
 					</div>
 				</div>
 			</div>
@@ -56,7 +56,7 @@ get_header();
 				<h2 class="section__title"><?php esc_html_e( 'Business', 'mytheme' ); ?></h2>
 				<p class="section__sub"><?php esc_html_e( 'Cards section like your “事業紹介”.', 'mytheme' ); ?></p>
 			</div>
-			<a class="btn" href="<?php echo esc_url( home_url( '/service/' ) ); ?>"><?php esc_html_e( 'View all', 'mytheme' ); ?></a>
+			<a class="btn" href="<?php echo esc_url( home_url( '/support/' ) ); ?>"><?php esc_html_e( 'View all', 'mytheme' ); ?></a>
 		</div>
 
 		<div class="cards">
@@ -65,9 +65,9 @@ get_header();
 					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/card-1.svg' ); ?>" alt="" loading="lazy">
 				</div>
 				<div class="card__body">
-					<h3 class="card__title"><?php esc_html_e( 'Service / Process', 'mytheme' ); ?></h3>
+					<h3 class="card__title"><?php esc_html_e( 'Support', 'mytheme' ); ?></h3>
 					<p class="card__text"><?php esc_html_e( 'Short description goes here. Replace with your real copy.', 'mytheme' ); ?></p>
-					<a class="card__link" href="<?php echo esc_url( home_url( '/service/' ) ); ?>">
+					<a class="card__link" href="<?php echo esc_url( home_url( '/support/' ) ); ?>">
 						<?php esc_html_e( 'Learn more', 'mytheme' ); ?> <span aria-hidden="true">→</span>
 					</a>
 				</div>
@@ -78,9 +78,9 @@ get_header();
 					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/card-2.svg' ); ?>" alt="" loading="lazy">
 				</div>
 				<div class="card__body">
-					<h3 class="card__title"><?php esc_html_e( 'Machines / Products', 'mytheme' ); ?></h3>
+					<h3 class="card__title"><?php esc_html_e( 'Used Product', 'mytheme' ); ?></h3>
 					<p class="card__text"><?php esc_html_e( 'Use this for product lineup like the screenshot tiles.', 'mytheme' ); ?></p>
-					<a class="card__link" href="<?php echo esc_url( home_url( '/product/' ) ); ?>">
+					<a class="card__link" href="<?php echo esc_url( home_url( '/used-product/' ) ); ?>">
 						<?php esc_html_e( 'Learn more', 'mytheme' ); ?> <span aria-hidden="true">→</span>
 					</a>
 				</div>
@@ -91,9 +91,9 @@ get_header();
 					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/card-3.svg' ); ?>" alt="" loading="lazy">
 				</div>
 				<div class="card__body">
-					<h3 class="card__title"><?php esc_html_e( 'Works / Case studies', 'mytheme' ); ?></h3>
-					<p class="card__text"><?php esc_html_e( 'Show “導入事例” style cards with images.', 'mytheme' ); ?></p>
-					<a class="card__link" href="<?php echo esc_url( home_url( '/works/' ) ); ?>">
+					<h3 class="card__title"><?php esc_html_e( 'About', 'mytheme' ); ?></h3>
+					<p class="card__text"><?php esc_html_e( 'Company profile and strengths.', 'mytheme' ); ?></p>
+					<a class="card__link" href="<?php echo esc_url( home_url( '/about/' ) ); ?>">
 						<?php esc_html_e( 'Learn more', 'mytheme' ); ?> <span aria-hidden="true">→</span>
 					</a>
 				</div>
@@ -141,6 +141,55 @@ get_header();
 				<span class="avatar" aria-hidden="true"></span>
 			</div>
 		</div>
+	</div>
+</section>
+
+<section class="section">
+	<div class="container">
+		<?php
+		$posts_page_id = (int) get_option( 'page_for_posts' );
+		$news_url      = $posts_page_id ? get_permalink( $posts_page_id ) : home_url( '/news/' );
+		?>
+		<div class="section__head">
+			<div>
+				<h2 class="section__title"><?php esc_html_e( 'News', 'mytheme' ); ?></h2>
+				<p class="section__sub"><?php esc_html_e( 'Latest updates.', 'mytheme' ); ?></p>
+			</div>
+			<a class="btn" href="<?php echo esc_url( $news_url ); ?>"><?php esc_html_e( 'View all', 'mytheme' ); ?></a>
+		</div>
+
+		<?php
+		$news_query = new WP_Query(
+			array(
+				'post_type'           => 'post',
+				'posts_per_page'      => 3,
+				'ignore_sticky_posts' => true,
+			)
+		);
+		?>
+		<?php if ( $news_query->have_posts() ) : ?>
+			<div class="post-list">
+				<?php while ( $news_query->have_posts() ) : ?>
+					<?php $news_query->the_post(); ?>
+					<article class="post-card">
+						<div class="post-card__meta">
+							<time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>">
+								<?php echo esc_html( get_the_date() ); ?>
+							</time>
+						</div>
+						<h3 class="post-card__title">
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</h3>
+						<p class="post-card__excerpt">
+							<?php echo esc_html( wp_strip_all_tags( get_the_excerpt() ) ); ?>
+						</p>
+					</article>
+				<?php endwhile; ?>
+			</div>
+			<?php wp_reset_postdata(); ?>
+		<?php else : ?>
+			<p class="muted"><?php esc_html_e( 'No news yet.', 'mytheme' ); ?></p>
+		<?php endif; ?>
 	</div>
 </section>
 
