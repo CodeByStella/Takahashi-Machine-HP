@@ -389,7 +389,6 @@ a {
 .section {
   max-width: 1600px;
   margin: 0 auto;
-  // padding: 42px 0;
 }
 .section--alt {
   background: linear-gradient(
