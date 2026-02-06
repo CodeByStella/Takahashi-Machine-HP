@@ -383,9 +383,9 @@ $person5 = mytheme_top_asset('person5');
 <!-- Enquiry section start -->
 <?php
 $enquiry_bg = mytheme_top_asset('enquiry-bg');
-$download_icon = mytheme_top_asset("download");
-$mail_icon = mytheme_top_asset("mail");
-$telephone_icon = mytheme_top_asset("telephone");
+$download_icon = mytheme_top_asset('download');
+$mail_icon = mytheme_top_asset('mail');
+$telephone_icon = mytheme_top_asset('telephone');
 ?>
 <section class="section relative overflow-hidden pt-[117px] pb-[124px]">
 	<img class=" absolute	top-0 left-0 bottom-0 right-0 w-full h-full object-cover -z-10" aria-hidden="true" src="<?php echo esc_url($enquiry_bg); ?>" alt="" />
@@ -439,15 +439,16 @@ $footer_asset = static function (string $base, string $fallback_rel): string {
 };
 
 $facebook_icon = $footer_asset('facebook-blue', '/assets/img/hero-placeholder.svg');
-$instagram_icon = $footer_asset("instagram", "/assets/img/footer/instagram-icon.svg");
+$instagram_icon = $footer_asset('instagram', '/assets/img/footer/instagram-icon.svg');
 
-$banner = mytheme_top_asset("banner");
-$blog_banner = mytheme_top_asset("blog-banner");
-$item = mytheme_top_asset("item");
-$tsicon = mytheme_top_asset("ts-icon");
+$banner = mytheme_top_asset('banner');
+$blog_banner = mytheme_top_asset('blog-banner');
+$item = mytheme_top_asset('item');
+$tsicon = mytheme_top_asset('ts-icon');
 ?>
 <section class="section pt-[90px] pb-[130px]">
-	<div class="w-[75%] mx-auto">
+	
+<div class="w-[75%] mx-auto">
 		<p class="text-[60px] w-full text-[#6EBA38] text-center mb-[36px]"><?php esc_html_e('Follow us !', 'mytheme'); ?></p>
 		<div class="pt-[60px] pb-[70px] px-[80px] bg-white rounded-[12px] flex justify-between">
 			<div class="w-[464px]">
@@ -501,64 +502,52 @@ $tsicon = mytheme_top_asset("ts-icon");
 
 <!-- Feature Section start -->
 <?php
-$feature_1 = mytheme_top_asset("feature-1");
-$feature_2 = mytheme_top_asset("feature-2");
-$feature_3 = mytheme_top_asset("feature-3");
-$feature_4 = mytheme_top_asset("feature-4");
+$feature_1 = mytheme_top_asset('feature-1');
+$feature_2 = mytheme_top_asset('feature-2');
+$feature_3 = mytheme_top_asset('feature-3');
+$feature_4 = mytheme_top_asset('feature-4');
 ?>
+<?php
+$feature_cards = array(
+	array(
+		'image' => $feature_1,
+		'eyebrow' => 'Custom Made',
+		'title' => '製作実績',
+	),
+	array(
+		'image' => $feature_2,
+		'eyebrow' => 'Strength',
+		'title' => '高橋の強み',
+	),
+	array(
+		'image' => $feature_3,
+		'eyebrow' => 'Existing Product',
+		'title' => '既存製品',
+	),
+	array(
+		'image' => $feature_4,
+		'eyebrow' => 'Used Product',
+		'title' => '中古製品',
+	),
+);
+?>
+
 <section class="section">
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-		<div class="group relative aspect-square overflow-hidden">
-			<img src="<?php echo esc_url($feature_1); ?>" alt="" class="opacity-80 absolute inset-0 h-full w-full object-cover" />
-			<div class="absolute inset-0 bg-black/75 transition-colors duration-300 group-hover:bg-black/25"></div>
-			<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-				<p class="text-[16px] opacity-50"><?php esc_html_e('Custom Made', 'mytheme'); ?></p>
-				<h3 class="mt-[20px] text-[30px]"><?php esc_html_e('製作実績', 'mytheme'); ?></h3>
+		<?php foreach ($feature_cards as $feature_card): ?>
+			<div class="group relative aspect-square overflow-hidden">
+				<img src="<?php echo esc_url($feature_card['image']); ?>" alt="" class="opacity-80 absolute inset-0 h-full w-full object-cover" />
+				<div class="absolute inset-0 bg-black/75 transition-colors duration-300 group-hover:bg-black/25"></div>
+				<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+					<p class="text-[16px] opacity-50"><?php echo esc_html($feature_card['eyebrow']); ?></p>
+					<h3 class="mt-[20px] text-[30px]"><?php echo esc_html($feature_card['title']); ?></h3>
+				</div>
+				<span class="absolute left-[52px] group-hover:left-[31px] top-[52px] group-hover:top-[31px] h-[20px] w-[20px] border-l-[4px] border-t-[4px] border-[#d1b06e] transition-all duration-300"></span>
+				<span class="absolute right-[52px] group-hover:right-[31px] top-[52px] group-hover:top-[31px] h-[20px] w-[20px] border-r-[4px] border-t-[4px] border-[#d1b06e] transition-all duration-300"></span>
+				<span class="absolute left-[52px] group-hover:left-[31px] bottom-[52px] group-hover:bottom-[31px] h-[20px] w-[20px] border-b-[4px] border-l-[4px] border-[#d1b06e] transition-all duration-300"></span>
+				<span class="absolute right-[52px] group-hover:right-[31px] bottom-[52px] group-hover:bottom-[31px] h-[20px] w-[20px] border-b-[4px] border-r-[4px] border-[#d1b06e] transition-all duration-300"></span>
 			</div>
-			<span class="absolute left-[52px] group-hover:left-[31px] top-[52px] group-hover:top-[31px] h-[20px] w-[20px] border-l-[4px] border-t-[4px] border-[#d1b06e] transition-all duration-300"></span>
-			<span class="absolute right-[52px] group-hover:right-[31px] top-[52px] group-hover:top-[31px] h-[20px] w-[20px] border-r-[4px] border-t-[4px] border-[#d1b06e] transition-all duration-300"></span>
-			<span class="absolute left-[52px] group-hover:left-[31px] bottom-[52px] group-hover:bottom-[31px] h-[20px] w-[20px] border-b-[4px] border-l-[4px] border-[#d1b06e] transition-all duration-300"></span>
-			<span class="absolute right-[52px] group-hover:right-[31px] bottom-[52px] group-hover:bottom-[31px] h-[20px] w-[20px] border-b-[4px] border-r-[4px] border-[#d1b06e] transition-all duration-300"></span>
-		</div>
-
-		<div class="group relative aspect-square overflow-hidden">
-			<img src="<?php echo esc_url($feature_2); ?>" alt="" class="opacity-80 absolute inset-0 h-full w-full object-cover" />
-			<div class="absolute inset-0 bg-black/75 transition-colors duration-300 group-hover:bg-black/25"></div>
-			<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-				<p class="text-[16px] opacity-50"><?php esc_html_e('Strength', 'mytheme'); ?></p>
-				<h3 class="mt-[20px] text-[30px]"><?php esc_html_e('高橋の強み', 'mytheme'); ?></h3>
-			</div>
-			<span class="absolute left-[52px] group-hover:left-[31px] top-[52px] group-hover:top-[31px] h-[20px] w-[20px] border-l-[4px] border-t-[4px] border-[#d1b06e] transition-all duration-300"></span>
-			<span class="absolute right-[52px] group-hover:right-[31px] top-[52px] group-hover:top-[31px] h-[20px] w-[20px] border-r-[4px] border-t-[4px] border-[#d1b06e] transition-all duration-300"></span>
-			<span class="absolute left-[52px] group-hover:left-[31px] bottom-[52px] group-hover:bottom-[31px] h-[20px] w-[20px] border-b-[4px] border-l-[4px] border-[#d1b06e] transition-all duration-300"></span>
-			<span class="absolute right-[52px] group-hover:right-[31px] bottom-[52px] group-hover:bottom-[31px] h-[20px] w-[20px] border-b-[4px] border-r-[4px] border-[#d1b06e] transition-all duration-300"></span>
-		</div>
-
-		<div class="group relative aspect-square overflow-hidden">
-			<img src="<?php echo esc_url($feature_3); ?>" alt="" class="opacity-80 absolute inset-0 h-full w-full object-cover" />
-			<div class="absolute inset-0 bg-black/75 transition-colors duration-300 group-hover:bg-black/25"></div>
-			<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-				<p class="text-[16px] opacity-50"><?php esc_html_e('Existing Product', 'mytheme'); ?></p>
-				<h3 class="mt-[20px] text-[30px]"><?php esc_html_e('既存製品', 'mytheme'); ?></h3>
-			</div>
-			<span class="absolute left-[52px] group-hover:left-[31px] top-[52px] group-hover:top-[31px] h-[20px] w-[20px] border-l-[4px] border-t-[4px] border-[#d1b06e] transition-all duration-300"></span>
-			<span class="absolute right-[52px] group-hover:right-[31px] top-[52px] group-hover:top-[31px] h-[20px] w-[20px] border-r-[4px] border-t-[4px] border-[#d1b06e] transition-all duration-300"></span>
-			<span class="absolute left-[52px] group-hover:left-[31px] bottom-[52px] group-hover:bottom-[31px] h-[20px] w-[20px] border-b-[4px] border-l-[4px] border-[#d1b06e] transition-all duration-300"></span>
-			<span class="absolute right-[52px] group-hover:right-[31px] bottom-[52px] group-hover:bottom-[31px] h-[20px] w-[20px] border-b-[4px] border-r-[4px] border-[#d1b06e] transition-all duration-300"></span>
-		</div>
-
-		<div class="group relative aspect-square overflow-hidden">
-			<img src="<?php echo esc_url($feature_4); ?>" alt="" class="opacity-80 absolute inset-0 h-full w-full object-cover" />
-			<div class="absolute inset-0 bg-black/75 transition-colors duration-300 group-hover:bg-black/25"></div>
-			<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-				<p class="text-[16px] opacity-50"><?php esc_html_e('Used Product', 'mytheme'); ?></p>
-				<h3 class="mt-[20px] text-[30px]"><?php esc_html_e('中古製品', 'mytheme'); ?></h3>
-			</div>
-			<span class="absolute left-[52px] group-hover:left-[31px] top-[52px] group-hover:top-[31px] h-[20px] w-[20px] border-l-[4px] border-t-[4px] border-[#d1b06e] transition-all duration-300"></span>
-			<span class="absolute right-[52px] group-hover:right-[31px] top-[52px] group-hover:top-[31px] h-[20px] w-[20px] border-r-[4px] border-t-[4px] border-[#d1b06e] transition-all duration-300"></span>
-			<span class="absolute left-[52px] group-hover:left-[31px] bottom-[52px] group-hover:bottom-[31px] h-[20px] w-[20px] border-b-[4px] border-l-[4px] border-[#d1b06e] transition-all duration-300"></span>
-			<span class="absolute right-[52px] group-hover:right-[31px] bottom-[52px] group-hover:bottom-[31px] h-[20px] w-[20px] border-b-[4px] border-r-[4px] border-[#d1b06e] transition-all duration-300"></span>
-		</div>
+		<?php endforeach; ?>
 	</div>
 </section>
 <!-- Feature Section end -->
