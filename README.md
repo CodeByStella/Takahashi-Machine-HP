@@ -1,118 +1,256 @@
-# MyTheme (custom WordPress theme)
+# MyTheme – WordPress Theme Setup Guide
 
-This theme is a **classic PHP theme** built for the Takahashi site.
+A custom WordPress theme for the Takahashi site, built with **Tailwind CSS v4**, **Tailwind CLI (no CDN)**, and **PHP templates**.
 
-## Pages in this project
+---
 
-You said your site has these pages:
+## Prerequisites
 
-- Top
-- About
-- Support
-- Used Product
-- Contact
-- News
-- News detail
+- **Node.js** (v16+) and **npm** (v9+) or **pnpm**
+- **WordPress 5.9+** installed locally or on a server
+- **XAMPP** or similar local WordPress environment (Windows example: `C:/xampp/htdocs/takahashi/wp-content/themes/mytheme/`)
 
-This theme already includes templates for that structure.
+---
 
-## Quick setup (WordPress admin)
+## Project Setup
 
-1. **Activate the theme**
-   - Appearance → Themes → activate **MyTheme**
-2. **Create pages**
-   - Pages → Add New
-   - Create pages with these **slugs**:
-     - `about`
-     - `support`
-     - `used-product` (or `used_product`)
-     - `contact`
-     - `news` (Page title can be “News”)
-3. **Configure News**
-   - Settings → Reading
-   - Set:
-     - “Your homepage displays” → **A static page**
-     - “Homepage” → your Top page (or leave it and use `front-page.php`)
-     - “Posts page” → the **News** page
-4. **Create menus**
-   - Appearance → Menus
-   - Create a menu and assign it to:
-     - **Primary Menu**
-     - (Optional) **Footer Menu**
+### 1. Install Dependencies
 
-## Which file controls which page?
+```bash
+cd /path/to/mytheme
+npm install
+# or
+pnpm install
+```
 
-Edit these files to change layout/design:
+### 2. Development Workflow
 
-- **Top page**: `front-page.php`
-- **About / Support / Used Product / Contact pages (default layout)**: `page.php`
-- **About page (slug: about)**: `page-about.php` (currently uses `page.php`)
-- **Support page (slug: support)**: `page-support.php` (currently uses `page.php`)
-- **Used Product page (slug: used-product)**: `page-used-product.php` (currently uses `page.php`)
-- **Used Product page (slug: used_product)**: `page-used_product.php` (currently uses `page.php`)
-- **News list** (Posts page): `home.php`
-- **News detail** (single post): `single.php`
-- **Header / navigation**: `header.php`
-- **Footer**: `footer.php`
-- **Styles**: `assets/css/main.css`
-- **Page-specific styles**: `assets/css/pages/*.css`
-- **Mobile menu JS**: `assets/js/main.js`
+**Start Tailwind in watch mode:**
+```bash
+npm run dev
+# Monitors changes to .php, .js, .html files and rebuilds CSS in real-time
+```
 
-## How to update content
+**Build for production:**
+```bash
+npm run build
+# Minifies output to assets/css/style.css
+```
 
-### Static pages (About/Support/Used Product/Contact)
+### 3. Activate Theme in WordPress
 
-Edit the page content in WordPress:
+1. Go to **Appearance → Themes** in WordPress admin
+2. Click **Activate** on **MyTheme**
+3. Configure theme settings at **Appearance → Customize**
 
-- Pages → (select the page) → edit content
+---
 
-The theme outputs the content via `the_content()` in `page.php`.
+## CSS/Styling Architecture
 
-### News
+### Build Process
 
-News is using **WordPress posts**:
+```
+input.css (source)
+  ├── @import "./pages/front-page.css"    (page-specific styles)
+  ├── @import "./pages/about.css"
+  ├── @import "./pages/*.css"             (all page files)
+  ├── @import "./main.css"                (custom theme styles)
+  └── @import "tailwindcss"               (Tailwind utilities last for priority)
+         ↓
+   [Tailwind CLI processes]
+         ↓
+  style.css (compiled, minified)
+         ↓
+   functions.php enqueues it in WordPress
+```
 
-- Posts → Add New
-- Featured image (optional) appears at the top of the news detail page (`single.php`).
+### File Structure
 
-### Top page sections
+```
+assets/css/
+├── input.css              (Tailwind source entry point)
+├── style.css              (Compiled output, minified)
+├── main.css               (Custom theme variables & reusable styles)
+└── pages/
+    ├── front-page.css     (Top page styles)
+    ├── about.css
+    ├── contact.css
+    ├── support.css
+    ├── used-product.css
+    └── news.css
+```
 
-The Top page is currently **hardcoded sections** in `front-page.php` (hero, cards, banner, etc).
+### CSS Priority (Cascade)
 
-To change:
+1. **Page-specific CSS** (lowest priority)
+2. Custom theme styles (`main.css`)
+3. **Tailwind utilities** (highest priority) ← Tailwind classes override custom CSS
 
-- Text/buttons/sections: edit `front-page.php`
-- Base styles: edit `assets/css/main.css`
-- Page-only styles (optional):
-  - Top: `assets/css/pages/front-page.css`
-  - Default pages: `assets/css/pages/page.css`
-  - About: `assets/css/pages/about.css`
-  - Support: `assets/css/pages/support.css`
-  - Used Product: `assets/css/pages/used-product.css`
-  - Contact: `assets/css/pages/contact.css`
-  - News: `assets/css/pages/news.css`
+Use Tailwind utility classes to override page-specific styles:
+```html
+<!-- Tailwind utility overrides page CSS -->
+<div class="top-hero text-white">...</div>
+```
 
-## TailwindCSS CDN
+---
 
-Tailwind is loaded via CDN in `functions.php`.
+## Template Structure
 
-- If you want Tailwind to also apply its base reset, enable preflight by editing:
-  - `functions.php` → `tailwind.config = { corePlugins: { preflight: false } };`
-  - Change `false` to `true`
+### Page Templates
 
-## Images
+| Page | Template | Slug |
+|------|----------|------|
+| **Top/Home** | `front-page.php` | (WordPress reads as homepage) |
+| **About** | `page-about.php` | `about` |
+| **Support** | `page-support.php` | `support` |
+| **Used Product** | `page-used-product.php` or `page-used_product.php` | `used-product` or `used_product` |
+| **Contact** | `page-contact.php` | `contact` |
+| **News** (Archive) | `home.php` or `index.php` | (set in Reading settings) |
+| **News Detail** (Single) | `single.php` | (post slug) |
+| **Generic Pages** | `page.php` | (fallback for any page) |
 
-Placeholder images are in:
+### Reusable Components
 
-- `assets/img/hero-placeholder.svg`
-- `assets/img/card-1.svg`
-- `assets/img/card-2.svg`
-- `assets/img/card-3.svg`
+- `header.php` – Site header (logo, nav, CTA buttons)
+- `footer.php` – Site footer (copyright, menus)
+- `template-parts/` – Reusable partial templates
 
-Replace them with real images (you can keep the same filenames), or update the image paths in `front-page.php`.
+---
 
-## Notes / common changes
+## WordPress Configuration
 
-- **Menu items**: best practice is to manage from WP admin (Appearance → Menus).
-- **Contact form**: usually handled by a plugin (e.g. Contact Form 7). Put the shortcode in the Contact page content.
+### 1. Create Pages
 
+Go to **Pages → Add New** and create these pages with exact slugs:
+
+- `about` (About)
+- `support` (Support)
+- `used-product` or `used_product` (Used Product)
+- `contact` (Contact)
+- `news` (News Archive)
+
+### 2. Configure Reading Settings
+
+**Settings → Reading:**
+- "Your homepage displays" → **A static page**
+- "Homepage" → Select your Top/Home page
+- "Posts page" → Select **News** page
+
+### 3. Set Up Menus
+
+**Appearance → Menus:**
+1. Create a menu named "Primary Menu"
+2. Add pages/links as needed
+3. Assign to **Primary Menu** location
+4. (Optional) Create "Footer Menu" and assign to **Footer Menu** location
+
+---
+
+## Development Workflow
+
+### Edit Styles
+
+**Option A: Tailwind utility classes** (write in PHP templates)
+```html
+<!-- Use Tailwind utilities directly -->
+<div class="text-white bg-blue-600 p-4 rounded-lg hover:bg-blue-700">
+  Content here
+</div>
+```
+
+**Option B: Custom CSS** (write in `main.css` or page-specific files)
+```css
+/* main.css */
+:root {
+  --mytheme-accent: #6eba38;
+}
+
+.custom-component {
+  color: var(--mytheme-accent);
+}
+```
+
+### Edit PHP Templates
+
+1. Modify `front-page.php`, `page-*.php`, `single.php`, etc.
+2. Use `<?php wp_head(); ?>` and `<?php wp_body_open(); ?>` in header/body tags
+3. Access theme functions from `functions.php`
+
+### Watch for Changes
+
+With `npm run dev` running, CSS rebuilds automatically when you:
+- Edit `.php` files
+- Edit `.js` files
+- Edit `.css` files in `assets/css/`
+
+---
+
+## Build & Deployment
+
+### Local Testing
+```bash
+npm run dev
+# Visit http://localhost/takahashi (or your WP domain)
+```
+
+### Production Build
+```bash
+npm run build
+# Generates minified assets/css/style.css
+# Commit and deploy
+```
+
+---
+
+## Tailwind Configuration
+
+**`tailwind.config.js`**
+```javascript
+export default {
+  content: [
+    "./**/*.php",
+    "./**/*.js",
+    "./**/*.html"
+  ],
+  theme: {
+    extend: {
+      // Add custom theme extensions here
+    },
+  },
+  plugins: [],
+}
+```
+
+Content paths tell Tailwind which files to scan for utility classes.
+
+---
+
+## Useful Functions from `functions.php`
+
+```php
+mytheme_setup()              // Register theme features
+mytheme_enqueue_assets()     // Enqueue CSS/JS in WordPress
+mytheme_top_asset($base)     // Load images from assets/img/top/
+mytheme_widgets_init()       // Register widget areas
+```
+
+---
+
+## Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| CSS not updating | Run `npm run build` → Clear browser cache (Ctrl+Shift+Delete) |
+| Tailwind classes not showing | Check `input.css` imports; ensure `npm run dev` is running |
+| Images not loading | Check `assets/img/` folder exists; use `get_template_directory_uri()` for paths |
+| Menu not showing | Create menu in **Appearance → Menus** and assign to location |
+| Homepage not showing | Go to **Settings → Reading** and select static homepage |
+
+---
+
+## Resources
+
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [Tailwind CLI](https://tailwindcss.com/docs/installation)
+- [WordPress Theme Development](https://developer.wordpress.org/themes/)
+- [WordPress Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/)
