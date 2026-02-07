@@ -26,20 +26,20 @@ $prod_3 = mytheme_top_asset('prod-3');
 
 <section class="pb-[60px] md:pb-[100px]">
 	<div class="mx-auto w-full max-w-[1600px]">
-		<div class="top-panel">
-			<div class="top-hero w-full">
-				<img class="top-hero-bg" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
+		<div class="overflow-hidden">
+			<div class="relative aspect-[1600/622] w-full">
+				<img class="absolute inset-0 h-full w-full object-cover" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
 
-				<div class="top-hero-content h-full md:pt-[120px] md:pl-[200px]">
-					<p class="top-kicker">
+				<div class="relative z-10 h-full text-white md:pt-[120px] md:pl-[200px]">
+					<p class="mb-[24px] inline-flex items-center gap-[10px] text-[12px] text-white/75">
 						<img class="top-kicker-icon" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/top/product-icon.svg'); ?>" alt="" loading="lazy">
 						<span class="text-[20px] text-[#6EBA38]"><?php esc_html_e('Product', 'mytheme'); ?></span>
 					</p>
-					<h2 class="top-title mb-[34px]">
+					<h2 class="mb-[34px] text-[44px] font-bold leading-[1.35] tracking-[0.02em]">
 						<?php esc_html_e('高橋製作所オリジナル', 'mytheme'); ?><br>
 						<?php esc_html_e('オーダー製品', 'mytheme'); ?>
 					</h2>
-					<p class="top-lead mb-[44px]">
+					<p class="mb-[44px] text-[16px] leading-[1.8] text-white/85">
 						<?php esc_html_e('お客様のご要望にお応えしてきた', 'mytheme'); ?><br>
 						<?php esc_html_e('製作実績をご紹介します。', 'mytheme'); ?>
 					</p>
@@ -57,7 +57,7 @@ $prod_3 = mytheme_top_asset('prod-3');
 				</div>
 			</div>
 
-			<div class="top-carousel">
+			<div class="relative bg-[#f4f2eb] lg:-mt-[95px] lg:bg-transparent">
 
 				<div class="flex gap-[30px] justify-center items-center">
 					<button class="bg-[#D2A573] w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Previous', 'mytheme'); ?>">
@@ -65,36 +65,36 @@ $prod_3 = mytheme_top_asset('prod-3');
 							<path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M147.717,1645.06l-7.071-7.071,7.071-7.071" transform="translate(-139.231 -1630.21)" fill="none" stroke="#fff" stroke-width="2" />
 						</svg>
 					</button>
-					<article class="top-card max-w-[380px]">
-						<div class="top-card-media">
-							<img src="<?php echo esc_url($prod_1); ?>" alt="" loading="lazy">
+					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
+						<div class="aspect-[190/133] overflow-hidden">
+							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_1); ?>" alt="" loading="lazy">
 						</div>
-						<div class="top-card-body">
-							<h3 class="top-card-title"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="top-card-meta"><?php esc_html_e('大阪府｜ネット通販生産', 'mytheme'); ?></p>
-							<span class="top-tag"><?php esc_html_e('ダンボールパレットプレス機', 'mytheme'); ?></span>
-						</div>
-					</article>
-
-					<article class="top-card max-w-[380px]">
-						<div class="top-card-media">
-							<img src="<?php echo esc_url($prod_2); ?>" alt="" loading="lazy">
-						</div>
-						<div class="top-card-body">
-							<h3 class="top-card-title"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="top-card-meta"><?php esc_html_e('西宮市｜特殊塗装生産', 'mytheme'); ?></p>
-							<span class="top-tag"><?php esc_html_e('ダンボールスコア機付き機', 'mytheme'); ?></span>
+						<div class="p-[28px_30px_40px]">
+							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
+							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('大阪府｜ネット通販生産', 'mytheme'); ?></p>
+							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('ダンボールパレットプレス機', 'mytheme'); ?></span>
 						</div>
 					</article>
 
-					<article class="top-card max-w-[380px]">
-						<div class="top-card-media">
-							<img src="<?php echo esc_url($prod_3); ?>" alt="" loading="lazy">
+					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
+						<div class="aspect-[190/133] overflow-hidden">
+							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_2); ?>" alt="" loading="lazy">
 						</div>
-						<div class="top-card-body">
-							<h3 class="top-card-title"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="top-card-meta"><?php esc_html_e('西宮市｜製造業', 'mytheme'); ?></p>
-							<span class="top-tag"><?php esc_html_e('トムソンカス製切機', 'mytheme'); ?></span>
+						<div class="p-[28px_30px_40px]">
+							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
+							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('西宮市｜特殊塗装生産', 'mytheme'); ?></p>
+							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('ダンボールスコア機付き機', 'mytheme'); ?></span>
+						</div>
+					</article>
+
+					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
+						<div class="aspect-[190/133] overflow-hidden">
+							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_3); ?>" alt="" loading="lazy">
+						</div>
+						<div class="p-[28px_30px_40px]">
+							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
+							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('西宮市｜製造業', 'mytheme'); ?></p>
+							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('トムソンカス製切機', 'mytheme'); ?></span>
 						</div>
 					</article>
 					<button class="bg-[#D2A573] w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Next', 'mytheme'); ?>">
@@ -105,10 +105,10 @@ $prod_3 = mytheme_top_asset('prod-3');
 					</button>
 				</div>
 
-				<div class="top-dots" aria-hidden="true">
-					<span class="top-dot is-active"></span>
-					<span class="top-dot"></span>
-					<span class="top-dot"></span>
+				<div class="mt-[30px] flex items-center justify-center gap-[10px]" aria-hidden="true">
+					<span class="h-[10px] w-[24px] rounded-full bg-[#6eba38] opacity-80"></span>
+					<span class="h-[10px] w-[10px] rounded-full bg-[#1f1c1a] opacity-20"></span>
+					<span class="h-[10px] w-[10px] rounded-full bg-[#1f1c1a] opacity-20"></span>
 				</div>
 			</div>
 		</div>
@@ -127,20 +127,20 @@ $prod_3 = mytheme_top_asset('prod-3');
 
 <section class="pb-[60px] md:pb-[100px]">
 	<div class="mx-auto w-full max-w-[1600px]">
-		<div class="existing-product-panel">
-			<div class="existing-product-hero w-full">
-				<img class="existing-product-hero-bg" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
+		<div class="overflow-hidden">
+			<div class="relative aspect-[1600/462] w-full">
+				<img class="absolute inset-0 h-full w-full object-cover" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
 
-				<div class="existing-product-hero-content h-full md:pt-[120px] md:px-[200px]">
-					<p class="existing-product-kicker">
+				<div class="relative z-10 h-full text-white md:pt-[120px] md:px-[200px]">
+					<p class="mb-[22px] inline-flex items-center gap-[10px] text-[20px] text-white/75">
 						<img class="existing-product-kicker-icon" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/top/product-icon.svg'); ?>" alt="" loading="lazy">
 						<span class="text-[20px] text-[#6EBA38]"><?php esc_html_e('Existing Product', 'mytheme'); ?></span>
 					</p>
-					<h2 class="existing-product-title mb-[34px]">
+					<h2 class="mb-[34px] text-[44px] font-bold leading-[1.35] tracking-[0.02em]">
 						<?php esc_html_e('既存製品一覧', 'mytheme'); ?><br>
 					</h2>
 					<div class="flex justify-between w-full gap-[24px] text-[16px] items-end">
-						<p class="existing-product-lead opacity-30">
+						<p class="text-[16px] leading-[1.8] text-white opacity-30">
 							<?php esc_html_e('様々な製品を取り揃え、', 'mytheme'); ?><br />
 							<?php esc_html_e('全国の工場で幅広くご愛用いただいております。', 'mytheme'); ?>
 						</p>
@@ -158,7 +158,7 @@ $prod_3 = mytheme_top_asset('prod-3');
 				</div>
 			</div>
 
-			<div class="top-carousel">
+			<div class="relative bg-[#f4f2eb] lg:-mt-[95px] lg:bg-transparent">
 
 				<div class="flex gap-[30px] justify-center items-center">
 					<button class="bg-[#D2A573] w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Previous', 'mytheme'); ?>">
@@ -166,36 +166,36 @@ $prod_3 = mytheme_top_asset('prod-3');
 							<path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M147.717,1645.06l-7.071-7.071,7.071-7.071" transform="translate(-139.231 -1630.21)" fill="none" stroke="#fff" stroke-width="2" />
 						</svg>
 					</button>
-					<article class="top-card max-w-[380px]">
-						<div class="top-card-media">
-							<img src="<?php echo esc_url($prod_1); ?>" alt="" loading="lazy">
+					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
+						<div class="aspect-[190/133] overflow-hidden">
+							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_1); ?>" alt="" loading="lazy">
 						</div>
-						<div class="top-card-body">
-							<h3 class="top-card-title"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="top-card-meta"><?php esc_html_e('大阪府｜ネット通販生産', 'mytheme'); ?></p>
-							<span class="top-tag"><?php esc_html_e('ダンボールパレットプレス機', 'mytheme'); ?></span>
-						</div>
-					</article>
-
-					<article class="top-card max-w-[380px]">
-						<div class="top-card-media">
-							<img src="<?php echo esc_url($prod_2); ?>" alt="" loading="lazy">
-						</div>
-						<div class="top-card-body">
-							<h3 class="top-card-title"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="top-card-meta"><?php esc_html_e('西宮市｜特殊塗装生産', 'mytheme'); ?></p>
-							<span class="top-tag"><?php esc_html_e('ダンボールスコア機付き機', 'mytheme'); ?></span>
+						<div class="p-[28px_30px_40px]">
+							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
+							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('大阪府｜ネット通販生産', 'mytheme'); ?></p>
+							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('ダンボールパレットプレス機', 'mytheme'); ?></span>
 						</div>
 					</article>
 
-					<article class="top-card max-w-[380px]">
-						<div class="top-card-media">
-							<img src="<?php echo esc_url($prod_3); ?>" alt="" loading="lazy">
+					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
+						<div class="aspect-[190/133] overflow-hidden">
+							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_2); ?>" alt="" loading="lazy">
 						</div>
-						<div class="top-card-body">
-							<h3 class="top-card-title"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="top-card-meta"><?php esc_html_e('西宮市｜製造業', 'mytheme'); ?></p>
-							<span class="top-tag"><?php esc_html_e('トムソンカス製切機', 'mytheme'); ?></span>
+						<div class="p-[28px_30px_40px]">
+							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
+							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('西宮市｜特殊塗装生産', 'mytheme'); ?></p>
+							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('ダンボールスコア機付き機', 'mytheme'); ?></span>
+						</div>
+					</article>
+
+					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
+						<div class="aspect-[190/133] overflow-hidden">
+							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_3); ?>" alt="" loading="lazy">
+						</div>
+						<div class="p-[28px_30px_40px]">
+							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
+							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('西宮市｜製造業', 'mytheme'); ?></p>
+							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('トムソンカス製切機', 'mytheme'); ?></span>
 						</div>
 					</article>
 					<button class="bg-[#D2A573] w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Next', 'mytheme'); ?>">
@@ -206,10 +206,10 @@ $prod_3 = mytheme_top_asset('prod-3');
 					</button>
 				</div>
 
-				<div class="top-dots" aria-hidden="true">
-					<span class="top-dot is-active"></span>
-					<span class="top-dot"></span>
-					<span class="top-dot"></span>
+				<div class="mt-[30px] flex items-center justify-center gap-[10px]" aria-hidden="true">
+					<span class="h-[10px] w-[24px] rounded-full bg-[#6eba38] opacity-80"></span>
+					<span class="h-[10px] w-[10px] rounded-full bg-[#1f1c1a] opacity-20"></span>
+					<span class="h-[10px] w-[10px] rounded-full bg-[#1f1c1a] opacity-20"></span>
 				</div>
 			</div>
 		</div>
@@ -229,20 +229,20 @@ $prod_3 = mytheme_top_asset('prod-3');
 
 <section class="pb-[60px] md:pb-[100px]">
 	<div class="mx-auto w-full max-w-[1600px]">
-		<div class="used-product-panel">
-			<div class="used-product-hero w-full">
-				<img class="used-product-hero-bg" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
+		<div class="overflow-hidden">
+			<div class="relative aspect-[1600/449] w-full">
+				<img class="absolute inset-0 h-full w-full object-contain" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
 
-				<div class="used-product-hero-content h-full md:pt-[120px] md:px-[200px]">
-					<p class="used-product-kicker">
+				<div class="relative z-10 h-full md:pt-[120px] md:px-[200px]">
+					<p class="mb-[24px] inline-flex items-center gap-[10px] text-[12px] text-[#1f1c1a]">
 						<img class="used-product-kicker-icon" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/top/product-icon.svg'); ?>" alt="" loading="lazy">
 						<span class="text-[20px] text-[#6EBA38]"><?php esc_html_e('Used Product', 'mytheme'); ?></span>
 					</p>
-					<h2 class="used-product-title mb-[34px]">
+					<h2 class="mb-[34px] text-[44px] font-bold leading-[1.35] tracking-[0.02em] text-[#1f1c1a]">
 						<?php esc_html_e('中古製品一覧', 'mytheme'); ?><br>
 					</h2>
 					<div class="flex justify-between w-full gap-[24px] text-[16px]">
-						<p class="used-product-lead opacity-70">
+						<p class="text-[16px] leading-[1.8] text-[#1f1c1a] opacity-70">
 							<?php esc_html_e('非常に良質な中古機器を揃えており、', 'mytheme'); ?><br />
 							<?php esc_html_e('販売はもちろんカスタマイズなど承っております。', 'mytheme'); ?>
 						</p>
@@ -260,7 +260,7 @@ $prod_3 = mytheme_top_asset('prod-3');
 				</div>
 			</div>
 
-			<div class="top-carousel">
+			<div class="relative bg-[#f4f2eb] lg:-mt-[95px] lg:bg-transparent">
 
 				<div class="flex gap-[30px] justify-center items-center">
 					<button class="bg-[#D2A573] w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Previous', 'mytheme'); ?>">
@@ -268,36 +268,36 @@ $prod_3 = mytheme_top_asset('prod-3');
 							<path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M147.717,1645.06l-7.071-7.071,7.071-7.071" transform="translate(-139.231 -1630.21)" fill="none" stroke="#fff" stroke-width="2" />
 						</svg>
 					</button>
-					<article class="top-card max-w-[380px]">
-						<div class="top-card-media">
-							<img src="<?php echo esc_url($prod_1); ?>" alt="" loading="lazy">
+					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
+						<div class="aspect-[190/133] overflow-hidden">
+							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_1); ?>" alt="" loading="lazy">
 						</div>
-						<div class="top-card-body">
-							<h3 class="top-card-title"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="top-card-meta"><?php esc_html_e('大阪府｜ネット通販生産', 'mytheme'); ?></p>
-							<span class="top-tag"><?php esc_html_e('ダンボールパレットプレス機', 'mytheme'); ?></span>
-						</div>
-					</article>
-
-					<article class="top-card max-w-[380px]">
-						<div class="top-card-media">
-							<img src="<?php echo esc_url($prod_2); ?>" alt="" loading="lazy">
-						</div>
-						<div class="top-card-body">
-							<h3 class="top-card-title"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="top-card-meta"><?php esc_html_e('西宮市｜特殊塗装生産', 'mytheme'); ?></p>
-							<span class="top-tag"><?php esc_html_e('ダンボールスコア機付き機', 'mytheme'); ?></span>
+						<div class="p-[28px_30px_40px]">
+							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
+							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('大阪府｜ネット通販生産', 'mytheme'); ?></p>
+							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('ダンボールパレットプレス機', 'mytheme'); ?></span>
 						</div>
 					</article>
 
-					<article class="top-card max-w-[380px]">
-						<div class="top-card-media">
-							<img src="<?php echo esc_url($prod_3); ?>" alt="" loading="lazy">
+					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
+						<div class="aspect-[190/133] overflow-hidden">
+							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_2); ?>" alt="" loading="lazy">
 						</div>
-						<div class="top-card-body">
-							<h3 class="top-card-title"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="top-card-meta"><?php esc_html_e('西宮市｜製造業', 'mytheme'); ?></p>
-							<span class="top-tag"><?php esc_html_e('トムソンカス製切機', 'mytheme'); ?></span>
+						<div class="p-[28px_30px_40px]">
+							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
+							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('西宮市｜特殊塗装生産', 'mytheme'); ?></p>
+							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('ダンボールスコア機付き機', 'mytheme'); ?></span>
+						</div>
+					</article>
+
+					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
+						<div class="aspect-[190/133] overflow-hidden">
+							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_3); ?>" alt="" loading="lazy">
+						</div>
+						<div class="p-[28px_30px_40px]">
+							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
+							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('西宮市｜製造業', 'mytheme'); ?></p>
+							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('トムソンカス製切機', 'mytheme'); ?></span>
 						</div>
 					</article>
 					<button class="bg-[#D2A573] w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Next', 'mytheme'); ?>">
@@ -308,10 +308,10 @@ $prod_3 = mytheme_top_asset('prod-3');
 					</button>
 				</div>
 
-				<div class="top-dots" aria-hidden="true">
-					<span class="top-dot is-active"></span>
-					<span class="top-dot"></span>
-					<span class="top-dot"></span>
+				<div class="mt-[30px] flex items-center justify-center gap-[10px]" aria-hidden="true">
+					<span class="h-[10px] w-[24px] rounded-full bg-[#6eba38] opacity-80"></span>
+					<span class="h-[10px] w-[10px] rounded-full bg-[#1f1c1a] opacity-20"></span>
+					<span class="h-[10px] w-[10px] rounded-full bg-[#1f1c1a] opacity-20"></span>
 				</div>
 			</div>
 		</div>
