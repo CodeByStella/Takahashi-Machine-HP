@@ -1,0 +1,22 @@
+/* Page-specific styles (imported BEFORE Tailwind so Tailwind utilities override them) */
+@import "./pages/front-page.css";
+@import "./pages/about.css";
+@import "./pages/contact.css";
+@import "./pages/support.css";
+@import "./pages/used-product.css";
+@import "./pages/news.css";
+@import "./main.css";
+
+/* Tailwind imports last for highest priority */
+@import "tailwindcss";
+
+/* your reusable components go here */
+@layer components {
+  .card {
+    @apply bg-white shadow-lg rounded-xl p-6;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "mytheme",
+  "version": "1.0.0",
+  "description": "This theme is a **classic PHP theme** built for the Takahashi site.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --watch",
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeByStella/Takahashi-Machine-HP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeByStella/Takahashi-Machine-HP/issues"
+  },
+  "homepage": "https://github.com/CodeByStella/Takahashi-Machine-HP#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  }
+}

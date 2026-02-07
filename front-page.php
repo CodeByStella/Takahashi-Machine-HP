@@ -135,7 +135,7 @@ $prod_3 = mytheme_top_asset('prod-3');
 					<h2 class="existing-product-title mb-[34px]">
 						<?php esc_html_e('既存製品一覧', 'mytheme'); ?><br>
 					</h2>
-					<div class="flex justify-between w-full gap-[24px]">
+					<div class="flex justify-between w-full gap-[24px] text-[16px] items-end">
 						<p class="existing-product-lead opacity-30">
 							<?php esc_html_e('様々な製品を取り揃え、', 'mytheme'); ?><br />
 							<?php esc_html_e('全国の工場で幅広くご愛用いただいております。', 'mytheme'); ?>
@@ -233,7 +233,7 @@ $prod_3 = mytheme_top_asset('prod-3');
 					<h2 class="used-product-title mb-[34px]">
 						<?php esc_html_e('中古製品一覧', 'mytheme'); ?><br>
 					</h2>
-					<div class="flex justify-between w-full gap-[24px]">
+					<div class="flex justify-between w-full gap-[24px] text-[16px]">
 						<p class="used-product-lead opacity-70">
 							<?php esc_html_e('非常に良質な中古機器を揃えており、', 'mytheme'); ?><br />
 							<?php esc_html_e('販売はもちろんカスタマイズなど承っております。', 'mytheme'); ?>
