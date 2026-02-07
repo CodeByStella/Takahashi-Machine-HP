@@ -44,12 +44,16 @@ $prod_3 = mytheme_top_asset('prod-3');
 						<?php esc_html_e('製作実績をご紹介します。', 'mytheme'); ?>
 					</p>
 
-					<a class="top-cta md:w-[266px] md:h-[56px] relative" href="<?php echo esc_url(home_url('/used-product/')); ?>">
-						<span class="text-center w-full"><?php esc_html_e('VIEW MORE', 'mytheme'); ?></span>
-						<svg class="absolute top-1/2 -translate-y-1/2 right-[29px]" xmlns="http://www.w3.org/2000/svg" width="7.588" height="10.934" viewBox="0 0 7.588 10.934">
-							<path d="M431.405,1336.6l4.406,4.407-4.406,4.406" transform="translate(-430.345 -1335.541)" fill="none" stroke="#fff" stroke-width="3" />
-						</svg>
-					</a>
+					<?php
+					get_template_part(
+						'template-parts/view-more',
+						null,
+						array(
+							'url'   => home_url('/used-product/'),
+							'label' => __('VIEW MORE', 'mytheme'),
+						)
+					);
+					?>
 				</div>
 			</div>
 
@@ -140,12 +144,16 @@ $prod_3 = mytheme_top_asset('prod-3');
 							<?php esc_html_e('様々な製品を取り揃え、', 'mytheme'); ?><br />
 							<?php esc_html_e('全国の工場で幅広くご愛用いただいております。', 'mytheme'); ?>
 						</p>
-						<a class="existing-product-cta md:w-[266px] md:h-[56px] relative" href="<?php echo esc_url(home_url('/used-product/')); ?>">
-							<span class="text-center w-full"><?php esc_html_e('VIEW MORE', 'mytheme'); ?></span>
-							<svg class="absolute existing-product-1/2 -translate-y-1/2 right-[29px]" xmlns="http://www.w3.org/2000/svg" width="7.588" height="10.934" viewBox="0 0 7.588 10.934">
-								<path d="M431.405,1336.6l4.406,4.407-4.406,4.406" transform="translate(-430.345 -1335.541)" fill="none" stroke="#fff" stroke-width="3" />
-							</svg>
-						</a>
+						<?php
+						get_template_part(
+							'template-parts/view-more',
+							null,
+							array(
+								'url'   => home_url('/used-product/'),
+								'label' => __('VIEW MORE', 'mytheme'),
+							)
+						);
+						?>
 					</div>
 				</div>
 			</div>
@@ -238,12 +246,16 @@ $prod_3 = mytheme_top_asset('prod-3');
 							<?php esc_html_e('非常に良質な中古機器を揃えており、', 'mytheme'); ?><br />
 							<?php esc_html_e('販売はもちろんカスタマイズなど承っております。', 'mytheme'); ?>
 						</p>
-						<a class="used-product-cta md:w-[266px] md:h-[56px] relative" href="<?php echo esc_url(home_url('/used-product/')); ?>">
-							<span class="text-center w-full"><?php esc_html_e('VIEW MORE', 'mytheme'); ?></span>
-							<svg class="absolute used-product-1/2 -translate-y-1/2 right-[29px]" xmlns="http://www.w3.org/2000/svg" width="7.588" height="10.934" viewBox="0 0 7.588 10.934">
-								<path d="M431.405,1336.6l4.406,4.407-4.406,4.406" transform="translate(-430.345 -1335.541)" fill="none" stroke="#fff" stroke-width="3" />
-							</svg>
-						</a>
+						<?php
+						get_template_part(
+							'template-parts/view-more',
+							null,
+							array(
+								'url'   => home_url('/used-product/'),
+								'label' => __('VIEW MORE', 'mytheme'),
+							)
+						);
+						?>
 					</div>
 				</div>
 			</div>
@@ -447,8 +459,8 @@ $item = mytheme_top_asset('item');
 $tsicon = mytheme_top_asset('ts-icon');
 ?>
 <section class="section pt-[90px] pb-[130px]">
-	
-<div class="w-[75%] mx-auto">
+
+	<div class="w-[75%] mx-auto">
 		<p class="text-[60px] w-full text-[#6EBA38] text-center mb-[36px]"><?php esc_html_e('Follow us !', 'mytheme'); ?></p>
 		<div class="pt-[60px] pb-[70px] px-[80px] bg-white rounded-[12px] flex justify-between">
 			<div class="w-[464px]">
