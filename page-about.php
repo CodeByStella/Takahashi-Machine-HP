@@ -106,7 +106,7 @@ $strength_item_4 = mytheme_img_asset("about/strength-4");
   );
   ?>
 
-  <div class="w-[70%] mt-[120px] mx-auto flex flex-col gap-[130px]">
+  <div class="w-[75%] mt-[120px] mx-auto flex flex-col gap-[130px]">
     <?php foreach ($strength_items as $index => $item) : ?>
       <?php $row_class = ($index % 2 === 1) ? 'flex-row-reverse' : 'justify-start'; ?>
       <div class="flex gap-[100px] <?php echo esc_attr($row_class); ?>">
@@ -122,7 +122,7 @@ $strength_item_4 = mytheme_img_asset("about/strength-4");
           <p class="text-primary text-[25px] -tracking-[0.12em] mt-8">
             <?php echo wp_kses($item['title'], array('br' => array())); ?>
           </p>
-          <p class="text-primary text-[18px] opacity-[70px] mt-[64px] -tracking-[0.06em]"><?php echo esc_html($item['body']); ?></p>
+          <p class="text-primary text-[18px] opacity-70 mt-[64px] -tracking-[0.06em]"><?php echo esc_html($item['body']); ?></p>
         </div>
       </div>
     <?php endforeach; ?>
@@ -130,7 +130,196 @@ $strength_item_4 = mytheme_img_asset("about/strength-4");
 </section>
 <!-- Strength section end -->
 
+<?php
+$service_mesh = mytheme_img_asset('about/service-mesh');
+$service_decoration = mytheme_img_asset('about/service-decoration');
+?>
+<div class="w-full h-[257px] mt-[175px] relative">
+  <img src="<?php echo esc_url($service_decoration); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -top-[400px] -left-[130px] w-[592px] h-full object-cover" />
+  <img src="<?php echo esc_url($service_mesh); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="h-full mx-auto object-cover" />
+  <div class="w-full overflow-hidden h-full absolute top-0 left-0">
+    <?php
+    get_template_part(
+      'template-parts/marquee',
+      null,
+      array(
+        'text' => 'Custom Order & One Stop Service',
+      )
+    );
+    ?>
+  </div>
+</div>
 
+<!-- Flow Section start -->
+<?php
+$decoration_icon = mytheme_img_asset('top/product-icon');
+$flow_item_1 = mytheme_img_asset('about/flow-1');
+$flow_item_2 = mytheme_img_asset('about/flow-2');
+$flow_item_3 = mytheme_img_asset('about/flow-3');
+$flow_item_4 = mytheme_img_asset('about/flow-4');
+$flow_item_5 = mytheme_img_asset('about/flow-5');
+$flow_item_6 = mytheme_img_asset('about/flow-6');
+$flow_item_7 = mytheme_img_asset('about/flow-7');
+?>
+<section class="flow-section mt-[200px] pb-59">
+  <div class="w-[75%] mx-auto relative">
+    <p class="text-[20px] w-fit gap-[14px] flex text-secondary">
+      <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[30px] h-[30px]" />
+      Flow
+    </p>
+    <h1 class="mt-6 text-primary text-[44px]">
+      製作の流れ
+    </h1>
+    <p class="text-[16px] mt-9">
+      「こうしたい」というイメージから、<br />
+      お客様の現場やご要望に合わせた機械づくりを行います。<br />
+      ゼロから製作することも可能ですし、既製品をセミオーダーで<br />
+      カスタマイズすることも可能です。まずは一度ご相談くださいませ。<br />
+    </p>
+    <div class="flex flex-col mt-[51px]">
+      <div class="flex">
+        <div class="w-[350px] relative aspect-[350/230]">
+          <div class="w-[150px] aspect-square bg-secondary absolute top-0 left-0"></div>
+          <img src="<?php echo esc_url($flow_item_1); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[250px] h-auto object-cover  bottom-0 left-[30px]" />
+          <div class="w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] bottom-[57px] translate-x-1/2"></div>
+          <div class="w-[2px] h-[57px] bg-primary absolute -right-[2px] bottom-0"></div>
+          <h1 class="text-secondary text-[60px] leading-[1] absolute bottom-24 right-0 translate-x-1/2">01</h1>
+        </div>
+        <div class="h-full pl-[68px]">
+          <p class="text-primary text-[24px] -tracking-[0.12em] mt-22">
+            お問い合わせ・お聞き取り
+          </p>
+          <p class="text-primary text-[16px] opacity-70 mt-4 -tracking-[0.06em]">
+            メール・FAX・電話でお問い合せください。<br />
+            ご希望の機械概要（⼨法・形状・材料など）やイメージ画像などがあればお⾒せください。
+          </p>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="w-[350px]">
+        </div>
+        <div class="px-[68px] pt-15 pb-[50px] relative aspect-[420/340] w-105 border-[2px] border-l-0 border-r-0 border-primary">
+          <div class="w-[150px] aspect-square bg-secondary absolute top-15 left-[68px]"></div>
+          <img src="<?php echo esc_url($flow_item_2); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[250px] relative h-auto object-cover  top-[30px] left-[30px] " />
+          <div class="w-[10px] aspect-square rounded-full bg-primary absolute right-[1px] top-[90px] translate-x-1/2"></div>
+          <div class="w-[2px] h-[90px] bg-primary absolute right-0 top-0"></div>
+          <div class="w-[10px] aspect-square rounded-full bg-primary absolute right-[1px] bottom-[120px] translate-x-1/2"></div>
+          <div class="w-[2px] h-[120px] bg-primary absolute right-0 bottom-0"></div>
+          <h1 class="text-secondary text-[60px] leading-[1] absolute bottom-39 right-0 translate-x-1/2">02</h1>
+        </div>
+        <div class="h-full pl-[68px]">
+          <p class="text-primary text-[24px] -tracking-[0.12em] mt-34">
+            概算・お⾒積もりの提出
+          </p>
+          <p class="text-primary text-[16px] opacity-70 mt-4 -tracking-[0.08em]">
+            ラフスケッチと概算⾒積をお伝えします。
+          </p>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="w-[350px] relative aspect-[350/230]">
+          <div class="w-[150px] aspect-square bg-secondary absolute top-0 left-0"></div>
+          <img src="<?php echo esc_url($flow_item_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[250px] h-auto object-cover  bottom-0 left-[30px]" />
+          <div class="w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] top-[57px] translate-x-1/2"></div>
+          <div class="w-[2px] h-[57px] bg-primary absolute -right-[2px] top-0"></div>
+          <div class="w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] bottom-[57px] translate-x-1/2"></div>
+          <div class="w-[2px] h-[57px] bg-primary absolute -right-[2px] bottom-0"></div>
+          <h1 class="text-secondary text-[60px] leading-[1] absolute bottom-24 right-0 translate-x-1/2">03</h1>
+        </div>
+        <div class="h-full pl-[68px]">
+          <p class="text-primary text-[24px] -tracking-[0.12em] mt-22">
+            お打合せ
+          </p>
+          <p class="text-primary text-[16px] opacity-70 mt-4 -tracking-[0.06em]">
+            詳細と仕上材を打合せで決定後、正式なお⾒積りを提出します。
+          </p>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="w-[350px]">
+        </div>
+        <div class="px-[68px] pt-15 pb-[50px] relative aspect-[420/340] w-105 border-[2px] border-l-0 border-r-0 border-primary">
+          <div class="w-[150px] aspect-square bg-secondary absolute top-15 left-[68px]"></div>
+          <img src="<?php echo esc_url($flow_item_4); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[250px] relative h-auto object-cover  top-[30px] left-[30px] " />
+          <div class="w-[10px] aspect-square rounded-full bg-primary absolute right-[1px] top-[90px] translate-x-1/2"></div>
+          <div class="w-[2px] h-[90px] bg-primary absolute right-0 top-0"></div>
+          <div class="w-[10px] aspect-square rounded-full bg-primary absolute right-[1px] bottom-[120px] translate-x-1/2"></div>
+          <div class="w-[2px] h-[120px] bg-primary absolute right-0 bottom-0"></div>
+          <h1 class="text-secondary text-[60px] leading-[1] absolute bottom-39 right-0 translate-x-1/2">04</h1>
+        </div>
+        <div class="h-full pl-[68px] w-auto min-w-0 flex-1">
+          <p class="text-primary text-[24px] -tracking-[0.12em] mt-34">
+            最終確認・発注
+          </p>
+          <p class="text-primary text-[16px] opacity-70 mt-4 -tracking-[0.06em] break-words">
+            最終確認として図⾯・⼨法・材料・⾊・形状・納期のご確認をしてもらい、注⽂書を作成して正式発注となります。
+          </p>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="w-[350px] relative aspect-[350/230]">
+          <div class="w-[150px] aspect-square bg-secondary absolute top-0 left-0"></div>
+          <img src="<?php echo esc_url($flow_item_5); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[250px] h-auto object-cover  bottom-0 left-[30px]" />
+          <div class="w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] top-[57px] translate-x-1/2"></div>
+          <div class="w-[2px] h-[57px] bg-primary absolute -right-[2px] top-0"></div>
+          <div class="w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] bottom-[57px] translate-x-1/2"></div>
+          <div class="w-[2px] h-[57px] bg-primary absolute -right-[2px] bottom-0"></div>
+          <h1 class="text-secondary text-[60px] leading-[1] absolute bottom-24 right-0 translate-x-1/2">05</h1>
+        </div>
+        <div class="h-full pl-[68px]">
+          <p class="text-primary text-[24px] -tracking-[0.12em] mt-22">
+            製作
+          </p>
+          <p class="text-primary text-[16px] opacity-70 mt-4 -tracking-[0.06em]">
+            製作に取りかかります。
+          </p>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="w-[350px]">
+        </div>
+        <div class="px-[68px] pt-15 pb-[50px] relative aspect-[420/340] w-105 border-[2px] border-l-0 border-r-0 border-primary">
+          <div class="w-[150px] aspect-square bg-secondary absolute top-15 left-[68px]"></div>
+          <img src="<?php echo esc_url($flow_item_6); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[250px] relative h-auto object-cover  top-[30px] left-[30px] " />
+          <div class="w-[10px] aspect-square rounded-full bg-primary absolute right-[1px] top-[90px] translate-x-1/2"></div>
+          <div class="w-[2px] h-[90px] bg-primary absolute right-0 top-0"></div>
+          <div class="w-[10px] aspect-square rounded-full bg-primary absolute right-[1px] bottom-[120px] translate-x-1/2"></div>
+          <div class="w-[2px] h-[120px] bg-primary absolute right-0 bottom-0"></div>
+          <h1 class="text-secondary text-[60px] leading-[1] absolute bottom-39 right-0 translate-x-1/2">06</h1>
+        </div>
+        <div class="h-full pl-[68px] w-auto min-w-0 flex-1">
+          <p class="text-primary text-[24px] -tracking-[0.12em] mt-34">
+            製品の発送・納品
+          </p>
+          <p class="text-primary text-[16px] opacity-70 mt-4 -tracking-[0.06em] break-words">
+            単品機械の場合、梱包して運送会社で送れる物は全国対応致します。<br />
+            弊社規定の地域は直接納品致します。
+          </p>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="w-[350px] relative aspect-[350/230]">
+          <div class="w-[150px] aspect-square bg-secondary absolute top-0 left-0"></div>
+          <img src="<?php echo esc_url($flow_item_7); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[250px] h-auto object-cover  bottom-0 left-[30px]" />
+          <div class="w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] top-[57px] translate-x-1/2"></div>
+          <div class="w-[2px] h-[57px] bg-primary absolute -right-[2px] top-0"></div>
+          <h1 class="text-secondary text-[60px] leading-[1] absolute bottom-24 right-0 translate-x-1/2">07</h1>
+        </div>
+        <div class="h-full pl-[68px]">
+          <p class="text-primary text-[24px] -tracking-[0.12em] mt-22">
+            納品・アフターサービス
+          </p>
+          <p class="text-primary text-[16px] opacity-70 mt-4 -tracking-[0.06em]">
+            設置後、納品完了となります。<br />
+            また、納品後のメンテナンスや修理もお受けしております。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<!-- Flow Section end -->
 
 <?php
 get_footer();

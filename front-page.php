@@ -319,10 +319,15 @@ $person5 = mytheme_img_asset('top/person5');
 	<section class="section relative pb-[100px] md:pb-[100px]">
 		<div class="relative flex justify-center h-full w-full aspect-[1600/577]">
 			<img src="<?php echo esc_url($mesh_bg); ?>" alt="" aria-hidden="true" class="absolute h-full w-[94%] -z-10">
-			<div class="absolute left-0 top-0 w-[200%] marquee pointer-events-none text-[64px] font-semibold tracking-[0.12em] text-[#B58522] md:text-[150px]">
-				<span>Cardboard Processing Machines that Increase On-site Productivity</span>
-				<span>Cardboard Processing Machines that Increase On-site Productivity</span>
-			</div>
+			<?php
+			get_template_part(
+				'template-parts/marquee',
+				null,
+				array(
+					'text' => 'Cardboard Processing Machines that Increase On-site Productivity',
+				)
+			);
+			?>
 			<div class="text-center mt-[230px]">
 				<p class="text-sm text-[#5b5246] md:text-[40px] leading-[3.5rem]">
 					<?php esc_html_e('現場の⽣産性を上げる', 'mytheme'); ?><br>
