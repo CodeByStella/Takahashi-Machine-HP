@@ -12,7 +12,7 @@ $articles = isset($args['articles']) && is_array($args['articles']) ? $args['art
 
 <div class="relative bg-[#f4f2eb] lg:bg-transparent" data-carousel>
 	<div class="flex gap-[30px] justify-center items-center">
-		<button class="bg-[#D2A573] w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Previous', 'mytheme'); ?>" data-carousel-prev>
+		<button class="bg-[#D2A573] w-[50px] cursor-pointer h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Previous', 'mytheme'); ?>" data-carousel-prev>
 			<svg xmlns="http://www.w3.org/2000/svg" width="9.193" height="15.557" viewBox="0 0 9.193 15.557">
 				<path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M147.717,1645.06l-7.071-7.071,7.071-7.071" transform="translate(-139.231 -1630.21)" fill="none" stroke="#fff" stroke-width="2" />
 			</svg>
@@ -39,7 +39,7 @@ $articles = isset($args['articles']) && is_array($args['articles']) ? $args['art
 				<?php endforeach; ?>
 			</div>
 		</div>
-		<button class="bg-[#D2A573] w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Next', 'mytheme'); ?>" data-carousel-next>
+		<button class="bg-[#D2A573] cursor-pointer w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Next', 'mytheme'); ?>" data-carousel-next>
 			<svg xmlns="http://www.w3.org/2000/svg" width="9.193" height="15.557" viewBox="0 0 9.193 15.557">
 				<path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M1451.94,1630.941l7.071,7.072-7.071,7.071" transform="translate(-1451.233 -1630.234)" fill="none" stroke="#fff" stroke-width="2" />
 			</svg>

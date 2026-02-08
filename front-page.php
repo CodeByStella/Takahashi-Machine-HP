@@ -57,59 +57,54 @@ $prod_3 = mytheme_top_asset('prod-3');
 				</div>
 			</div>
 
-			<div class="relative bg-[#f4f2eb] lg:-mt-[95px] lg:bg-transparent">
-
-				<div class="flex gap-[30px] justify-center items-center">
-					<button class="bg-[#D2A573] w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Previous', 'mytheme'); ?>">
-						<svg xmlns="http://www.w3.org/2000/svg" width="9.193" height="15.557" viewBox="0 0 9.193 15.557">
-							<path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M147.717,1645.06l-7.071-7.071,7.071-7.071" transform="translate(-139.231 -1630.21)" fill="none" stroke="#fff" stroke-width="2" />
-						</svg>
-					</button>
-					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
-						<div class="aspect-[190/133] overflow-hidden">
-							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_1); ?>" alt="" loading="lazy">
-						</div>
-						<div class="p-[28px_30px_40px]">
-							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('大阪府｜ネット通販生産', 'mytheme'); ?></p>
-							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('ダンボールパレットプレス機', 'mytheme'); ?></span>
-						</div>
-					</article>
-
-					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
-						<div class="aspect-[190/133] overflow-hidden">
-							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_2); ?>" alt="" loading="lazy">
-						</div>
-						<div class="p-[28px_30px_40px]">
-							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('西宮市｜特殊塗装生産', 'mytheme'); ?></p>
-							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('ダンボールスコア機付き機', 'mytheme'); ?></span>
-						</div>
-					</article>
-
-					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
-						<div class="aspect-[190/133] overflow-hidden">
-							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_3); ?>" alt="" loading="lazy">
-						</div>
-						<div class="p-[28px_30px_40px]">
-							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('西宮市｜製造業', 'mytheme'); ?></p>
-							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('トムソンカス製切機', 'mytheme'); ?></span>
-						</div>
-					</article>
-					<button class="bg-[#D2A573] w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Next', 'mytheme'); ?>">
-						<svg xmlns="http://www.w3.org/2000/svg" width="9.193" height="15.557" viewBox="0 0 9.193 15.557">
-							<path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M1451.94,1630.941l7.071,7.072-7.071,7.071" transform="translate(-1451.233 -1630.234)" fill="none" stroke="#fff" stroke-width="2" />
-						</svg>
-
-					</button>
-				</div>
-
-				<div class="mt-[30px] flex items-center justify-center gap-[10px]" aria-hidden="true">
-					<span class="h-[10px] w-[24px] rounded-full bg-[#6eba38] opacity-80"></span>
-					<span class="h-[10px] w-[10px] rounded-full bg-[#1f1c1a] opacity-20"></span>
-					<span class="h-[10px] w-[10px] rounded-full bg-[#1f1c1a] opacity-20"></span>
-				</div>
+			<div class="lg:-mt-[95px]">
+				<?php
+				$used_product_articles = array(
+					array(
+						'image'    => $prod_1,
+						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
+						'location' => __('大阪府｜ネット通販生産', 'mytheme'),
+						'tag'      => __('ダンボールパレットプレス機', 'mytheme'),
+					),
+					array(
+						'image'    => $prod_2,
+						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
+						'location' => __('西宮市｜特殊塗装生産', 'mytheme'),
+						'tag'      => __('ダンボールスコア機付き機', 'mytheme'),
+					),
+					array(
+						'image'    => $prod_3,
+						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
+						'location' => __('西宮市｜製造業', 'mytheme'),
+						'tag'      => __('トムソンカス製切機', 'mytheme'),
+					),
+					array(
+						'image'    => $prod_3,
+						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
+						'location' => __('西宮市｜製造業', 'mytheme'),
+						'tag'      => __('トムソンカス製切機', 'mytheme'),
+					),
+					array(
+						'image'    => $prod_3,
+						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
+						'location' => __('西宮市｜製造業', 'mytheme'),
+						'tag'      => __('トムソンカス製切機', 'mytheme'),
+					),
+					array(
+						'image'    => $prod_3,
+						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
+						'location' => __('西宮市｜製造業', 'mytheme'),
+						'tag'      => __('トムソンカス製切機', 'mytheme'),
+					),
+				);
+				get_template_part(
+					'template-parts/product-carousel',
+					null,
+					array(
+						'articles' => $used_product_articles,
+					)
+				);
+				?>
 			</div>
 		</div>
 	</div>
@@ -158,59 +153,54 @@ $prod_3 = mytheme_top_asset('prod-3');
 				</div>
 			</div>
 
-			<div class="relative bg-[#f4f2eb] lg:-mt-[95px] lg:bg-transparent">
-
-				<div class="flex gap-[30px] justify-center items-center">
-					<button class="bg-[#D2A573] w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Previous', 'mytheme'); ?>">
-						<svg xmlns="http://www.w3.org/2000/svg" width="9.193" height="15.557" viewBox="0 0 9.193 15.557">
-							<path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M147.717,1645.06l-7.071-7.071,7.071-7.071" transform="translate(-139.231 -1630.21)" fill="none" stroke="#fff" stroke-width="2" />
-						</svg>
-					</button>
-					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
-						<div class="aspect-[190/133] overflow-hidden">
-							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_1); ?>" alt="" loading="lazy">
-						</div>
-						<div class="p-[28px_30px_40px]">
-							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('大阪府｜ネット通販生産', 'mytheme'); ?></p>
-							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('ダンボールパレットプレス機', 'mytheme'); ?></span>
-						</div>
-					</article>
-
-					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
-						<div class="aspect-[190/133] overflow-hidden">
-							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_2); ?>" alt="" loading="lazy">
-						</div>
-						<div class="p-[28px_30px_40px]">
-							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('西宮市｜特殊塗装生産', 'mytheme'); ?></p>
-							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('ダンボールスコア機付き機', 'mytheme'); ?></span>
-						</div>
-					</article>
-
-					<article class="max-w-[380px] overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
-						<div class="aspect-[190/133] overflow-hidden">
-							<img class="h-full w-full object-cover" src="<?php echo esc_url($prod_3); ?>" alt="" loading="lazy">
-						</div>
-						<div class="p-[28px_30px_40px]">
-							<h3 class="mb-[16px] text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php esc_html_e('商品名が入ります商品名が入ります', 'mytheme'); ?></h3>
-							<p class="mb-[25px] text-[12px] text-[rgba(31,28,26,0.55)]"><?php esc_html_e('西宮市｜製造業', 'mytheme'); ?></p>
-							<span class="inline-flex h-[20px] items-center bg-[#6eba38] px-[10px] text-[12px] font-bold text-white"><?php esc_html_e('トムソンカス製切機', 'mytheme'); ?></span>
-						</div>
-					</article>
-					<button class="bg-[#D2A573] w-[50px] h-[50px] rounded-full flex items-center justify-center" type="button" aria-label="<?php esc_attr_e('Next', 'mytheme'); ?>">
-						<svg xmlns="http://www.w3.org/2000/svg" width="9.193" height="15.557" viewBox="0 0 9.193 15.557">
-							<path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M1451.94,1630.941l7.071,7.072-7.071,7.071" transform="translate(-1451.233 -1630.234)" fill="none" stroke="#fff" stroke-width="2" />
-						</svg>
-
-					</button>
-				</div>
-
-				<div class="mt-[30px] flex items-center justify-center gap-[10px]" aria-hidden="true">
-					<span class="h-[10px] w-[24px] rounded-full bg-[#6eba38] opacity-80"></span>
-					<span class="h-[10px] w-[10px] rounded-full bg-[#1f1c1a] opacity-20"></span>
-					<span class="h-[10px] w-[10px] rounded-full bg-[#1f1c1a] opacity-20"></span>
-				</div>
+			<div class="lg:-mt-[95px]">
+				<?php
+				$used_product_articles = array(
+					array(
+						'image'    => $prod_1,
+						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
+						'location' => __('大阪府｜ネット通販生産', 'mytheme'),
+						'tag'      => __('ダンボールパレットプレス機', 'mytheme'),
+					),
+					array(
+						'image'    => $prod_2,
+						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
+						'location' => __('西宮市｜特殊塗装生産', 'mytheme'),
+						'tag'      => __('ダンボールスコア機付き機', 'mytheme'),
+					),
+					array(
+						'image'    => $prod_3,
+						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
+						'location' => __('西宮市｜製造業', 'mytheme'),
+						'tag'      => __('トムソンカス製切機', 'mytheme'),
+					),
+					array(
+						'image'    => $prod_3,
+						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
+						'location' => __('西宮市｜製造業', 'mytheme'),
+						'tag'      => __('トムソンカス製切機', 'mytheme'),
+					),
+					array(
+						'image'    => $prod_3,
+						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
+						'location' => __('西宮市｜製造業', 'mytheme'),
+						'tag'      => __('トムソンカス製切機', 'mytheme'),
+					),
+					array(
+						'image'    => $prod_3,
+						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
+						'location' => __('西宮市｜製造業', 'mytheme'),
+						'tag'      => __('トムソンカス製切機', 'mytheme'),
+					),
+				);
+				get_template_part(
+					'template-parts/product-carousel',
+					null,
+					array(
+						'articles' => $used_product_articles,
+					)
+				);
+				?>
 			</div>
 		</div>
 

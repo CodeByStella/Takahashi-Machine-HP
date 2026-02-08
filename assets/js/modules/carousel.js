@@ -2,8 +2,8 @@ export default function initCarousel() {
   const carousels = document.querySelectorAll('[data-carousel]');
   if (!carousels.length) return;
 
-  const activeDotClass = 'h-[10px] w-[24px] rounded-full bg-[#6eba38] opacity-80';
-  const inactiveDotClass = 'h-[10px] w-[10px] rounded-full bg-[#1f1c1a] opacity-20';
+  const activeDotClass = 'h-[10px] w-[24px] rounded-full bg-[#6eba38] opacity-80 transition-all duration-300 ease-out';
+  const inactiveDotClass = 'h-[10px] w-[10px] rounded-full bg-[#1f1c1a] opacity-20 transition-all duration-300 ease-out';
 
   carousels.forEach((carousel) => {
     const track = carousel.querySelector('[data-carousel-track]');
