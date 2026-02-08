@@ -18,10 +18,10 @@ get_header();
 
 <!-- Product section start -->
 <?php
-$product_bg = mytheme_top_asset('product-bg');
-$prod_1 = mytheme_top_asset('prod-1');
-$prod_2 = mytheme_top_asset('prod-2');
-$prod_3 = mytheme_top_asset('prod-3');
+$product_bg = mytheme_img_asset('top/product-bg');
+$prod_1 = mytheme_img_asset('top/prod-1');
+$prod_2 = mytheme_img_asset('top/prod-2');
+$prod_3 = mytheme_img_asset('top/prod-3');
 ?>
 
 <section class="pb-[60px] md:pb-[100px]">
@@ -114,10 +114,10 @@ $prod_3 = mytheme_top_asset('prod-3');
 
 <!-- Existing Product section start -->
 <?php
-$product_bg = mytheme_top_asset('machine');
-$prod_1 = mytheme_top_asset('prod-1');
-$prod_2 = mytheme_top_asset('prod-2');
-$prod_3 = mytheme_top_asset('prod-3');
+$product_bg = mytheme_img_asset('top/machine');
+$prod_1 = mytheme_img_asset('top/prod-1');
+$prod_2 = mytheme_img_asset('top/prod-2');
+$prod_3 = mytheme_img_asset('top/prod-3');
 ?>
 
 <section class="pb-[60px] md:pb-[100px]">
@@ -211,10 +211,10 @@ $prod_3 = mytheme_top_asset('prod-3');
 
 <!-- Used Product section start -->
 <?php
-$product_bg = mytheme_top_asset('mesh');
-$prod_1 = mytheme_top_asset('prod-1');
-$prod_2 = mytheme_top_asset('prod-2');
-$prod_3 = mytheme_top_asset('prod-3');
+$product_bg = mytheme_img_asset('top/mesh');
+$prod_1 = mytheme_img_asset('top/prod-1');
+$prod_2 = mytheme_img_asset('top/prod-2');
+$prod_3 = mytheme_img_asset('top/prod-3');
 ?>
 
 <section class="pb-[60px] md:pb-[100px]">
@@ -307,12 +307,12 @@ $prod_3 = mytheme_top_asset('prod-3');
 
 <!-- CARDBOARD PROCESSING SECTION START -->
 <?php
-$mesh_bg = mytheme_top_asset('mesh2');
-$person1 = mytheme_top_asset('person1');
-$person2 = mytheme_top_asset('person2');
-$person3 = mytheme_top_asset('person3');
-$person4 = mytheme_top_asset('person4');
-$person5 = mytheme_top_asset('person5');
+$mesh_bg = mytheme_img_asset('top/mesh2');
+$person1 = mytheme_img_asset('top/person1');
+$person2 = mytheme_img_asset('top/person2');
+$person3 = mytheme_img_asset('top/person3');
+$person4 = mytheme_img_asset('top/person4');
+$person5 = mytheme_img_asset('top/person5');
 ?>
 
 <div class="max-w-screen overflow-hidden">
@@ -379,10 +379,10 @@ $person5 = mytheme_top_asset('person5');
 
 <!-- Enquiry section start -->
 <?php
-$enquiry_bg = mytheme_top_asset('enquiry-bg');
-$download_icon = mytheme_top_asset('download');
-$mail_icon = mytheme_top_asset('mail');
-$telephone_icon = mytheme_top_asset('telephone');
+$enquiry_bg = mytheme_img_asset('top/enquiry-bg');
+$download_icon = mytheme_img_asset('top/download');
+$mail_icon = mytheme_img_asset('top/mail');
+$telephone_icon = mytheme_img_asset('top/telephone');
 ?>
 <section class="section relative overflow-hidden pt-[117px] pb-[124px]">
 	<img class=" absolute	top-0 left-0 bottom-0 right-0 w-full h-full object-cover -z-10" aria-hidden="true" src="<?php echo esc_url($enquiry_bg); ?>" alt="" />
@@ -438,10 +438,10 @@ $footer_asset = static function (string $base, string $fallback_rel): string {
 $facebook_icon = $footer_asset('facebook-blue', '/assets/img/hero-placeholder.svg');
 $instagram_icon = $footer_asset('instagram', '/assets/img/footer/instagram-icon.svg');
 
-$banner = mytheme_top_asset('banner');
-$blog_banner = mytheme_top_asset('blog-banner');
-$item = mytheme_top_asset('item');
-$tsicon = mytheme_top_asset('ts-icon');
+$banner = mytheme_img_asset('top/banner');
+$blog_banner = mytheme_img_asset('top/blog-banner');
+$item = mytheme_img_asset('top/item');
+$tsicon = mytheme_img_asset('top/ts-icon');
 ?>
 <section class="section pt-[90px] pb-[130px]">
 
@@ -499,10 +499,10 @@ $tsicon = mytheme_top_asset('ts-icon');
 
 <!-- Feature Section start -->
 <?php
-$feature_1 = mytheme_top_asset('feature-1');
-$feature_2 = mytheme_top_asset('feature-2');
-$feature_3 = mytheme_top_asset('feature-3');
-$feature_4 = mytheme_top_asset('feature-4');
+$feature_1 = mytheme_img_asset('top/feature-1');
+$feature_2 = mytheme_img_asset('top/feature-2');
+$feature_3 = mytheme_img_asset('top/feature-3');
+$feature_4 = mytheme_img_asset('top/feature-4');
 ?>
 <?php
 $feature_cards = array(

@@ -1,3 +1,5 @@
+@config "../../tailwind.config.js";
+
 /* Page-specific styles (imported BEFORE Tailwind so Tailwind utilities override them) */
 @import "./pages/front-page.css";
 @import "./pages/about.css";
@@ -12,11 +14,4 @@
 
 /* your reusable components go here */
 @layer components {
-  .card {
-    @apply bg-white shadow-lg rounded-xl p-6;
-  }
-
-  .btn-primary {
-    @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition;
-  }
 }

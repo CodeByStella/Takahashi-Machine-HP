@@ -275,7 +275,7 @@ assets/js/
 ```php
 mytheme_setup()              // Register theme features
 mytheme_enqueue_assets()     // Enqueue CSS/JS in WordPress
-mytheme_top_asset($base)     // Load images from assets/img/top/
+mytheme_img_asset($path)     // Load images from assets/img/ by path
 mytheme_widgets_init()       // Register widget areas
 ```
 

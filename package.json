@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This theme is a **classic PHP theme** built for the Takahashi site.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --watch",
     "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --minify",
