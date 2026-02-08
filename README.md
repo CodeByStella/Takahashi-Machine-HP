@@ -31,10 +31,21 @@ npm run dev
 # Monitors changes to .php, .js, .html files and rebuilds CSS in real-time
 ```
 
+**Start JS bundler in watch mode:**
+```bash
+npm run dev:js
+# Bundles assets/js/main.js to assets/js/bundle.js
+```
+
 **Build for production:**
 ```bash
 npm run build
 # Minifies output to assets/css/style.css
+```
+
+```bash
+npm run build:js
+# Creates minified assets/js/bundle.js
 ```
 
 ### 3. Activate Theme in WordPress
@@ -183,6 +194,9 @@ With `npm run dev` running, CSS rebuilds automatically when you:
 - Edit `.js` files
 - Edit `.css` files in `assets/css/`
 
+With `npm run dev:js` running, JS bundles automatically when you:
+- Edit `.js` files in `assets/js/`
+
 ---
 
 ## Build & Deployment
@@ -190,6 +204,8 @@ With `npm run dev` running, CSS rebuilds automatically when you:
 ### Local Testing
 ```bash
 npm run dev
+# In another terminal:
+npm run dev:js
 # Visit http://localhost/takahashi (or your WP domain)
 ```
 
@@ -197,6 +213,8 @@ npm run dev
 ```bash
 npm run build
 # Generates minified assets/css/style.css
+npm run build:js
+# Generates minified assets/js/bundle.js
 # Commit and deploy
 ```
 
@@ -224,6 +242,33 @@ export default {
 Content paths tell Tailwind which files to scan for utility classes.
 
 ---
+
+## JS Architecture
+
+### Build Process
+
+```
+assets/js/modules/*.js  (feature modules)
+        ↓
+assets/js/main.js       (entry point)
+        ↓
+  [esbuild bundles]
+        ↓
+assets/js/bundle.js     (browser-ready output)
+        ↓
+functions.php enqueues it in WordPress
+```
+
+### File Structure
+
+```
+assets/js/
+├── main.js             (entry point)
+├── bundle.js           (compiled output)
+└── modules/
+    ├── nav.js
+    └── carousel.js
+```
 
 ## Useful Functions from `functions.php`
 
