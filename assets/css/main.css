@@ -279,6 +279,7 @@ a {
   font-size: 13px;
   font-weight: 700;
   color: rgba(43, 43, 43, 0.86);
+  position: relative;
 }
 .primary-nav a:hover {
   color: rgba(43, 43, 43, 1);
@@ -294,6 +295,10 @@ a {
   height: 10px;
   border-radius: 999px;
   background: #6eba38;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  left: -16px;
 }
 
 /* Primary nav sizing (desktop spec) */
@@ -301,12 +306,13 @@ a {
   .primary-nav .primary-menu,
   .primary-nav .menu,
   .primary-nav .menu > ul {
-    gap: 0;
+    gap: 60px;
+    margin-right: 40px;
   }
 
   .primary-nav .primary-menu > li,
   .primary-nav .menu > ul > li {
-    width: 155px; /* pitch between item start points */
+    width: fit-content; /* pitch between item start points */
   }
 
   .primary-nav .primary-menu > li > a,
@@ -387,7 +393,7 @@ a {
 
 /* Sections */
 .section {
-  max-width: 1600px;
+  /* max-width: 1600px; */
   margin: 0 auto;
 }
 .section--alt {

@@ -153,6 +153,10 @@ $service_decoration = mytheme_img_asset('about/service-decoration');
 <!-- Flow Section start -->
 <?php
 $decoration_icon = mytheme_img_asset('top/product-icon');
+$flow_decoration_1 = mytheme_img_asset('about/flow-decoration-1');
+$flow_decoration_2 = mytheme_img_asset('about/flow-decoration-2');
+$flow_decoration_3 = mytheme_img_asset('about/flow-decoration-3');
+
 $flow_item_1 = mytheme_img_asset('about/flow-1');
 $flow_item_2 = mytheme_img_asset('about/flow-2');
 $flow_item_3 = mytheme_img_asset('about/flow-3');
@@ -161,7 +165,11 @@ $flow_item_5 = mytheme_img_asset('about/flow-5');
 $flow_item_6 = mytheme_img_asset('about/flow-6');
 $flow_item_7 = mytheme_img_asset('about/flow-7');
 ?>
-<section class="flow-section mt-[200px] pb-59">
+<section class="flow-section mt-[200px] relative pb-59 ">
+  <div class="overflow-hidden w-full h-[500px] absolute -top-38">
+    <img src="<?php echo esc_url($flow_decoration_1); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-48 translate-x-1/2 right-[33%] w-[296px] h-auto " />
+    <img src="<?php echo esc_url($flow_decoration_2); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute translate-x-1/2 right-[10%] w-[424px] h-auto " />
+  </div>
   <div class="w-[75%] mx-auto relative">
     <p class="text-[20px] w-fit gap-[14px] flex text-secondary">
       <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[30px] h-[30px]" />
@@ -216,7 +224,9 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           </p>
         </div>
       </div>
-      <div class="flex">
+      <div class="flex relative">
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -top-12 translate-x-1/2 -right-[0%] w-[150px] h-auto " />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-12 translate-x-1/2 -right-[10%] w-[150px] h-auto " />
         <div class="w-[350px] relative aspect-[350/230]">
           <div class="w-[150px] aspect-square bg-secondary absolute top-0 left-0"></div>
           <img src="<?php echo esc_url($flow_item_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[250px] h-auto object-cover  bottom-0 left-[30px]" />
@@ -256,7 +266,9 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           </p>
         </div>
       </div>
-      <div class="flex">
+      <div class="flex relative">
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -bottom-36 translate-x-1/2 -left-[22%] w-[150px] h-auto " />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -bottom-14 translate-x-1/2 -left-[31%] w-[150px] h-auto " />
         <div class="w-[350px] relative aspect-[350/230]">
           <div class="w-[150px] aspect-square bg-secondary absolute top-0 left-0"></div>
           <img src="<?php echo esc_url($flow_item_5); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[250px] h-auto object-cover  bottom-0 left-[30px]" />
@@ -297,7 +309,10 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           </p>
         </div>
       </div>
-      <div class="flex">
+      <div class="flex relative">
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-12 translate-x-1/2 -right-[1%] w-[150px] h-auto " />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -bottom-22 translate-x-1/2 -right-[10%] w-[150px] h-auto " />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -bottom-52 translate-x-1/2 -right-[1%] w-[150px] h-auto " />
         <div class="w-[350px] relative aspect-[350/230]">
           <div class="w-[150px] aspect-square bg-secondary absolute top-0 left-0"></div>
           <img src="<?php echo esc_url($flow_item_7); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[250px] h-auto object-cover  bottom-0 left-[30px]" />
@@ -320,6 +335,74 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
   </div>
 </section>
 <!-- Flow Section end -->
+
+<!-- Business section start -->\
+<?php
+$decoration_icon = mytheme_img_asset('top/product-icon');
+
+$business_item_1 = mytheme_img_asset('about/business-1');
+$business_item_2 = mytheme_img_asset('about/business-2');
+$business_item_3 = mytheme_img_asset('about/business-3');
+?>
+<section class="business-section">
+  <p class="text-[20px] w-fit gap-[14px] flex mx-auto text-secondary">
+    <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[30px] h-[30px]" />
+    Business
+  </p>
+  <h1 class="mx-auto w-fit text-[44px] text-primary text-center mt-5">
+    事業内容
+  </h1>
+  <div class="grid grid-cols-3 gap-[75px] mt-[90px] mx-auto w-fit">
+    <div class="relative flex flex-col w-[340px] grid-cols-1">
+      <div class="w-15 aspect-square bg-secondary absolute -translate-x-1/2 top-0 -translate-y-1/2 -z-10"></div>
+      <img src="<?php echo esc_url($business_item_1); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class=" h-auto w-full object-cover aspect-[340/238]" />
+      <p class="text-[28px] mt-[23px] w-full text-center -tracking-[0.06em]">既製品販売</p>
+      <p class="text-[16px] opacity-70 mt-[18px] w-full text-left -tracking-[0.06em]">⼩⼝から⼤⼝まで、スペースを考慮した様々な製品を取り揃え、全国の⼯場で幅広くご愛⽤頂いております。</p>
+    </div>
+    <div class="relative flex flex-col w-[340px] grid-cols-1">
+      <div class="w-15 aspect-square bg-secondary absolute -translate-x-1/2 top-0 -translate-y-1/2 -z-10"></div>
+      <img src="<?php echo esc_url($business_item_2); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class=" h-auto w-full object-cover aspect-[340/238]" />
+      <p class="text-[28px] mt-[23px] w-full text-center -tracking-[0.06em]">オリジナルオーダー</p>
+      <p class="text-[16px] opacity-70 mt-[18px] w-full text-left -tracking-[0.06em]">ダンボールパレットプレス機、ダンボールフスマ断裁機、トムソンカス取り機等、必要な⽤途に応じて製作させていただきます。</p>
+    </div>
+    <div class="relative flex flex-col w-[340px] grid-cols-1">
+      <div class="w-15 aspect-square bg-secondary absolute -translate-x-1/2 top-0 -translate-y-1/2 -z-10"></div>
+      <img src="<?php echo esc_url($business_item_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class=" h-auto w-full object-cover aspect-[340/238]" />
+      <p class="text-[28px] mt-[23px] w-full text-center -tracking-[0.06em]">中古品販売</p>
+      <p class="text-[16px] opacity-70 mt-[18px] w-full text-left -tracking-[0.06em]">⾮常に良質な中古機器をご提供することにより、ランニングコストやメンテナンス等、コスト対策に貢献致します。</p>
+    </div>
+  </div>
+
+</section>
+<!-- Business section end -->
+
+<!-- Company section start -->
+<?php
+$company_bg = mytheme_img_asset('about/company-bg');
+?>
+<section class="company-section mt-[105px]">
+  <div class="relative pt-30 pb-[110px] w-full h-[338px]">
+    <img src="<?php echo esc_url($company_bg); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="-z-10 absolute top-0 left-0 w-full h-full object-cover" />
+    <p class="text-[20px] w-fit gap-[14px] flex mx-auto text-secondary">
+      <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[30px] h-[30px]" />
+      Company
+    </p>
+    <h1 class="mx-auto w-fit text-[44px] text-white text-center mt-5">
+      会社案内
+    </h1>
+  </div>
+  <div class="w-[75%] mx-auto">
+    <h2 class="text-primary text-[28px] relative mt-[87px]">
+      <div class="bg-secondary w-5 aspect-square absolute -translate-x-1/2 top-0 -translate-y-1/2 -z-10"></div>
+      ご挨拶
+    </h2>
+  </div>
+
+</section>
+<!-- Company section end -->
+
+
+
 
 <?php
 get_footer();

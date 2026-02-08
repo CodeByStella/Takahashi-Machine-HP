@@ -25,7 +25,7 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 ?>
 
 <section class="pb-[60px] md:pb-[100px]">
-	<div class="mx-auto w-full max-w-[1600px]">
+	<div class="mx-auto w-full">
 		<div class="overflow-hidden">
 			<div class="relative aspect-[1600/622] w-full">
 				<img class="absolute inset-0 h-full w-full object-cover" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
@@ -121,7 +121,7 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 ?>
 
 <section class="pb-[60px] md:pb-[100px]">
-	<div class="mx-auto w-full max-w-[1600px]">
+	<div class="mx-auto w-full">
 		<div class="overflow-hidden">
 			<div class="relative aspect-[1600/462] w-full">
 				<img class="absolute inset-0 h-full w-full object-cover" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
@@ -218,7 +218,7 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 ?>
 
 <section class="pb-[60px] md:pb-[100px]">
-	<div class="mx-auto w-full max-w-[1600px]">
+	<div class="mx-auto w-full">
 		<div class="overflow-hidden">
 			<div class="relative aspect-[1600/449] w-full">
 				<img class="absolute inset-0 h-full w-full object-contain" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
