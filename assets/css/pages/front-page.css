@@ -10,7 +10,14 @@
 }
 .marquee {
   display: flex;
-  gap: 48px;
+  width: 200%;
+  gap: 0;
   white-space: nowrap;
   animation: marquee 18s linear infinite;
+  will-change: transform;
+}
+
+.marquee > span {
+  flex: 0 0 50%;
+  padding-right: 48px;
 }
