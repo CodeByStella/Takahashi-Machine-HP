@@ -5,7 +5,7 @@ $mail_icon = mytheme_img_asset('top/mail');
 $telephone_icon = mytheme_img_asset('top/telephone');
 ?>
 <!-- Enquiry section start -->
-<section class="section relative overflow-hidden pt-[117px] pb-[124px]">
+<section class="section relative overflow-hidden pt-[117px] pb-[124px] h-[614px]">
 	<img class=" absolute	top-0 left-0 bottom-0 right-0 w-full h-full object-cover -z-10" aria-hidden="true" src="<?php echo esc_url($enquiry_bg); ?>" alt="" />
 	<p class="mb-[50px] text-white text-[44px] text-center"><?php esc_html_e('お問い合わせはこちら', 'mytheme'); ?></p>
 	<div class="flex justify-center gap-[30px]">
