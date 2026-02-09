@@ -187,7 +187,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
     <div class="flex flex-col mt-[51px]">
       <div class="flex">
         <div class="w-[350px] relative aspect-[350/230]">
-          <div class="w-[150px] aspect-square bg-secondary absolute top-0 left-0"></div>
+          <div class="w-[200px] aspect-square bg-secondary absolute top-0 left-0"></div>
           <img src="<?php echo esc_url($flow_item_1); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[250px] h-auto object-cover  bottom-0 left-[30px]" />
           <div class="w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] bottom-[57px] translate-x-1/2"></div>
           <div class="w-[2px] h-[57px] bg-primary absolute -right-[2px] bottom-0"></div>
@@ -207,7 +207,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
         <div class="w-[350px]">
         </div>
         <div class="px-[68px] pt-15 pb-[50px] relative aspect-[420/340] w-105 border-[2px] border-l-0 border-r-0 border-primary">
-          <div class="w-[150px] aspect-square bg-secondary absolute top-15 left-[68px]"></div>
+          <div class="w-[200px] aspect-square bg-secondary absolute top-15 left-[68px]"></div>
           <img src="<?php echo esc_url($flow_item_2); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[250px] relative h-auto object-cover  top-[30px] left-[30px] " />
           <div class="w-[10px] aspect-square rounded-full bg-primary absolute right-[1px] top-[90px] translate-x-1/2"></div>
           <div class="w-[2px] h-[90px] bg-primary absolute right-0 top-0"></div>
@@ -225,10 +225,10 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
         </div>
       </div>
       <div class="flex relative">
-        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -top-12 translate-x-1/2 -right-[0%] w-[150px] h-auto " />
-        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-12 translate-x-1/2 -right-[10%] w-[150px] h-auto " />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -top-24 translate-x-1/2 -right-[0%] w-[200px] h-auto " />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-6 translate-x-1/2 -right-[10%] w-[200px] h-auto " />
         <div class="w-[350px] relative aspect-[350/230]">
-          <div class="w-[150px] aspect-square bg-secondary absolute top-0 left-0"></div>
+          <div class="w-[200px] aspect-square bg-secondary absolute top-0 left-0"></div>
           <img src="<?php echo esc_url($flow_item_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[250px] h-auto object-cover  bottom-0 left-[30px]" />
           <div class="w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] top-[57px] translate-x-1/2"></div>
           <div class="w-[2px] h-[57px] bg-primary absolute -right-[2px] top-0"></div>
@@ -249,7 +249,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
         <div class="w-[350px]">
         </div>
         <div class="px-[68px] pt-15 pb-[50px] relative aspect-[420/340] w-105 border-[2px] border-l-0 border-r-0 border-primary">
-          <div class="w-[150px] aspect-square bg-secondary absolute top-15 left-[68px]"></div>
+          <div class="w-[200px] aspect-square bg-secondary absolute top-15 left-[68px]"></div>
           <img src="<?php echo esc_url($flow_item_4); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[250px] relative h-auto object-cover  top-[30px] left-[30px] " />
           <div class="w-[10px] aspect-square rounded-full bg-primary absolute right-[1px] top-[90px] translate-x-1/2"></div>
           <div class="w-[2px] h-[90px] bg-primary absolute right-0 top-0"></div>
@@ -267,10 +267,10 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
         </div>
       </div>
       <div class="flex relative">
-        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -bottom-36 translate-x-1/2 -left-[22%] w-[150px] h-auto " />
-        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -bottom-14 translate-x-1/2 -left-[31%] w-[150px] h-auto " />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -bottom-48 translate-x-1/2 -left-[26%] w-[200px] h-auto " />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -bottom-14 translate-x-1/2 -left-[36%] w-[200px] h-auto " />
         <div class="w-[350px] relative aspect-[350/230]">
-          <div class="w-[150px] aspect-square bg-secondary absolute top-0 left-0"></div>
+          <div class="w-[200px] aspect-square bg-secondary absolute top-0 left-0"></div>
           <img src="<?php echo esc_url($flow_item_5); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[250px] h-auto object-cover  bottom-0 left-[30px]" />
           <div class="w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] top-[57px] translate-x-1/2"></div>
           <div class="w-[2px] h-[57px] bg-primary absolute -right-[2px] top-0"></div>
@@ -291,7 +291,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
         <div class="w-[350px]">
         </div>
         <div class="px-[68px] pt-15 pb-[50px] relative aspect-[420/340] w-105 border-[2px] border-l-0 border-r-0 border-primary">
-          <div class="w-[150px] aspect-square bg-secondary absolute top-15 left-[68px]"></div>
+          <div class="w-[200px] aspect-square bg-secondary absolute top-15 left-[68px]"></div>
           <img src="<?php echo esc_url($flow_item_6); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[250px] relative h-auto object-cover  top-[30px] left-[30px] " />
           <div class="w-[10px] aspect-square rounded-full bg-primary absolute right-[1px] top-[90px] translate-x-1/2"></div>
           <div class="w-[2px] h-[90px] bg-primary absolute right-0 top-0"></div>
@@ -310,11 +310,11 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
         </div>
       </div>
       <div class="flex relative">
-        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-12 translate-x-1/2 -right-[1%] w-[150px] h-auto " />
-        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -bottom-22 translate-x-1/2 -right-[10%] w-[150px] h-auto " />
-        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -bottom-52 translate-x-1/2 -right-[1%] w-[150px] h-auto " />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-4 translate-x-1/2 right-[2%] w-[200px] h-auto " />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -bottom-28 translate-x-1/2 -right-[10%] w-[200px] h-auto " />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute -bottom-60 translate-x-1/2 right-[2%] w-[200px] h-auto " />
         <div class="w-[350px] relative aspect-[350/230]">
-          <div class="w-[150px] aspect-square bg-secondary absolute top-0 left-0"></div>
+          <div class="w-[200px] aspect-square bg-secondary absolute top-0 left-0"></div>
           <img src="<?php echo esc_url($flow_item_7); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[250px] h-auto object-cover  bottom-0 left-[30px]" />
           <div class="w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] top-[57px] translate-x-1/2"></div>
           <div class="w-[2px] h-[57px] bg-primary absolute -right-[2px] top-0"></div>
@@ -379,6 +379,7 @@ $business_item_3 = mytheme_img_asset('about/business-3');
 <!-- Company section start -->
 <?php
 $company_bg = mytheme_img_asset('about/company-bg');
+$company = mytheme_img_asset('about/company');
 ?>
 <section class="company-section mt-[105px]">
   <div class="relative pt-30 pb-[110px] w-full h-[338px]">
@@ -393,11 +394,148 @@ $company_bg = mytheme_img_asset('about/company-bg');
   </div>
   <div class="w-[75%] mx-auto">
     <h2 class="text-primary text-[28px] relative mt-[87px]">
-      <div class="bg-secondary w-5 aspect-square absolute -translate-x-1/2 top-0 -translate-y-1/2 -z-10"></div>
+      <div class="bg-secondary w-5 aspect-square absolute -translate-x-6 top-0 -translate-y-1/2 -z-10"></div>
       ご挨拶
     </h2>
+    <p class="text-primary text-[18px] mt-[40px] -tracking-[0.06em]">
+      弊社は創業以来ダンボール機械の製造、販売、設計を⼿掛けてまいりました。<br />
+      今現在、⼿掛けている機械はもちろんのこと、お客差のご要望に応じた製品や、これから必要であろう新しい製品の設計製作をすることを⽇頃から考え取り組んだ製品作りを⾏っています。<br />
+      また、⾃社、他社製品、⼟、⽇、祭⽇問わずアフターサービスにも努めております。<br />
+    </p>
+    <h2 class="text-primary text-[28px] relative mt-[96px]">
+      <div class="bg-secondary w-5 aspect-square absolute -translate-x-6 top-0 -translate-y-1/2 -z-10"></div>
+      会社概要
+    </h2>
+    <?php
+    $company_table = array(
+      array(
+        'label' => '会社名',
+        'value' => '株式会社高橋製作所',
+      ),
+      array(
+        'label' => '代表者',
+        'value' => '代表取締役社長　高橋 宏',
+      ),
+      array(
+        'label' => '資本金',
+        'value' => '1,500万円',
+      ),
+      array(
+        'label' => '設立',
+        'value' => '昭和44年10月1日',
+      ),
+      array(
+        'label' => '社員数',
+        'value' => '7名',
+      ),
+      array(
+        'label' => '事業内容',
+        'value' => array(
+          'ダンボール製造機械',
+          '・製作販売',
+          '・中古機械整備販売',
+          '・メンテナンス',
+        ),
+      ),
+      array(
+        'label' => '所在地',
+        'value' => '〒578-0983　大阪府東大阪市吉田下島14番25号',
+      ),
+      array(
+        'label' => 'TEL',
+        'value' => '072-961-9975',
+      ),
+      array(
+        'label' => 'FAX',
+        'value' => '072-963-7568',
+      ),
+      array(
+        'label' => '取引金融機関',
+        'value' => array(
+          '三菱東京UFJ銀行　今里支店',
+          '永和信用金庫　花園支店',
+        ),
+      ),
+      array(
+        'label' => '中古機器について',
+        'value' => array(
+          '当社では、非常に良質な中古機器の販売をしております。',
+          '全て弊社でメンテ、リメイクを行った自社製品になります。',
+        ),
+      ),
+    );
+    ?>
+    <div class="mt-[45px] grid grid-cols-12 gap-15">
+      <div class="col-span-7">
+        <table class="w-full border-collapse text-[16px] text-primary">
+          <?php foreach ($company_table as $row) : ?>
+            <tr class="border-b-[2px] border-[#8F8D8C]">
+              <td class="w-[170px] whitespace-nowrap pt-2 pb-4 align-top">
+                <?php echo esc_html($row['label']); ?>
+              </td>
+              <td class="pt-2 pb-4 align-top leading-[1.8]">
+                <?php if (is_array($row['value'])) : ?>
+                  <?php foreach ($row['value'] as $line_index => $line) : ?>
+                    <?php if ($line_index > 0) : ?><br><?php endif; ?>
+                    <?php echo esc_html($line); ?>
+                  <?php endforeach; ?>
+                <?php else : ?>
+                  <?php echo esc_html($row['value']); ?>
+                <?php endif; ?>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        </table>
+      </div>
+      <div class="col-span-5 pt-6 relative">
+        <img src="<?php echo esc_url($company); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-full h-auto object-cover" />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-53 translate-x-1/2 -right-[26%] w-[200px] h-auto " />
+        <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-84 translate-x-1/2 -right-[0%] w-[200px] h-auto " />
+      </div>
+    </div>
+    <h2 class="text-primary text-[28px] relative mt-[96px]">
+      <div class="bg-secondary w-5 aspect-square absolute -translate-x-6 top-0 -translate-y-1/2 -z-10"></div>
+      アクセス
+    </h2>
+    <div class="w-full aspect-[115/30] mt-[45px] relative">
+      <iframe
+        class="w-full h-full border border-[#60605B40]"
+        src="https://www.google.com/maps?q=%E3%80%92578-0983+%E5%A4%A7%E9%98%AA%E5%BA%9C%E6%9D%B1%E5%A4%A7%E9%98%AA%E5%B8%82%E5%90%89%E7%94%B0%E4%B8%8B%E5%B3%B614-25&output=embed&hl=ja&region=JP"
+        title="株式会社高橋製作所 地図"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+      <a
+        class="absolute right-0 -bottom-22 inline-flex items-center justify-center bg-secondary !text-white text-[14px] px-9 py-[10px] rounded-[20px] leading-[1.2] z-10"
+        href="https://www.google.com/maps?q=%E3%80%92578-0983+%E5%A4%A7%E9%98%AA%E5%BA%9C%E6%9D%B1%E5%A4%A7%E9%98%AA%E5%B8%82%E5%90%89%E7%94%B0%E4%B8%8B%E5%B3%B614-25"
+        target="_blank"
+        rel="noopener noreferrer">
+        Google Map で見る
+      </a>
+    </div>
+    <div class="relative pb-[155px]">
+      <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-[185px] translate-x-1/2 -right-[0%] w-[200px] h-auto " />
+      <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-[445px] translate-x-1/2 -right-[0%] w-[200px] h-auto " />
+      <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-[315px] translate-x-1/2 -right-[10%] w-[200px] h-auto " />
+      <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-[315px] translate-x-1/2 right-[10%] w-[200px] h-auto " />
+      <h2 class="text-secondary text-[20px] pl-[55px] mt-15">所在地</h2>
+      <p class="text-primary text-[16px] mt-4 -tracking-[0.06em]">
+        〒578-0983　大阪府東大阪市吉田下島14番25号<br>
+        TEL：072-961-9975<br>
+      </p>
+      <h2 class="text-secondary text-[20px] pl-[55px] mt-11">電⾞でお越しの場合</h2>
+      <p class="text-primary text-[16px] mt-4 -tracking-[0.06em]">
+        新⼤阪駅・⼤阪駅から<br>
+        地下鉄御堂筋線、中百⾆⿃⽅⾯⾏きに乗り「本町駅」下⾞<br>
+        地下鉄中央線、⽣駒⽅⾯に乗り換え「吉⽥駅」で下⾞
+      </p>
+      <h2 class="text-secondary text-[20px] pl-[55px] mt-11">⾞でお越しの場合</h2>
+      <p class="text-primary text-[16px] mt-4 -tracking-[0.06em]">
+        阪神⾼速 東⼤阪線 中野I.Cより5分
+      </p>
+    </div>
   </div>
-
 </section>
 <!-- Company section end -->
 
