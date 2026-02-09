@@ -516,7 +516,7 @@ $company = mytheme_img_asset('about/company');
     </div>
     <div class="relative pb-[155px]">
       <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-[185px] translate-x-1/2 -right-[0%] w-[200px] h-auto " />
-      <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-[445px] translate-x-1/2 -right-[0%] w-[200px] h-auto " />
+      <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-[445px] translate-x-1/2 -right-[0%] w-[200px] h-auto -z-10 " />
       <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-[315px] translate-x-1/2 -right-[10%] w-[200px] h-auto " />
       <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-[315px] translate-x-1/2 right-[10%] w-[200px] h-auto " />
       <h2 class="text-secondary text-[20px] pl-[55px] mt-15">所在地</h2>
@@ -538,6 +538,7 @@ $company = mytheme_img_asset('about/company');
   </div>
 </section>
 <!-- Company section end -->
+<?php get_template_part('template-parts/section', 'enquiry'); ?>
 
 
 
