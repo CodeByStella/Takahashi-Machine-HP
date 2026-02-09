@@ -18,7 +18,7 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 
-	<header class="site-header lg:h-[140px]">
+	<!-- <header class="site-header lg:h-[140px]">
 		<div class="mx-auto w-full max-w-[1600px] px-4 lg:px-[40px] lg:pt-[24px] h-full">
 			<div class="flex items-start justify-between h-full">
 				<a class="site-brand lg:flex lg:flex-col lg:items-start lg:gap-[4px]" href="<?php echo esc_url(home_url('/')); ?>">
@@ -122,6 +122,6 @@
 				</div>
 			</div>
 		</div>
-	</header>
+	</header> -->
 
 	<main id="content">
