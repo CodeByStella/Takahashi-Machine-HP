@@ -106,19 +106,20 @@
 							</svg>
 						</button>
 					</div>
-					<nav class="primary-nav lg:h-fit lg:items-center mt-[12px] lg:mt-[23px]" data-nav aria-label="<?php esc_attr_e('Primary menu', 'mytheme'); ?>">
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'primary',
-								'container'      => false,
-								'menu_id'        => 'primary-menu',
-								'menu_class'     => 'primary-menu',
-								'fallback_cb'    => 'wp_page_menu',
-							)
-						);
-						?>
-					</nav>
+				<nav class="primary-nav lg:h-fit lg:items-center mt-[12px] lg:mt-[23px]" data-nav aria-label="<?php esc_attr_e('Primary menu', 'mytheme'); ?>">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'primary',
+							'container'      => false,
+							'menu_id'        => 'primary-menu',
+							'menu_class'     => 'primary-menu',
+							'fallback_cb'    => 'wp_page_menu',
+							'walker'         => new Mytheme_Walker_Nav_Menu(),
+						)
+					);
+					?>
+				</nav>
 				</div>
 			</div>
 		</div>

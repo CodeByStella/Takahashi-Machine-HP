@@ -56,7 +56,7 @@
 							'container' => false,
 							'menu_id' => 'footer-menu',
 							'menu_class' => 'footer-menu grid grid-cols-[205px_205px] gap-y-[20px] text-[14px] text-black/70',
-							'depth' => 1,
+							'walker' => new Mytheme_Walker_Footer_Nav_Menu(),
 							'fallback_cb' => '__return_false',
 						)
 					);

@@ -308,6 +308,12 @@ a {
   left: -16px;
 }
 
+/* Dropdown Menu Styles - Minimal CSS, rest handled by Tailwind */
+.primary-nav .sub-menu .current-menu-item > a::before,
+.primary-nav .sub-menu .current_page_item > a::before {
+  display: none;
+}
+
 /* Primary nav sizing (desktop spec) */
 @media (min-width: 1024px) {
   .primary-nav .primary-menu,
@@ -617,6 +623,17 @@ a {
   text-underline-offset: 3px;
 }
 
+/* Footer submenu styling */
+.footer-nav .sub-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+.footer-nav .sub-menu li {
+  font-size: 13px;
+}
+
 /* Page + content */
 .page-hero {
   padding: 28px 0 10px;
@@ -838,6 +855,7 @@ a {
   .primary-nav a {
     font-size: 14px;
   }
+
   .cards {
     grid-template-columns: 1fr;
   }

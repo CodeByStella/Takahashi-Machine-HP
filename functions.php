@@ -130,6 +130,184 @@ if (!function_exists('mytheme_img_asset')) {
 }
 
 /* ======================================================
+   Custom Walker for Dropdown Navigation (Tailwind)
+====================================================== */
+class Mytheme_Walker_Nav_Menu extends Walker_Nav_Menu
+{
+  /**
+   * Start the element output.
+   */
+  public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+  {
+    $indent = ($depth) ? str_repeat("\t", $depth) : '';
+    $classes = empty($item->classes) ? array() : (array) $item->classes;
+    $classes[] = 'menu-item-' . $item->ID;
+
+    // Add relative positioning for parent items
+    if (in_array('menu-item-has-children', $classes)) {
+      $classes[] = 'relative';
+    }
+
+    $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
+    $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+    $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth);
+    $id = $id ? ' id="' . esc_attr($id) . '"' : '';
+
+    $output .= $indent . '<li' . $id . $class_names . '>';
+
+    $atts = array();
+    $atts['title']  = !empty($item->attr_title) ? $item->attr_title : '';
+    $atts['target'] = !empty($item->target) ? $item->target : '';
+    $atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
+
+    // Base link classes
+    $link_classes = array();
+
+    // If item has children, prevent default navigation
+    if (in_array('menu-item-has-children', $classes)) {
+      $atts['href'] = '#';
+      $atts['aria-expanded'] = 'false';
+      $atts['data-dropdown-toggle'] = 'true';
+      
+      // Parent link classes (desktop and mobile)
+      if ($depth === 0) {
+        $link_classes[] = 'flex items-center gap-2 lg:justify-between max-lg:w-full max-lg:justify-between';
+      }
+    } else {
+      // Ensure absolute URL for submenu items
+      $url = !empty($item->url) ? $item->url : '';
+      // If URL is relative (starts with /), prepend home_url
+      if (!empty($url) && substr($url, 0, 1) === '/' && substr($url, 0, 2) !== '//') {
+        $url = home_url($url);
+      }
+      $atts['href'] = $url;
+    }
+
+    // Add Tailwind classes for submenu items
+    if ($depth > 0) {
+      $link_classes[] = 'block w-full px-3.5 py-2.5 rounded-lg text-[13px] font-semibold text-[rgba(43,43,43,0.8)] hover:bg-[rgba(110,186,56,0.08)] hover:text-[rgba(43,43,43,1)] transition-all duration-150';
+    }
+
+    if (!empty($link_classes)) {
+      $atts['class'] = implode(' ', $link_classes);
+    }
+
+    $atts = apply_filters('nav_menu_link_attributes', $atts, $item, $args, $depth);
+
+    $attributes = '';
+    foreach ($atts as $attr => $value) {
+      if (!empty($value)) {
+        $value = ('href' === $attr) ? esc_url($value) : esc_attr($value);
+        $attributes .= ' ' . $attr . '="' . $value . '"';
+      }
+    }
+
+    $item_output = $args->before;
+    $item_output .= '<a' . $attributes . '>';
+    
+    // Add dash prefix for submenu items
+    $title_prefix = ($depth > 0) ? '— ' : '';
+    $item_output .= $args->link_before . $title_prefix . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+
+    // Add plus icon for items with children
+    if (in_array('menu-item-has-children', $classes)) {
+      $item_output .= '<span class="dropdown-icon inline-flex items-center justify-center w-[10px] aspect-square" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+  <g id="plus" transform="translate(-1267 -92)">
+    <rect id="長方形_657" data-name="長方形 657" width="10" height="2" transform="translate(1267 96)" fill="#6eba38"/>
+    <rect id="長方形_657_のコピー" data-name="長方形 657 のコピー" width="2" height="10" transform="translate(1271 92)" fill="#6eba38"/>
+  </g>
+</svg>
+</span>';
+    }
+
+    $item_output .= '</a>';
+    $item_output .= $args->after;
+
+    $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+  }
+
+  /**
+   * Start the sub-menu output.
+   */
+  public function start_lvl(&$output, $depth = 0, $args = null)
+  {
+    $indent = str_repeat("\t", $depth);
+    // Tailwind classes for dropdown: hidden by default, positioned absolutely on desktop, static on mobile
+    $classes = 'sub-menu hidden lg:absolute lg:top-[calc(100%+12px)] lg:left-0 lg:min-w-[200px] lg:bg-white lg:shadow-[0_10px_30px_rgba(0,0,0,0.15)] lg:border lg:border-black/[0.08] lg:p-2 lg:z-[1000] max-lg:static max-lg:mt-2 max-lg:pl-4 max-lg:border-l-2 max-lg:border-[rgba(110,186,56,0.3)] list-none m-0 p-0';
+    $output .= "\n$indent<ul class=\"$classes\">\n";
+  }
+}
+
+/* ======================================================
+   Footer Walker - No Dropdown, Show All Items
+====================================================== */
+class Mytheme_Walker_Footer_Nav_Menu extends Walker_Nav_Menu
+{
+  /**
+   * Start the element output.
+   */
+  public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+  {
+    $indent = ($depth) ? str_repeat("\t", $depth) : '';
+    $classes = empty($item->classes) ? array() : (array) $item->classes;
+    $classes[] = 'menu-item-' . $item->ID;
+
+    $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
+    $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+    $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth);
+    $id = $id ? ' id="' . esc_attr($id) . '"' : '';
+
+    $output .= $indent . '<li' . $id . $class_names . '>';
+
+    $atts = array();
+    $atts['title']  = !empty($item->attr_title) ? $item->attr_title : '';
+    $atts['target'] = !empty($item->target) ? $item->target : '';
+    $atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
+
+    // All items are clickable in footer
+    $url = !empty($item->url) ? $item->url : '';
+    // If URL is relative (starts with /), prepend home_url
+    if (!empty($url) && substr($url, 0, 1) === '/' && substr($url, 0, 2) !== '//') {
+      $url = home_url($url);
+    }
+    $atts['href'] = $url;
+
+    $atts = apply_filters('nav_menu_link_attributes', $atts, $item, $args, $depth);
+
+    $attributes = '';
+    foreach ($atts as $attr => $value) {
+      if (!empty($value)) {
+        $value = ('href' === $attr) ? esc_url($value) : esc_attr($value);
+        $attributes .= ' ' . $attr . '="' . $value . '"';
+      }
+    }
+
+    $item_output = $args->before;
+    $item_output .= '<a' . $attributes . '>';
+    
+    // Add dash prefix for submenu items
+    $title_prefix = ($depth > 0) ? '— ' : '';
+    $item_output .= $args->link_before . $title_prefix . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+
+    $item_output .= '</a>';
+    $item_output .= $args->after;
+
+    $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+  }
+
+  /**
+   * Start the sub-menu output - No special classes, just a simple list
+   */
+  public function start_lvl(&$output, $depth = 0, $args = null)
+  {
+    $indent = str_repeat("\t", $depth);
+    $output .= "\n$indent<ul class=\"sub-menu\">\n";
+  }
+}
+
+/* ======================================================
    Widgets
 ====================================================== */
 function mytheme_widgets_init()
