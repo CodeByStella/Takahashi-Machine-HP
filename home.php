@@ -19,7 +19,7 @@ $hero_mesh = mytheme_img_asset('news/hero-mesh');
 			class="-z-10 absolute h-auto w-[94%] object-cover mx-auto left-1/2 -translate-x-1/2" />
 		<div class=" w-full py-[46px]">
 			<div class="flex justify-end items-center w-full">
-				<div class="mr-[44px]">
+				<div class="mr-56">
 					<h1 class="text-[110px] leading-[1.1] text-[#6EBA38]">News</h1>
 					<p class="text-[36px] font-bold">お知らせ</p>
 				</div>
@@ -48,44 +48,44 @@ $decoration_icon = mytheme_img_asset('news/product-icon');
 					array(
 						'post_type'           => 'post',
 						'post_status'         => 'publish',
-						'posts_per_page'      => 10, 
+						'posts_per_page'      => 10,
 						'ignore_sticky_posts' => true,
 					)
 				);
-				?>	
+				?>
 
-				<?php if ( $news_query->have_posts() ) : ?>
-				<ul>
-					<?php while ( $news_query->have_posts() ) : ?>
-					<?php
+				<?php if ($news_query->have_posts()) : ?>
+					<ul>
+						<?php while ($news_query->have_posts()) : ?>
+							<?php
 							$news_query->the_post();
 							$categories = get_the_category();
-							$category_name = ( $categories && ! is_wp_error( $categories ) ) ? $categories[0]->name : __( 'News', 'mytheme' );
+							$category_name = ($categories && ! is_wp_error($categories)) ? $categories[0]->name : __('News', 'mytheme');
 							?>
-					<li class="border-b border-primary/20">
-						<a href="<?php the_permalink(); ?>" class="flex items-center gap-[22px] py-[18px]">
-							<time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"
-								class="w-[110px] shrink-0 text-[14px] text-primary/60">
-								<?php echo esc_html( get_the_date( 'Y.m.d' ) ); ?>
-							</time>
+							<li class="border-b border-primary/20">
+								<a href="<?php the_permalink(); ?>" class="flex items-center gap-[22px] py-[18px]">
+									<time datetime="<?php echo esc_attr(get_the_date(DATE_W3C)); ?>"
+										class="w-[110px] shrink-0 text-[14px] text-primary/60">
+										<?php echo esc_html(get_the_date('Y.m.d')); ?>
+									</time>
 
-							<span
-								class="shrink-0 bg-secondary px-[14px] py-[4px] text-[12px] font-medium leading-none text-white">
-								<?php echo esc_html( $category_name ); ?>
-							</span>
+									<span
+										class="shrink-0 bg-secondary px-[14px] py-[4px] text-[12px] font-medium leading-none text-white">
+										<?php echo esc_html($category_name); ?>
+									</span>
 
-							<span class="min-w-0 flex-1 truncate text-[16px] text-primary">
-								<?php the_title(); ?>
-							</span>
-						</a>
-					</li>
-					<?php endwhile; ?>
-				</ul>
-				<?php wp_reset_postdata(); ?>
+									<span class="min-w-0 flex-1 truncate text-[16px] text-primary">
+										<?php the_title(); ?>
+									</span>
+								</a>
+							</li>
+						<?php endwhile; ?>
+					</ul>
+					<?php wp_reset_postdata(); ?>
 				<?php else : ?>
-				<p class="py-[18px] text-[16px] text-primary/60">
-					<?php esc_html_e( 'No news yet.', 'mytheme' ); ?>
-				</p>
+					<p class="py-[18px] text-[16px] text-primary/60">
+						<?php esc_html_e('No news yet.', 'mytheme'); ?>
+					</p>
 				<?php endif; ?>
 			</div>
 		</div>
@@ -101,12 +101,12 @@ $decoration_icon = mytheme_img_asset('news/product-icon');
 
 			// "All" should go back to this News listing page.
 			$news_all_url = '';
-			$queried_id   = function_exists( 'get_queried_object_id' ) ? (int) get_queried_object_id() : 0;
-			if ( $queried_id ) {
-				$news_all_url = get_permalink( $queried_id );
+			$queried_id   = function_exists('get_queried_object_id') ? (int) get_queried_object_id() : 0;
+			if ($queried_id) {
+				$news_all_url = get_permalink($queried_id);
 			}
-			if ( empty( $news_all_url ) ) {
-				$news_all_url = home_url( '/' );
+			if (empty($news_all_url)) {
+				$news_all_url = home_url('/');
 			}
 
 			$news_category_items[] = array(
@@ -118,37 +118,37 @@ $decoration_icon = mytheme_img_asset('news/product-icon');
 			$news_category_targets = array(
 				array(
 					'label' => 'お知らせ',
-					'names' => array( 'お知らせ' ),
-					'slugs' => array( 'oshirase' ),
+					'names' => array('お知らせ'),
+					'slugs' => array('oshirase'),
 				),
 				array(
 					'label' => 'メンテナンス',
-					'names' => array( 'メンテナンス' ),
-					'slugs' => array( 'maintenance' ),
+					'names' => array('メンテナンス'),
+					'slugs' => array('maintenance'),
 				),
 			);
 
-			foreach ( $news_category_targets as $target ) {
+			foreach ($news_category_targets as $target) {
 				$term = null;
 
-				foreach ( $target['names'] as $name ) {
-					$term = get_term_by( 'name', $name, 'category' );
-					if ( $term && ! is_wp_error( $term ) ) {
+				foreach ($target['names'] as $name) {
+					$term = get_term_by('name', $name, 'category');
+					if ($term && ! is_wp_error($term)) {
 						break;
 					}
 				}
 
-				if ( ! $term ) {
-					foreach ( $target['slugs'] as $slug ) {
-						$term = get_term_by( 'slug', $slug, 'category' );
-						if ( $term && ! is_wp_error( $term ) ) {
+				if (! $term) {
+					foreach ($target['slugs'] as $slug) {
+						$term = get_term_by('slug', $slug, 'category');
+						if ($term && ! is_wp_error($term)) {
 							break;
 						}
 					}
 				}
 
-				$enabled = ( $term && ! is_wp_error( $term ) && (int) $term->count > 0 );
-				$url     = ( $term && ! is_wp_error( $term ) ) ? get_category_link( $term ) : '';
+				$enabled = ($term && ! is_wp_error($term) && (int) $term->count > 0);
+				$url     = ($term && ! is_wp_error($term)) ? get_category_link($term) : '';
 
 				// Always show the label; disable if missing/empty.
 				$news_category_items[] = array(
@@ -158,29 +158,29 @@ $decoration_icon = mytheme_img_asset('news/product-icon');
 				);
 			}
 			?>
-			<?php if ( ! empty( $news_category_items ) ) : ?>
-			<ul class="mt-[22px] flex flex-col  bg-white rounded-[20px] py-[15px]">
-				<?php foreach ( $news_category_items as $item ) : ?>
-				<li class="px-[20px] flex items-center justify-between">
-					<?php if ( ! empty( $item['enabled'] ) && ! empty( $item['url'] ) ) : ?>
-					<a href="<?php echo esc_url( $item['url'] ); ?>"
-						class="flex items-center justify-between text-[16px] text-primary/80 hover:text-primary">
-						<span class="text-[20px] font-medium w-[20px] text-[#6EBA38]">></span>
-						<span>
-							<?php echo esc_html( $item['label'] ); ?>
-						</span>
-					</a>
-					<?php else : ?>
-					<span class="flex items-center justify-between text-[16px] text-primary/40" aria-disabled="true">
-						<span class="text-[20px] font-medium w-[20px] text-[#6EBA38]">></span>
-						<span>
-							<?php echo esc_html( $item['label'] ); ?>
-						</span>
-					</span>
-					<?php endif; ?>
-				</li>
-				<?php endforeach; ?>
-			</ul>
+			<?php if (! empty($news_category_items)) : ?>
+				<ul class="mt-[22px] flex flex-col  bg-white rounded-[20px] py-[15px]">
+					<?php foreach ($news_category_items as $item) : ?>
+						<li class="px-[20px] flex items-center justify-between">
+							<?php if (! empty($item['enabled']) && ! empty($item['url'])) : ?>
+								<a href="<?php echo esc_url($item['url']); ?>"
+									class="flex items-center justify-between text-[16px] text-primary/80 hover:text-primary">
+									<span class="text-[20px] font-medium w-[20px] text-[#6EBA38]">></span>
+									<span>
+										<?php echo esc_html($item['label']); ?>
+									</span>
+								</a>
+							<?php else : ?>
+								<span class="flex items-center justify-between text-[16px] text-primary/40" aria-disabled="true">
+									<span class="text-[20px] font-medium w-[20px] text-[#6EBA38]">></span>
+									<span>
+										<?php echo esc_html($item['label']); ?>
+									</span>
+								</span>
+							<?php endif; ?>
+						</li>
+					<?php endforeach; ?>
+				</ul>
 			<?php endif; ?>
 
 			<!-- Archive -->
@@ -194,7 +194,7 @@ $decoration_icon = mytheme_img_asset('news/product-icon');
 				<?php
 				global $wpdb;
 				$news_years = array();
-				if ( isset( $wpdb ) ) {
+				if (isset($wpdb)) {
 					$news_years = $wpdb->get_col(
 						$wpdb->prepare(
 							"SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts WHERE post_type = %s AND post_status = %s ORDER BY post_date DESC",
@@ -205,22 +205,22 @@ $decoration_icon = mytheme_img_asset('news/product-icon');
 				}
 				?>
 
-				<?php if ( ! empty( $news_years ) ) : ?>
-				<ul class="mt-[22px] bg-white rounded-[20px] py-[26px] flex flex-col gap-[28px]">
-					<?php foreach ( $news_years as $year ) : ?>
-					<?php $year = (int) $year; ?>
-					<li class="px-[20px] flex items-center justify-between">
-						<a href="<?php echo esc_url( $item['url'] ); ?>"
-							class="flex items-center justify-between text-[16px] text-primary/80 hover:text-primary">
-							<span class="text-[20px] font-medium w-[20px] text-[#6EBA38]">></span>
-							<span>
-								<!-- <?php echo esc_html( $item['label'] ); ?> -->
-								2025年
-							</span>
-						</a>
-					</li>
-					<?php endforeach; ?>
-				</ul>
+				<?php if (! empty($news_years)) : ?>
+					<ul class="mt-[22px] bg-white rounded-[20px] py-[26px] flex flex-col gap-[28px]">
+						<?php foreach ($news_years as $year) : ?>
+							<?php $year = (int) $year; ?>
+							<li class="px-[20px] flex items-center justify-between">
+								<a href="<?php echo esc_url($item['url']); ?>"
+									class="flex items-center justify-between text-[16px] text-primary/80 hover:text-primary">
+									<span class="text-[20px] font-medium w-[20px] text-[#6EBA38]">></span>
+									<span>
+										<!-- <?php echo esc_html($item['label']); ?> -->
+										2025年
+									</span>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
 				<?php endif; ?>
 			</div>
 		</div>
