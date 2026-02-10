@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<section class="hero flex justify-end items-center">
+<section class="hero 2xl:pb-[113px] pb-[50px] flex justify-end items-center">
 	<img
 		class="md:w-[98%] md:h-auto"
 		src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/top/hero.png'); ?>"
@@ -30,7 +30,7 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 			<div class="relative aspect-[1600/622] w-full">
 				<img class="absolute inset-0 h-full w-full object-cover" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
 
-				<div class="relative z-10 h-full text-white md:pt-[120px] md:pl-[200px]">
+				<div class="relative z-10 h-full text-white xl:pt-15 2xl:pt-[120px] md:pl-[200px]">
 					<p class="mb-[24px] inline-flex items-center gap-[10px] text-[12px] text-white/75">
 						<img class="top-kicker-icon" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/top/product-icon.svg'); ?>" alt="" loading="lazy">
 						<span class="text-[20px] text-[#6EBA38]"><?php esc_html_e('Product', 'mytheme'); ?></span>
@@ -126,7 +126,7 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 			<div class="relative aspect-[1600/462] w-full">
 				<img class="absolute inset-0 h-full w-full object-cover" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
 
-				<div class="relative z-10 h-full text-white md:pt-[120px] md:px-[200px]">
+				<div class="relative z-10 h-full text-white xl:pt-15 2xl:pt-[120px] md:px-[200px]">
 					<p class="mb-[22px] inline-flex items-center gap-[10px] text-[20px] text-white/75">
 						<img class="existing-product-kicker-icon" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/top/product-icon.svg'); ?>" alt="" loading="lazy">
 						<span class="text-[20px] text-[#6EBA38]"><?php esc_html_e('Existing Product', 'mytheme'); ?></span>
@@ -223,7 +223,7 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 			<div class="relative aspect-[1600/449] w-full">
 				<img class="absolute inset-0 h-full w-full object-contain" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
 
-				<div class="relative z-10 h-full md:pt-[120px] md:px-[200px]">
+				<div class="relative z-10 h-full xl:pt-15 2xl:pt-[120px] md:px-[200px]">
 					<p class="mb-[24px] inline-flex items-center gap-[10px] text-[12px] text-[#1f1c1a]">
 						<img class="used-product-kicker-icon" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/top/product-icon.svg'); ?>" alt="" loading="lazy">
 						<span class="text-[20px] text-[#6EBA38]"><?php esc_html_e('Used Product', 'mytheme'); ?></span>
