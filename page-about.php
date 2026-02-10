@@ -28,7 +28,7 @@ $hero_mesh = mytheme_img_asset('about/hero-mesh');
       <p class="text-[14px] opacity-70 mt-[20px] w-full text-right pr-30">TOP > 髙橋について</p>
     </div>
     <div class="grid grid-cols-3 gap-[30px] mx-auto w-fit mt-[50px]">
-      <div class="bg-[#6EBA38] text-white w-80 aspect-[320/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2">
+      <div class="bg-secondary active:bg-primary text-white w-80 aspect-[320/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2">
         <p class="text-[16px] opacity-50">Strength</p>
         <p class="text-[24px]">髙橋の強み</p>
         <svg class="absolute top-1/2 -translate-y-1/2 right-5" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
@@ -36,7 +36,7 @@ $hero_mesh = mytheme_img_asset('about/hero-mesh');
           <path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M579.539,825.265l-4.406,4.406-4.406-4.406" transform="translate(-560 -812)" fill="none" stroke="#fff" stroke-width="2" />
         </svg>
       </div>
-      <div class="bg-primary text-white w-80 aspect-[320/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2">
+      <div class="bg-secondary active:bg-primary text-white w-80 aspect-[320/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2">
         <p class="text-[16px] opacity-50">Business</p>
         <p class="text-[24px]">事業について</p>
         <svg class="absolute top-1/2 -translate-y-1/2 right-5" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
@@ -44,7 +44,7 @@ $hero_mesh = mytheme_img_asset('about/hero-mesh');
           <path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M579.539,825.265l-4.406,4.406-4.406-4.406" transform="translate(-560 -812)" fill="none" stroke="#fff" stroke-width="2" />
         </svg>
       </div>
-      <div class="bg-[#6EBA38] text-white w-80 aspect-[320/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2">
+      <div class="bg-secondary active:bg-primary text-white w-80 aspect-[320/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2">
         <p class="text-[16px] opacity-50">Company</p>
         <p class="text-[24px]">会社案内</p>
         <svg class="absolute top-1/2 -translate-y-1/2 right-5" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
