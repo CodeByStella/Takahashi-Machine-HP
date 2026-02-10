@@ -52,7 +52,7 @@ $decoration_icon = mytheme_img_asset('news/product-icon');
 						'ignore_sticky_posts' => true,
 					)
 				);
-				?>	
+				?>
 
 				<?php if ( $news_query->have_posts() ) : ?>
 				<ul>
