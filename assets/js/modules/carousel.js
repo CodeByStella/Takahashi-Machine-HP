@@ -21,6 +21,13 @@ export default function initCarousel() {
       maxIndex: 0,
       step: 0,
       dots: [],
+      isDragging: false,
+      startPos: 0,
+      currentTranslate: 0,
+      prevTranslate: 0,
+      animationID: 0,
+      startTime: 0,
+      velocity: 0,
     };
 
     const updateButtons = () => {
@@ -41,6 +48,16 @@ export default function initCarousel() {
       updateDots();
     };
 
+    const setPositionByIndex = () => {
+      state.currentTranslate = -state.index * state.step;
+      state.prevTranslate = state.currentTranslate;
+      setSliderPosition();
+    };
+
+    const setSliderPosition = () => {
+      track.style.transform = `translateX(${state.currentTranslate}px)`;
+    };
+
     const renderDots = () => {
       if (!dotsWrap) return;
       dotsWrap.innerHTML = '';
@@ -52,8 +69,11 @@ export default function initCarousel() {
         dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
         dot.className = i === state.index ? activeDotClass : inactiveDotClass;
         dot.addEventListener('click', () => {
+          track.style.transition = 'transform 0.3s ease-out';
           state.index = i;
-          update();
+          setPositionByIndex();
+          updateButtons();
+          updateDots();
         });
         dotsWrap.appendChild(dot);
         state.dots.push(dot);
@@ -70,20 +90,114 @@ export default function initCarousel() {
       state.maxIndex = Math.max(0, cards.length - state.perView);
       if (state.index > state.maxIndex) state.index = state.maxIndex;
       renderDots();
-      update();
+      setPositionByIndex();
+      updateButtons();
+      updateDots();
     };
+
+    // Drag/Swipe functionality
+    const getPositionX = (event) => {
+      return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    };
+
+    const dragStart = (event) => {
+      state.isDragging = true;
+      state.startPos = getPositionX(event);
+      state.startTime = Date.now();
+      state.velocity = 0;
+      track.style.transition = 'none';
+      track.style.cursor = 'grabbing';
+      if (event.type === 'mousedown') {
+        event.preventDefault();
+      }
+    };
+
+    const dragMove = (event) => {
+      if (!state.isDragging) return;
+      const currentPosition = getPositionX(event);
+      const diff = currentPosition - state.startPos;
+      state.currentTranslate = state.prevTranslate + diff;
+      
+      // Calculate velocity for momentum
+      const currentTime = Date.now();
+      const timeDiff = currentTime - state.startTime;
+      if (timeDiff > 0) {
+        state.velocity = diff / timeDiff;
+      }
+      
+      setSliderPosition();
+    };
+
+    const dragEnd = () => {
+      if (!state.isDragging) return;
+      state.isDragging = false;
+      track.style.transition = 'transform 0.3s ease-out';
+      track.style.cursor = 'grab';
+      
+      const movedBy = state.currentTranslate - state.prevTranslate;
+      
+      // Apply momentum if velocity is significant
+      const momentumThreshold = 0.5;
+      if (Math.abs(state.velocity) > momentumThreshold) {
+        if (state.velocity > 0 && state.index > 0) {
+          state.index -= 1;
+        } else if (state.velocity < 0 && state.index < state.maxIndex) {
+          state.index += 1;
+        }
+      } else {
+        // Snap to nearest slide based on drag distance
+        const threshold = state.step * 0.3;
+        if (movedBy < -threshold && state.index < state.maxIndex) {
+          state.index += 1;
+        } else if (movedBy > threshold && state.index > 0) {
+          state.index -= 1;
+        }
+      }
+      
+      setPositionByIndex();
+      updateButtons();
+      updateDots();
+    };
+
+    // Mouse events
+    track.addEventListener('mousedown', dragStart);
+    track.addEventListener('mousemove', dragMove);
+    track.addEventListener('mouseup', dragEnd);
+    track.addEventListener('mouseleave', dragEnd);
+    
+    // Touch events
+    track.addEventListener('touchstart', dragStart, { passive: true });
+    track.addEventListener('touchmove', dragMove, { passive: true });
+    track.addEventListener('touchend', dragEnd);
+    
+    // Prevent context menu on long press
+    track.addEventListener('contextmenu', (e) => {
+      if (state.isDragging) {
+        e.preventDefault();
+      }
+    });
+    
+    // Set cursor style
+    track.style.cursor = 'grab';
+    track.style.userSelect = 'none';
 
     if (prev) {
       prev.addEventListener('click', () => {
+        track.style.transition = 'transform 0.3s ease-out';
         state.index = Math.max(0, state.index - 1);
-        update();
+        setPositionByIndex();
+        updateButtons();
+        updateDots();
       });
     }
 
     if (next) {
       next.addEventListener('click', () => {
+        track.style.transition = 'transform 0.3s ease-out';
         state.index = Math.min(state.maxIndex, state.index + 1);
-        update();
+        setPositionByIndex();
+        updateButtons();
+        updateDots();
       });
     }
 
