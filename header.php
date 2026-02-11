@@ -18,7 +18,7 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 
-	<header class="site-header lg:h-[140px]">
+	<header class="site-header lg:h-[140px] pt-2 sm:pt-0">
 		<div class="mx-auto w-full max-w-[1600px] px-4 lg:px-[40px] lg:pt-[24px] h-full">
 			<div class="flex items-start justify-between h-full">
 				<a class="site-brand lg:flex lg:flex-col lg:items-start lg:gap-[4px]" href="<?php echo esc_url(home_url('/')); ?>">
@@ -106,20 +106,20 @@
 							</svg>
 						</button>
 					</div>
-				<nav class="primary-nav lg:h-fit lg:items-center mt-[12px] lg:mt-[23px]" data-nav aria-label="<?php esc_attr_e('Primary menu', 'mytheme'); ?>">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'primary',
-							'container'      => false,
-							'menu_id'        => 'primary-menu',
-							'menu_class'     => 'primary-menu',
-							'fallback_cb'    => 'wp_page_menu',
-							'walker'         => new Mytheme_Walker_Nav_Menu(),
-						)
-					);
-					?>
-				</nav>
+					<nav class="primary-nav lg:h-fit lg:items-center mt-[12px] lg:mt-[23px]" data-nav aria-label="<?php esc_attr_e('Primary menu', 'mytheme'); ?>">
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'primary',
+								'container'      => false,
+								'menu_id'        => 'primary-menu',
+								'menu_class'     => 'primary-menu',
+								'fallback_cb'    => 'wp_page_menu',
+								'walker'         => new Mytheme_Walker_Nav_Menu(),
+							)
+						);
+						?>
+					</nav>
 				</div>
 			</div>
 		</div>

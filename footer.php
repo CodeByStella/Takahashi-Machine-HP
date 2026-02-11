@@ -10,50 +10,50 @@
 </main>
 
 <footer class="site-footer bg-white">
-	<div class="mx-auto w-full max-w-[1600px] px-6 2xl:px-[200px] lg:px-[100px] pt-[60px] lg:pt-[90px] pb-[40px] lg:pb-[60px]">
-		<div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-[40px]">
+	<div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-[100px] 2xl:px-[200px] pt-[40px] sm:pt-[50px] md:pt-[60px] lg:pt-[90px] pb-[30px] sm:pb-[35px] md:pb-[40px] lg:pb-[60px]">
+		<div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-[30px] sm:gap-[35px] md:gap-[40px]">
 			<div>
 				<img
 					src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/header/logo.svg'); ?>"
 					alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-					class="w-[240px] h-[50px]"
+					class="w-[180px] h-[37.5px] sm:w-[200px] sm:h-[41.67px] md:w-[220px] md:h-[45.83px] lg:w-[240px] lg:h-[50px]"
 					width="240"
 					height="50"
 					loading="lazy">
 
-				<address class="not-italic text-[14px] text-black/70 leading-[1.8] mt-[49px]">
+				<address class="not-italic text-[12px] sm:text-[13px] md:text-[14px] text-black/70 leading-[1.8] mt-[30px] sm:mt-[35px] md:mt-[40px] lg:mt-[49px]">
 					<p class="m-0"><?php esc_html_e('〒578-0983', 'mytheme'); ?></p>
 					<p class="m-0"><?php esc_html_e('大阪府東大阪市吉田下島14番25号', 'mytheme'); ?></p>
 				</address>
 
-				<div class="mt-[17px] flex flex-col gap-[10px] w-fit">
+				<div class="mt-[14px] sm:mt-[15px] md:mt-[17px] flex flex-col gap-[8px] sm:gap-[9px] md:gap-[10px] w-full sm:w-fit">
 					<a
-						class="cta-pill cta-pill--download lg:w-[200px] lg:h-[40px] lg:rounded-full"
+						class="cta-pill cta-pill--download w-full sm:w-[180px] md:w-[190px] lg:w-[200px] h-[36px] sm:h-[38px] md:h-[40px] rounded-full"
 						href="https://www.google.com/maps"
 						target="_blank"
 						rel="noopener noreferrer">
-						<span class="w-full text-center"><?php esc_html_e('Google Map で見る', 'mytheme'); ?></span>
+						<span class="w-full text-center text-[14px] sm:text-[15px] md:text-[16px]"><?php esc_html_e('Google Map で見る', 'mytheme'); ?></span>
 					</a>
 
-					<a class="cta-pill cta-pill--phone lg:w-[200px] lg:h-[40px] lg:rounded-full" href="tel:0729619975">
-						<span class="w-full text-center">072-961-9975</span>
+					<a class="cta-pill cta-pill--phone w-full sm:w-[180px] md:w-[190px] lg:w-[200px] h-[36px] sm:h-[38px] md:h-[40px] rounded-full" href="tel:0729619975">
+						<span class="w-full text-center text-[14px] sm:text-[15px] md:text-[16px]">072-961-9975</span>
 					</a>
 				</div>
 
-				<p class="text-[12px] text-black/50 mt-[10px] mb-0 lg:w-[200px] text-center">
+				<p class="text-[11px] sm:text-[11px] md:text-[12px] text-black/50 mt-[8px] sm:mt-[9px] md:mt-[10px] mb-0 w-full sm:w-[180px] md:w-[190px] lg:w-[200px] text-center">
 					<?php esc_html_e('平日 9:00〜18:00', 'mytheme'); ?>
 				</p>
 			</div>
 
 			<div class="flex flex-col items-start lg:items-end">
-				<nav class="footer-nav" aria-label="<?php esc_attr_e('Footer menu', 'mytheme'); ?>">
+				<nav class="footer-nav w-full" aria-label="<?php esc_attr_e('Footer menu', 'mytheme'); ?>">
 					<?php
 					wp_nav_menu(
 						array(
 							'theme_location' => 'footer',
 							'container' => false,
 							'menu_id' => 'footer-menu',
-							'menu_class' => 'footer-menu grid grid-cols-[205px_205px] gap-y-[20px] text-[14px] text-black/70',
+							'menu_class' => 'footer-menu grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[205px_205px] gap-x-[15px] sm:gap-x-[20px] md:gap-x-[30px] gap-y-[12px] sm:gap-y-[15px] md:gap-y-[20px] text-[13px] sm:text-[13px] md:text-[14px] text-black/70',
 							'walker' => new Mytheme_Walker_Footer_Nav_Menu(),
 							'fallback_cb' => '__return_false',
 						)

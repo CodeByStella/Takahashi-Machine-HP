@@ -13,7 +13,7 @@ if ($text === '') {
 }
 ?>
 
-<div class="absolute left-0 top-0 w-[200%] marquee pointer-events-none font-semibold tracking-[0.12em] text-[#B58522] text-[150px]">
+<div class="absolute left-0 top-0 w-[200%] marquee pointer-events-none font-semibold tracking-[0.12em] text-[#B58522] text-[24px] md:text-[100px] 2xl:text-[150px]">
 	<span><?php echo esc_html($text); ?></span>
 	<span><?php echo esc_html($text); ?></span>
 </div>
