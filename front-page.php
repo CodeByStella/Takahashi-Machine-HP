@@ -20,9 +20,6 @@ get_header();
 <?php
 $product_bg = mytheme_img_asset('top/product-bg');
 $product_bg_sp = mytheme_img_asset('top/product-bg-sp');
-$prod_1 = mytheme_img_asset('top/prod-1');
-$prod_2 = mytheme_img_asset('top/prod-2');
-$prod_3 = mytheme_img_asset('top/prod-3');
 ?>
 
 <section class="pb-[40px] sm:pb-[50px] md:pb-[60px] lg:pb-[80px] xl:pb-[90px] 2xl:pb-[100px]">
@@ -51,7 +48,7 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 						'template-parts/view-more',
 						null,
 						array(
-							'url'   => home_url('/used-product/'),
+							'url'   => home_url('/product/?id=order'),
 							'label' => __('VIEW MORE', 'mytheme'),
 						)
 					);
@@ -61,49 +58,12 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 
 			<div class="mt-[20px] sm:mt-[30px] md:mt-[40px] lg:-mt-[50px] xl:-mt-[70px] 2xl:-mt-[95px]">
 				<?php
-				$used_product_articles = array(
-					array(
-						'image'    => $prod_1,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('大阪府｜ネット通販生産', 'mytheme'),
-						'tag'      => __('ダンボールパレットプレス機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_2,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜特殊塗装生産', 'mytheme'),
-						'tag'      => __('ダンボールスコア機付き機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_3,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜製造業', 'mytheme'),
-						'tag'      => __('トムソンカス製切機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_3,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜製造業', 'mytheme'),
-						'tag'      => __('トムソンカス製切機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_3,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜製造業', 'mytheme'),
-						'tag'      => __('トムソンカス製切機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_3,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜製造業', 'mytheme'),
-						'tag'      => __('トムソンカス製切機', 'mytheme'),
-					),
-				);
+				$product_carousel_articles = mytheme_get_product_carousel_articles('order', 6);
 				get_template_part(
 					'template-parts/product-carousel',
 					null,
 					array(
-						'articles' => $used_product_articles,
+						'articles' => $product_carousel_articles,
 					)
 				);
 				?>
@@ -118,9 +78,6 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 <?php
 $product_bg = mytheme_img_asset('top/machine');
 $product_bg_sp = mytheme_img_asset('top/machine-sp');
-$prod_1 = mytheme_img_asset('top/prod-1');
-$prod_2 = mytheme_img_asset('top/prod-2');
-$prod_3 = mytheme_img_asset('top/prod-3');
 ?>
 
 <section class="pb-[40px] sm:pb-[50px] md:pb-[60px] lg:pb-[80px] xl:pb-[90px] 2xl:pb-[100px]">
@@ -148,7 +105,7 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 							'template-parts/view-more',
 							null,
 							array(
-								'url'   => home_url('/used-product/'),
+								'url'   => home_url('/product/?id=existing'),
 								'label' => __('VIEW MORE', 'mytheme'),
 							)
 						);
@@ -159,49 +116,12 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 
 			<div class="mt-[20px] sm:mt-[30px] md:mt-[40px] lg:-mt-[50px] xl:-mt-[70px] 2xl:-mt-[95px]">
 				<?php
-				$used_product_articles = array(
-					array(
-						'image'    => $prod_1,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('大阪府｜ネット通販生産', 'mytheme'),
-						'tag'      => __('ダンボールパレットプレス機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_2,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜特殊塗装生産', 'mytheme'),
-						'tag'      => __('ダンボールスコア機付き機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_3,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜製造業', 'mytheme'),
-						'tag'      => __('トムソンカス製切機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_3,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜製造業', 'mytheme'),
-						'tag'      => __('トムソンカス製切機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_3,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜製造業', 'mytheme'),
-						'tag'      => __('トムソンカス製切機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_3,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜製造業', 'mytheme'),
-						'tag'      => __('トムソンカス製切機', 'mytheme'),
-					),
-				);
+				$existing_carousel_articles = mytheme_get_product_carousel_articles('existing', 6);
 				get_template_part(
 					'template-parts/product-carousel',
 					null,
 					array(
-						'articles' => $used_product_articles,
+						'articles' => $existing_carousel_articles,
 					)
 				);
 				?>
@@ -216,9 +136,6 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 <!-- Used Product section start -->
 <?php
 $product_bg = mytheme_img_asset('top/mesh');
-$prod_1 = mytheme_img_asset('top/prod-1');
-$prod_2 = mytheme_img_asset('top/prod-2');
-$prod_3 = mytheme_img_asset('top/prod-3');
 ?>
 
 <section class="pb-[40px] sm:pb-[50px] md:pb-[60px] lg:pb-[80px] xl:pb-[90px] 2xl:pb-[100px]">
@@ -245,7 +162,7 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 							'template-parts/view-more',
 							null,
 							array(
-								'url'   => home_url('/used-product/'),
+								'url'   => home_url('/product/?id=used'),
 								'label' => __('VIEW MORE', 'mytheme'),
 							)
 						);
@@ -256,49 +173,12 @@ $prod_3 = mytheme_img_asset('top/prod-3');
 
 			<div class="mt-[20px] sm:mt-[30px] md:mt-[40px] lg:-mt-[50px] xl:-mt-[70px] 2xl:-mt-[95px]">
 				<?php
-				$used_product_articles = array(
-					array(
-						'image'    => $prod_1,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('大阪府｜ネット通販生産', 'mytheme'),
-						'tag'      => __('ダンボールパレットプレス機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_2,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜特殊塗装生産', 'mytheme'),
-						'tag'      => __('ダンボールスコア機付き機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_3,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜製造業', 'mytheme'),
-						'tag'      => __('トムソンカス製切機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_3,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜製造業', 'mytheme'),
-						'tag'      => __('トムソンカス製切機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_3,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜製造業', 'mytheme'),
-						'tag'      => __('トムソンカス製切機', 'mytheme'),
-					),
-					array(
-						'image'    => $prod_3,
-						'title'    => __('商品名が入ります商品名が入ります', 'mytheme'),
-						'location' => __('西宮市｜製造業', 'mytheme'),
-						'tag'      => __('トムソンカス製切機', 'mytheme'),
-					),
-				);
+				$used_carousel_articles = mytheme_get_product_carousel_articles('used', 6);
 				get_template_part(
 					'template-parts/product-carousel',
 					null,
 					array(
-						'articles' => $used_product_articles,
+						'articles' => $used_carousel_articles,
 					)
 				);
 				?>
