@@ -35,25 +35,47 @@ $hero_mesh = mytheme_img_asset('news/hero-mesh');
 <!-- Lists news section start -->
 <?php
 $decoration_icon = mytheme_img_asset('news/product-icon');
+
+// Base URL for news list (filter links stay on this page).
+$posts_page_id = (int) get_option('page_for_posts');
+$news_base_url  = $posts_page_id ? get_permalink($posts_page_id) : home_url('/news/');
+
+// Current filter from URL (same page, filter only the list).
+$filter_category = isset($_GET['category']) ? sanitize_text_field(wp_unslash($_GET['category'])) : '';
+$filter_year     = isset($_GET['year']) ? absint($_GET['year']) : 0;
+
+$news_query_args = array(
+	'post_type'           => 'post',
+	'post_status'         => 'publish',
+	'posts_per_page'      => 10,
+	'ignore_sticky_posts' => true,
+);
+if ($filter_category) {
+	$news_query_args['category_name'] = $filter_category;
+}
+if ($filter_year) {
+	$news_query_args['date_query'] = array(
+		array(
+			'year' => $filter_year,
+		),
+	);
+}
+$news_query = new WP_Query($news_query_args);
+
+// List heading: reflect active filter.
+$list_heading = __('すべてのお知らせ一覧', 'mytheme');
+if ($filter_category) {
+	$cat_term = get_term_by('slug', $filter_category, 'category');
+	$list_heading = $cat_term && ! is_wp_error($cat_term) ? $cat_term->name . __('一覧', 'mytheme') : $list_heading;
+} elseif ($filter_year) {
+	$list_heading = sprintf(/* translators: %d: year */__('%d年のお知らせ一覧', 'mytheme'), $filter_year);
+}
 ?>
 <section class="flow-section mt-[32px] sm:mt-[44px] md:mt-[54px] 2xl:mt-[67px] relative pb-[40px] sm:pb-[50px] 2xl:pb-[59px] px-4 sm:px-6 md:px-8">
-	<div class="mx-auto max-w-[1200px] w-full flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-[40px] 2xl:gap-[60px]">
-		<div class="w-full min-w-0 2xl:w-[860px] 2xl:max-w-[860px] order-2 lg:order-1">
-			<p class="text-[20px] sm:text-[22px] md:text-[24px] 2xl:text-[28px] font-medium">すべてのお知らせ一覧</p>
+	<div class="mx-auto max-w-[1200px] w-full flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-[40px] 2xl:gap-[60px] flex-col-reverse">
+		<div class="w-full min-w-0 2xl:w-[860px] 2xl:max-w-[860px] order-1">
+			<p class="text-[20px] sm:text-[22px] md:text-[24px] 2xl:text-[28px] font-medium"><?php echo esc_html($list_heading); ?></p>
 			<div class="mt-[20px] sm:mt-[24px] 2xl:mt-[28px] border-t border-primary/20">
-				<?php
-				// This template is a Page; the main loop is the page itself.
-				// For the News list, query latest 10 posts.
-				$news_query = new WP_Query(
-					array(
-						'post_type'           => 'post',
-						'post_status'         => 'publish',
-						'posts_per_page'      => 10,
-						'ignore_sticky_posts' => true,
-					)
-				);
-				?>
-
 				<?php if ($news_query->have_posts()) : ?>
 					<ul>
 						<?php while ($news_query->have_posts()) : ?>
@@ -89,72 +111,45 @@ $decoration_icon = mytheme_img_asset('news/product-icon');
 				<?php endif; ?>
 			</div>
 		</div>
-		<div class="w-full lg:w-[240px] xl:w-[260px] 2xl:w-[280px] flex-shrink-0">
+		<div class="w-full lg:w-[240px] xl:w-[260px] 2xl:w-[280px] flex-shrink-0 order-2">
 			<div class="flex flex-row gap-[10px] 2xl:gap-[12px]">
 				<img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"
 					class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] 2xl:w-[30px] 2xl:h-[30px]" />
 				<p class="text-[22px] sm:text-[26px] 2xl:text-[30px] font-medium text-[#6EBA38]">Category</p>
 			</div>
 			<?php
-			// Sidebar categories (fixed order). Hide items if the category is empty/non-existent.
+			// Sidebar categories: filter on same page via ?category=slug (no template change).
 			$news_category_items = array();
 
-			// "All" should go back to this News listing page.
-			$news_all_url = '';
-			$queried_id   = function_exists('get_queried_object_id') ? (int) get_queried_object_id() : 0;
-			if ($queried_id) {
-				$news_all_url = get_permalink($queried_id);
-			}
-			if (empty($news_all_url)) {
-				$news_all_url = home_url('/');
-			}
-
+			// "All" = news page; keep year if filtering by year only.
+			$all_url = $filter_year ? add_query_arg('year', $filter_year, $news_base_url) : $news_base_url;
 			$news_category_items[] = array(
 				'label'   => 'すべて',
-				'url'     => $news_all_url,
+				'url'     => $all_url,
 				'enabled' => true,
+				'active'  => ! $filter_category && ! $filter_year,
 			);
 
-			$news_category_targets = array(
-				array(
-					'label' => 'お知らせ',
-					'names' => array('お知らせ'),
-					'slugs' => array('oshirase'),
-				),
-				array(
-					'label' => 'メンテナンス',
-					'names' => array('メンテナンス'),
-					'slugs' => array('maintenance'),
-				),
-			);
+			$news_categories = get_categories(array(
+				'taxonomy'   => 'category',
+				'orderby'    => 'name',
+				'order'      => 'ASC',
+				'hide_empty' => true,
+			));
 
-			foreach ($news_category_targets as $target) {
-				$term = null;
-
-				foreach ($target['names'] as $name) {
-					$term = get_term_by('name', $name, 'category');
-					if ($term && ! is_wp_error($term)) {
-						break;
-					}
+			foreach ($news_categories as $term) {
+				if (is_wp_error($term)) {
+					continue;
 				}
-
-				if (! $term) {
-					foreach ($target['slugs'] as $slug) {
-						$term = get_term_by('slug', $slug, 'category');
-						if ($term && ! is_wp_error($term)) {
-							break;
-						}
-					}
+				$cat_url = add_query_arg('category', $term->slug, $news_base_url);
+				if ($filter_year) {
+					$cat_url = add_query_arg('year', $filter_year, $cat_url);
 				}
-
-				$enabled = ($term && ! is_wp_error($term) && (int) $term->count > 0);
-				$url     = ($term && ! is_wp_error($term)) ? get_category_link($term) : '';
-
-				// Always show the label; disable if missing/empty.
 				$news_category_items[] = array(
-					'label'   => $target['label'],
-					'url'     => $url,
-					'enabled' => $enabled,
+					'label'   => $term->name,
+					'url'     => $cat_url,
+					'enabled' => (int) $term->count > 0,
+					'active'  => $filter_category === $term->slug,
 				);
 			}
 			?>
@@ -164,7 +159,7 @@ $decoration_icon = mytheme_img_asset('news/product-icon');
 						<li class="px-[14px] sm:px-[18px] 2xl:px-[20px] flex items-center justify-between">
 							<?php if (! empty($item['enabled']) && ! empty($item['url'])) : ?>
 								<a href="<?php echo esc_url($item['url']); ?>"
-									class="flex items-center justify-between w-full text-[14px] sm:text-[15px] 2xl:text-[16px] text-primary/80 hover:text-primary py-1">
+									class="flex items-center justify-between w-full text-[14px] sm:text-[15px] 2xl:text-[16px] py-1 <?php echo ! empty($item['active']) ? 'text-[#6EBA38] font-semibold' : 'text-primary/80 hover:text-primary'; ?>">
 									<span class="text-[16px] sm:text-[18px] 2xl:text-[20px] font-medium w-[16px] sm:w-[18px] 2xl:w-[20px] text-[#6EBA38]">></span>
 									<span>
 										<?php echo esc_html($item['label']); ?>
@@ -207,13 +202,18 @@ $decoration_icon = mytheme_img_asset('news/product-icon');
 
 				<?php if (! empty($news_years)) : ?>
 					<ul class="mt-[16px] sm:mt-[20px] 2xl:mt-[22px] bg-white rounded-[12px] sm:rounded-[16px] 2xl:rounded-[20px] py-[18px] sm:py-[22px] 2xl:py-[26px] flex flex-col gap-[20px] sm:gap-[24px] 2xl:gap-[28px]">
-						<?php foreach ($news_years as $year) : ?>
-							<?php $year = (int) $year; ?>
+						<?php foreach ($news_years as $y) : ?>
+							<?php $y = (int) $y; ?>
+							<?php $year_active = $filter_year === $y; ?>
+							<?php $year_url = add_query_arg('year', $y, $news_base_url); ?>
+							<?php if ($filter_category) {
+								$year_url = add_query_arg('category', $filter_category, $year_url);
+							} ?>
 							<li class="px-[14px] sm:px-[18px] 2xl:px-[20px] flex items-center justify-between">
-								<a href="<?php echo esc_url(get_year_link($year)); ?>"
-									class="flex items-center justify-between w-full text-[14px] sm:text-[15px] 2xl:text-[16px] text-primary/80 hover:text-primary py-1">
+								<a href="<?php echo esc_url($year_url); ?>"
+									class="flex items-center justify-between w-full text-[14px] sm:text-[15px] 2xl:text-[16px] py-1 <?php echo $year_active ? 'text-[#6EBA38] font-semibold' : 'text-primary/80 hover:text-primary'; ?>">
 									<span class="text-[16px] sm:text-[18px] 2xl:text-[20px] font-medium w-[16px] sm:w-[18px] 2xl:w-[20px] text-[#6EBA38]">></span>
-									<span><?php echo esc_html($year . '年'); ?></span>
+									<span><?php echo esc_html($y . '年'); ?></span>
 								</a>
 							</li>
 						<?php endforeach; ?>

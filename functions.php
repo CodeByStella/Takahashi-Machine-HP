@@ -49,8 +49,60 @@ function mytheme_setup()
       'footer'  => __('Footer Menu', 'mytheme'),
     )
   );
+
+  // Block editor: allow free layout, colors, and block styles on front.
+  add_theme_support('wp-block-styles');
+  add_theme_support('editor-styles');
+  add_theme_support('responsive-embeds');
 }
 add_action('after_setup_theme', 'mytheme_setup');
+
+
+/* ======================================================
+   News CMS: /news (list) and /news/:slug (single)
+====================================================== */
+
+/**
+ * Add rewrite rule so single posts are served at /news/post-slug.
+ */
+function mytheme_news_rewrite_rules() {
+  add_rewrite_rule(
+    '^news/([^/]+)/?$',
+    'index.php?name=$matches[1]',
+    'top'
+  );
+}
+add_action('init', 'mytheme_news_rewrite_rules');
+
+/**
+ * Make post permalinks use /news/slug when a "Posts page" is set.
+ */
+function mytheme_news_post_link($permalink, $post, $leavename = false) {
+  if ($post->post_type !== 'post') {
+    return $permalink;
+  }
+  $posts_page_id = (int) get_option('page_for_posts');
+  if (!$posts_page_id) {
+    return $permalink;
+  }
+  $news_url = get_permalink($posts_page_id);
+  if (!$news_url) {
+    return $permalink;
+  }
+  $news_url = rtrim($news_url, '/');
+  $slug = $leavename ? '%postname%' : $post->post_name;
+  return $news_url . '/' . $slug . '/';
+}
+add_filter('post_link', 'mytheme_news_post_link', 10, 3);
+
+/**
+ * Flush rewrite rules when theme is activated.
+ */
+function mytheme_flush_rewrite_on_activation() {
+  mytheme_news_rewrite_rules();
+  flush_rewrite_rules();
+}
+add_action('after_switch_theme', 'mytheme_flush_rewrite_on_activation');
 
 
 
@@ -84,6 +136,13 @@ function mytheme_enqueue_assets()
     array('mytheme-base'),
     file_exists($tailwind_path) ? filemtime($tailwind_path) : $theme_version
   );
+
+  // Block editor styles on front so news content (blocks, colors) displays correctly.
+  if (is_singular('post')) {
+    wp_enqueue_style('wp-block-library');
+    wp_enqueue_style('wp-block-library-theme');
+    wp_enqueue_style('global-styles');
+  }
 
   /**
    * Main JS (bundled)
@@ -169,7 +228,7 @@ class Mytheme_Walker_Nav_Menu extends Walker_Nav_Menu
       $atts['href'] = '#';
       $atts['aria-expanded'] = 'false';
       $atts['data-dropdown-toggle'] = 'true';
-      
+
       // Parent link classes (desktop and mobile)
       if ($depth === 0) {
         $link_classes[] = 'flex items-center gap-2 lg:justify-between max-lg:w-full max-lg:justify-between';
@@ -205,7 +264,7 @@ class Mytheme_Walker_Nav_Menu extends Walker_Nav_Menu
 
     $item_output = $args->before;
     $item_output .= '<a' . $attributes . '>';
-    
+
     // Add dash prefix for submenu items
     $title_prefix = ($depth > 0) ? '— ' : '';
     $item_output .= $args->link_before . $title_prefix . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
@@ -286,7 +345,7 @@ class Mytheme_Walker_Footer_Nav_Menu extends Walker_Nav_Menu
 
     $item_output = $args->before;
     $item_output .= '<a' . $attributes . '>';
-    
+
     // Add dash prefix for submenu items
     $title_prefix = ($depth > 0) ? '— ' : '';
     $item_output .= $args->link_before . $title_prefix . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
