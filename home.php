@@ -159,7 +159,7 @@ if ($filter_category) {
 						<li class="px-[14px] sm:px-[18px] 2xl:px-[20px] flex items-center justify-between">
 							<?php if (! empty($item['enabled']) && ! empty($item['url'])) : ?>
 								<a href="<?php echo esc_url($item['url']); ?>"
-									class="flex items-center justify-between w-full text-[14px] sm:text-[15px] 2xl:text-[16px] py-1 <?php echo ! empty($item['active']) ? 'text-[#6EBA38] font-semibold' : 'text-primary/80 hover:text-primary'; ?>">
+									class="flex items-center justify-left w-full text-[14px] sm:text-[15px] 2xl:text-[16px] py-1 <?php echo ! empty($item['active']) ? 'text-[#6EBA38] font-semibold' : 'text-primary/80 hover:text-primary'; ?>">
 									<span class="text-[16px] sm:text-[18px] 2xl:text-[20px] font-medium w-[16px] sm:w-[18px] 2xl:w-[20px] text-[#6EBA38]">></span>
 									<span>
 										<?php echo esc_html($item['label']); ?>
@@ -211,7 +211,7 @@ if ($filter_category) {
 							} ?>
 							<li class="px-[14px] sm:px-[18px] 2xl:px-[20px] flex items-center justify-between">
 								<a href="<?php echo esc_url($year_url); ?>"
-									class="flex items-center justify-between w-full text-[14px] sm:text-[15px] 2xl:text-[16px] py-1 <?php echo $year_active ? 'text-[#6EBA38] font-semibold' : 'text-primary/80 hover:text-primary'; ?>">
+									class="flex items-center justify-left w-full text-[14px] sm:text-[15px] 2xl:text-[16px] py-1 <?php echo $year_active ? 'text-[#6EBA38] font-semibold' : 'text-primary/80 hover:text-primary'; ?>">
 									<span class="text-[16px] sm:text-[18px] 2xl:text-[20px] font-medium w-[16px] sm:w-[18px] 2xl:w-[20px] text-[#6EBA38]">></span>
 									<span><?php echo esc_html($y . '年'); ?></span>
 								</a>
