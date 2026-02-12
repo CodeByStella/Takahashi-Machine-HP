@@ -8,6 +8,7 @@
   --mytheme-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   --mytheme-radius: 14px;
   --mytheme-container: 1120px;
+  --flow-item-width: 350px;
 }
 
 * {
@@ -16,6 +17,7 @@
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -58,6 +60,34 @@ a {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Flow Section */
+.flow-item-width {
+  width: 240px;
+  flex-shrink: 0;
+  min-width: 240px;
+}
+
+@media (min-width: 1024px) {
+  .flow-item-width {
+    width: 280px;
+    min-width: 280px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .flow-item-width {
+    width: 320px;
+    min-width: 320px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .flow-item-width {
+    width: var(--flow-item-width);
+    min-width: var(--flow-item-width);
+  }
 }
 
 /* Header */

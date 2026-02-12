@@ -33,7 +33,7 @@ $telephone_icon = mytheme_img_asset('top/telephone');
 			<p class="text-[12px] sm:text-[13px] md:text-[14px] text-[#1F1C1A] text-center mt-3 md:mt-[20px]">
 				<?php esc_html_e('お電話でのお問い合わせ', 'mytheme'); ?><br />
 			</p>
-			<p class="text-[22px] sm:text-[24px] md:text-[26px] lg:text-[30px] text-[#1F1C1A] text-center mt-1 md:mt-[2px] font-bold">
+			<p class="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] text-[#1F1C1A] text-center mt-1 md:mt-[2px] leading-[1.2]">
 				<?php esc_html_e('072-961-9975', 'mytheme'); ?><br />
 			</p>
 			<p class="text-[11px] sm:text-[11px] md:text-[12px] text-[#1F1C1A] text-center mt-1 md:mt-[2px]">
