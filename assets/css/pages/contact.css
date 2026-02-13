@@ -1,1 +1,106 @@
-/* Contact page only styles */
+/* Contact page: style Contact Form 7 to match original UI */
+
+.mytheme-contact-cf7-wrap .wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mytheme-contact-cf7-wrap .wpcf7-form > p {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 0;
+  margin: 0;
+  border-bottom: 1px solid #1f1c1a;
+}
+
+.mytheme-contact-cf7-wrap .wpcf7-form > p:first-child {
+  padding-top: 0;
+  padding-bottom: 30px;
+}
+
+.mytheme-contact-cf7-wrap .wpcf7-form > p:last-of-type {
+  border-bottom: none;
+}
+
+.mytheme-contact-cf7-wrap .wpcf7-form label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.mytheme-contact-cf7-wrap .wpcf7-form input[type="text"],
+.mytheme-contact-cf7-wrap .wpcf7-form input[type="email"],
+.mytheme-contact-cf7-wrap .wpcf7-form input[type="tel"] {
+  width: 100%;
+  max-width: 630px;
+  height: 60px;
+  background: #fff;
+  border: 1px solid #cecece;
+  padding: 5px 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.mytheme-contact-cf7-wrap .wpcf7-form textarea {
+  width: 100%;
+  max-width: 630px;
+  min-height: 200px;
+  background: #fff;
+  border: 1px solid #cecece;
+  padding: 5px 10px;
+  font-size: 16px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.mytheme-contact-cf7-wrap .wpcf7-form input[type="submit"],
+.mytheme-contact-cf7-wrap .wpcf7-form .wpcf7-submit {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  margin: 54px auto 0;
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  background: #6eba38;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.mytheme-contact-cf7-wrap .wpcf7-form input[type="submit"]:hover,
+.mytheme-contact-cf7-wrap .wpcf7-form .wpcf7-submit:hover {
+  opacity: 0.9;
+}
+
+.mytheme-contact-cf7-wrap .wpcf7-form .wpcf7-form-control-wrap {
+  flex: 1;
+  max-width: 630px;
+}
+
+/* Required badge (use <span class="required">必須</span> in CF7 labels) */
+.mytheme-contact-cf7-wrap .wpcf7-form label .required {
+  font-size: 12px;
+  background: #1f1c1a;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0 8px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  margin: 0;
+}

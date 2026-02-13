@@ -354,32 +354,41 @@ $feature_4 = mytheme_img_asset('top/feature-4');
 <?php
 $feature_cards = array(
 	array(
-		'image' => $feature_1,
+		'image'  => $feature_1,
 		'eyebrow' => 'Custom Made',
-		'title' => '製作実績',
+		'title'  => '製作実績',
+		'url'    => home_url('/product/?id=order'),
 	),
 	array(
-		'image' => $feature_2,
+		'image'  => $feature_2,
 		'eyebrow' => 'Strength',
-		'title' => '高橋の強み',
+		'title'  => '高橋の強み',
+		'url'    => home_url('/about/'),
 	),
 	array(
-		'image' => $feature_3,
+		'image'  => $feature_3,
 		'eyebrow' => 'Existing Product',
-		'title' => '既存製品',
+		'title'  => '既存製品',
+		'url'    => home_url('/product/?id=existing'),
 	),
 	array(
-		'image' => $feature_4,
+		'image'  => $feature_4,
 		'eyebrow' => 'Used Product',
-		'title' => '中古製品',
+		'title'  => '中古製品',
+		'url'    => home_url('/product/?id=used'),
 	),
 );
 ?>
 
 <section class="section">
 	<div class="grid grid-cols-2 lg:grid-cols-4">
-		<?php foreach ($feature_cards as $feature_card): ?>
-			<div class="group relative aspect-square overflow-hidden cursor-pointer">
+		<?php foreach ($feature_cards as $feature_card) : ?>
+			<?php
+			$card_url = isset($feature_card['url']) ? $feature_card['url'] : '';
+			$card_tag = $card_url ? 'a' : 'div';
+			$card_attr = $card_url ? ' href="' . esc_url($card_url) . '"' : '';
+			?>
+			<<?php echo $card_tag; ?> class="group relative aspect-square overflow-hidden cursor-pointer block"<?php echo $card_attr; ?>>
 				<img src="<?php echo esc_url($feature_card['image']); ?>" alt="" class="opacity-80 absolute inset-0 h-full w-full object-cover" />
 				<!-- Mobile: lighter overlay by default, Desktop: darker with hover effect -->
 				<div class="absolute inset-0 bg-black/45 transition-colors duration-300 md:bg-black/75 md:group-hover:bg-black/25 active:bg-black/30"></div>
@@ -395,7 +404,7 @@ $feature_cards = array(
 				<span class="absolute left-[15px] sm:left-[20px] md:left-[24px] 2xl:left-[52px] md:group-hover:!left-[25px] lg:md:group-hover:!left-[28px] 2xl:md:group-hover:!left-[31px] bottom-[15px] sm:bottom-[20px] md:bottom-[24px] 2xl:bottom-[52px] md:group-hover:!bottom-[25px] lg:md:group-hover:!bottom-[28px] 2xl:md:group-hover:!bottom-[31px] h-[15px] sm:h-[17px] md:h-[18px] lg:h-[19px] 2xl:h-[20px] w-[15px] sm:w-[17px] md:w-[18px] lg:w-[19px] 2xl:w-[20px] border-b-[3px] md:border-b-4 border-l-[3px] md:border-l-4 border-[#d1b06e] transition-all duration-300"></span>
 				<!-- Bottom-right corner -->
 				<span class="absolute right-[15px] sm:right-[20px] md:right-[24px] 2xl:right-[52px] md:group-hover:!right-[25px] lg:md:group-hover:!right-[28px] 2xl:md:group-hover:!right-[31px] bottom-[15px] sm:bottom-[20px] md:bottom-[24px] 2xl:bottom-[52px] md:group-hover:!bottom-[25px] lg:md:group-hover:!bottom-[28px] 2xl:md:group-hover:!bottom-[31px] h-[15px] sm:h-[17px] md:h-[18px] lg:h-[19px] 2xl:h-[20px] w-[15px] sm:w-[17px] md:w-[18px] lg:w-[19px] 2xl:w-[20px] border-b-[3px] md:border-b-4 border-r-[3px] md:border-r-4 border-[#d1b06e] transition-all duration-300"></span>
-			</div>
+			</<?php echo $card_tag; ?>>
 		<?php endforeach; ?>
 	</div>
 </section>

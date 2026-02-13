@@ -29,7 +29,7 @@
 				<div class="mt-[14px] sm:mt-[15px] md:mt-[17px] flex flex-col gap-[8px] sm:gap-[9px] md:gap-[10px] w-full sm:w-fit">
 					<a
 						class="cta-pill cta-pill--download w-full sm:w-[180px] md:w-[190px] lg:w-[200px] h-[36px] sm:h-[38px] md:h-[40px] rounded-full"
-						href="https://www.google.com/maps"
+						href="https://www.google.com/maps?q=%E3%80%92578-0983+%E5%A4%A7%E9%98%AA%E5%BA%9C%E6%9D%B1%E5%A4%A7%E9%98%AA%E5%B8%82%E5%90%89%E7%94%B0%E4%B8%8B%E5%B3%B614-25"
 						target="_blank"
 						rel="noopener noreferrer">
 						<span class="w-full text-center text-[14px] sm:text-[15px] md:text-[16px]"><?php esc_html_e('Google Map で見る', 'mytheme'); ?></span>

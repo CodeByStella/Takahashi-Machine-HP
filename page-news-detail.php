@@ -11,13 +11,15 @@ get_header();
 <!-- Hero section start -->
 <?php
 $hero_mesh = mytheme_img_asset('news/hero-mesh');
+$posts_page_id = (int) get_option('page_for_posts');
+$news_url = $posts_page_id ? get_permalink($posts_page_id) : home_url('/news/');
 ?>
 <section class="about-hero relative ">
     <div class="aspect-[1600/577] relative">
         <img src="<?php echo esc_url($hero_mesh); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"
             class="-z-10 absolute h-auto w-[94%] object-cover mx-auto left-1/2 -translate-x-1/2" />
         <div class="w-full max-w-6xl mx-auto flex justify-center items-end">
-            <p class="text-[14px] opacity-70 mt-[20px] w-full text-right pr-30">TOP > お知らせ >
+            <p class="text-[14px] opacity-70 mt-[20px] w-full text-right pr-30"><a href="<?php echo esc_url(home_url('/')); ?>">TOP</a> &gt; <a href="<?php echo esc_url($news_url); ?>">お知らせ</a> &gt;
                 <?php the_title(); ?>
             </p>
         </div>

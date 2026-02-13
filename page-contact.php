@@ -26,7 +26,7 @@ $hero_mesh = mytheme_img_asset('contact/hero-mesh');
 				<img src="<?php echo esc_url($hero_image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"
 					class="h-auto w-[64%] object-cover" />
 			</div>
-			<p class="text-[14px] opacity-70 mt-[20px] w-full text-right pr-30">TOP > メール無料相談</p>
+			<p class="text-[14px] opacity-70 mt-[20px] w-full text-right pr-30"><a href="<?php echo esc_url(home_url('/')); ?>">TOP</a> &gt; メール無料相談</p>
 		</div>
 	</div>
 </section>
@@ -34,101 +34,73 @@ $hero_mesh = mytheme_img_asset('contact/hero-mesh');
 
 <!-- Contact section start -->
 <?php
+$cf7_form_id = defined('MYTHEME_CF7_CONTACT_FORM_ID') ? MYTHEME_CF7_CONTACT_FORM_ID : '';
+$cf7_form_id = is_numeric($cf7_form_id) ? absint($cf7_form_id) : sanitize_key((string) $cf7_form_id);
+$use_cf7 = $cf7_form_id !== '' && $cf7_form_id !== 0 && function_exists('wpcf7_contact_form');
 ?>
 <section class="flow-section mt-[67px] relative pb-[59px]">
 	<div class="mx-auto max-w-[1200px] w-full flex flex-col gap-[60px] justify-center items-center">
-		<div class="w-[960px]">
+		<div class="w-[960px] max-w-full">
 			<p class="text-[18px] font-medium text-center">弊社サービスについてのご相談やお見積依頼などお気軽にお問い合わせください。</p>
-			<div class="mt-[23px] bg-[#F0ECE4] w-[960px] px-[70px] py-[50px]">
-				<form action="">
-					<div class="flex flex-row justify-between pb-[30px] border-b border-black">
-						<div class="flex flex-row gap-[10px] shrink-0 items-center">
-							<label class="text-[16px] font-medium" for="companyname">会社名</label>
-                            <div class="text-[12px] bg-black text-white rounded-[10px] text-center shrink-0 w-[40px] h-[20px]">
-                              必須
-                            </div>
-						</div>
-                        <input class="w-full max-w-[630px] h-[60px] bg-white border border-[#CECECE] px-[10px] py-[5px]" type="text" id="companyname" name="companyname" placeholder="">
+			<div class="mt-[23px] bg-[#F0ECE4] w-full max-w-[960px] mx-auto px-[70px] py-[50px] box-border mytheme-contact-cf7-wrap">
+				<?php if ($use_cf7) : ?>
+					<?php echo do_shortcode('[contact-form-7 id="' . $cf7_form_id . '"]'); ?>
+					<p class="text-[18px] font-medium text-center mt-10 mytheme-contact-privacy-intro">プライバシーポリシーをお読みいただき、同意の上送信してください。</p>
+					<div class="text-[14px] font-medium bg-white px-[60px] py-[15px] rounded-[4px] w-full h-[200px] overflow-scroll mt-5 mytheme-contact-privacy">
+						<p class="text-[14px] font-medium">
+							当社は、お客様からお預かりした個人情報を、以下の目的に限定して利用いたします。
+							・お問い合わせへのご回答
+							・お見積もりのご提案
+							・その他ご要望に応じたご連絡
+							・お客様の同意がない限り、個人情報を第三者に提供することはありません。
+							・お客様の個人情報の管理については、適切な措置を講じております。
+							当社は、お客様からお預かりした個人情報を、以下の目的に限定して利用いたします。
+							・お問い合わせへのご回答
+							・お見積もりのご提案
+							・その他ご要望に応じたご連絡
+							・お客様の同意がない限り、個人情報を第三者に提供することはありません。
+							・お客様の個人情報の管理については、適切な措置を講じております。
+							当社は、お客様からお預かりした個人情報を、以下の目的に限定して利用いたします。
+							・お問い合わせへのご回答
+							・お見積もりのご提案
+							・その他ご要望に応じたご連絡
+							・お客様の同意がない限り、個人情報を第三者に提供することはありません。
+							・お客様の個人情報の管理については、適切な措置を講じております。
+							当社は、お客様からお預かりした個人情報を、以下の目的に限定して利用いたします。
+							・お問い合わせへのご回答
+							・お見積もりのご提案
+							・その他ご要望に応じたご連絡
+							・お客様の同意がない限り、個人情報を第三者に提供することはありません。
+							・お客様の個人情報の管理については、適切な措置を講じております。
+						</p>
 					</div>
-					<div class="flex flex-row justify-between py-[30px] border-b border-black">
-						<div class="flex flex-row gap-[10px] shrink-0 items-center">
-							<label class="text-[16px] font-medium" for="name">お名前</label>
-                            <div class="text-[12px] bg-black text-white rounded-[10px] text-center shrink-0 w-[40px] h-[20px]">
-                              必須
-                            </div>
-						</div>
-                        <input class="w-full max-w-[630px] h-[60px] bg-white border border-[#CECECE] px-[10px] py-[5px]" type="text" id="name" name="name" placeholder="">
-					</div>
-					<div class="flex flex-row justify-between py-[30px] border-b border-black">
-						<div class="flex flex-row gap-[10px] shrink-0 items-center">
-							<label class="text-[16px] font-medium" for="email">メールアドレス</label>
-                            <div class="text-[12px] bg-black text-white rounded-[10px] text-center shrink-0 w-[40px] h-[20px]">
-                              必須
-                            </div>
-						</div>
-                        <input class="w-full max-w-[630px] h-[60px] bg-white border border-[#CECECE] px-[10px] py-[5px]" type="text" id="email" name="email" placeholder="">
-					</div>
-					<div class="flex flex-row justify-between py-[30px] border-b border-black">
-						<div class="flex flex-row gap-[10px] shrink-0 items-center">
-							<label class="text-[16px] font-medium" for="phone">電話番号</label>
-                            <div class="text-[12px] bg-black text-white rounded-[10px] text-center shrink-0 w-[40px] h-[20px]">
-                              必須
-                            </div>
-						</div>
-                        <input class="w-full max-w-[630px] h-[60px] bg-white border border-[#CECECE] px-[10px] py-[5px]" type="text" id="phone" name="phone" placeholder="">
-					</div>
-					<div class="flex flex-row justify-between py-[30px] border-b border-black">
-						<div class="flex flex-row gap-[10px] shrink-0 items-center">
-							<label class="text-[16px] font-medium" for="inquirySubject">お問い合わせの件名</label>
-						</div>
-                        <input class="w-full max-w-[630px] h-[60px] bg-white border border-[#CECECE] px-[10px] py-[5px]" type="text" id="inquirySubject" name="inquirySubject" placeholder="">
-					</div>
-					<div class="flex flex-row justify-between py-[30px]">
-						<div class="flex flex-row gap-[10px] shrink-0 items-center">
-							<label class="text-[16px] font-medium" for="inquirySubject">お問い合わせ内容</label>
-						</div>
-                        <input class="w-full max-w-[630px] h-[200px] bg-white border border-[#CECECE] px-[10px] py-[5px]" type="text" id="inquirySubject" name="inquirySubject" placeholder="">
-					</div>
-				</form>
+					<script>
+					(function(){
+						var wrap = document.querySelector('.mytheme-contact-cf7-wrap');
+						if (!wrap) return;
+						var form = wrap.querySelector('.wpcf7-form');
+						var privacy = wrap.querySelector('.mytheme-contact-privacy');
+						if (!form || !privacy) return;
+						var submitP = form.querySelector('p:last-child');
+						if (submitP && submitP.querySelector('input[type="submit"]')) {
+							privacy.parentNode.insertBefore(submitP, privacy.nextSibling);
+						}
+					})();
+					</script>
+				<?php else : ?>
+					<p class="text-[16px] text-center">
+						<?php if (!$cf7_form_id) : ?>
+							<?php esc_html_e('Contact Form 7 をインストールし、お問い合わせフォームを作成したら、functions.php で MYTHEME_CF7_CONTACT_FORM_ID にそのフォームのIDを設定してください。', 'mytheme'); ?>
+						<?php else : ?>
+							<?php esc_html_e('Contact Form 7 プラグインを有効化するか、MYTHEME_CF7_CONTACT_FORM_ID が正しいフォームIDか確認してください。', 'mytheme'); ?>
+						<?php endif; ?>
+					</p>
+				<?php endif; ?>
 			</div>
 		</div>
-        <div class="w-[960px] flex flex-col gap-[20px] items-center">
-            <p class="text-[18px] font-medium text-center">プライバシーポリシーをお読みいただき、同意の上送信してください。</p>
-            <div class="text-[14px] font-medium bg-white px-[60px] py-[15px] rounded-[4px] w-full h-[200px] overflow-scroll">
-                <p class="text-[14px] font-medium">
-                    当社は、お客様からお預かりした個人情報を、以下の目的に限定して利用いたします。
-                    ・お問い合わせへのご回答
-                    ・お見積もりのご提案
-                    ・その他ご要望に応じたご連絡
-                    ・お客様の同意がない限り、個人情報を第三者に提供することはありません。
-                    ・お客様の個人情報の管理については、適切な措置を講じております。
-                    当社は、お客様からお預かりした個人情報を、以下の目的に限定して利用いたします。
-                    ・お問い合わせへのご回答
-                    ・お見積もりのご提案
-                    ・その他ご要望に応じたご連絡
-                    ・お客様の同意がない限り、個人情報を第三者に提供することはありません。
-                    ・お客様の個人情報の管理については、適切な措置を講じております。
-                    当社は、お客様からお預かりした個人情報を、以下の目的に限定して利用いたします。
-                    ・お問い合わせへのご回答
-                    ・お見積もりのご提案
-                    ・その他ご要望に応じたご連絡
-                    ・お客様の同意がない限り、個人情報を第三者に提供することはありません。
-                    ・お客様の個人情報の管理については、適切な措置を講じております。
-                    当社は、お客様からお預かりした個人情報を、以下の目的に限定して利用いたします。
-                    ・お問い合わせへのご回答
-                    ・お見積もりのご提案
-                    ・その他ご要望に応じたご連絡
-                    ・お客様の同意がない限り、個人情報を第三者に提供することはありません。
-                    ・お客様の個人情報の管理については、適切な措置を講じております。
-                </p>
-            </div>
-            <div class="text-[18px] font-medium text-center w-[300px] bg-[#6EBA38] rounded-[30px] text-white py-[20px] px-[40px] mt-[54px]">
-               内容を確認する
-            </div>
-        </div>
 	</div>
 </section>
-<!-- Lists news section end -->
+<!-- Contact section end -->
 
 <?php
 get_footer();

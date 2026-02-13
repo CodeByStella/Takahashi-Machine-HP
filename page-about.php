@@ -25,33 +25,34 @@ $hero_mesh = mytheme_img_asset('about/hero-mesh');
         </div>
         <img src="<?php echo esc_url($hero_image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="h-auto w-full max-w-[340px] md:w-[58%] md:max-w-none lg:w-[62%] 2xl:w-[64%] object-cover order-1 md:order-2 rounded-[20px] sm:rounded-none" />
       </div>
-      <p class="text-[11px] sm:text-[12px] md:text-[13px] 2xl:text-[14px] opacity-70 mt-[12px] sm:mt-[16px] md:mt-[20px] w-full text-center md:text-right pr-0 md:pr-15 lg:pr-20 2xl:pr-30">TOP > 髙橋について</p>
+      <p class="text-[11px] sm:text-[12px] md:text-[13px] 2xl:text-[14px] opacity-70 mt-[12px] sm:mt-[16px] md:mt-[20px] w-full text-center md:text-right pr-0 md:pr-15 lg:pr-20 2xl:pr-30"><a href="<?php echo esc_url(home_url('/')); ?>">TOP</a> &gt; 髙橋について</p>
     </div>
+    <?php $about_page_url = get_permalink(); ?>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-[20px] lg:gap-[25px] 2xl:gap-[30px] mx-auto max-w-[320px] sm:max-w-none w-full sm:w-fit px-4 sm:px-0 mt-[30px] sm:mt-[35px] md:mt-[40px] lg:mt-[45px] 2xl:mt-[50px] pb-6 sm:pb-8 md:pb-0">
-      <div class="bg-secondary active:bg-primary text-white w-full sm:w-[240px] md:w-[220px] lg:w-[280px] 2xl:w-80 aspect-[320/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2 cursor-pointer transition-colors">
+      <a href="<?php echo esc_url($about_page_url . '#about-strength'); ?>" class="bg-secondary hover:bg-primary active:bg-primary text-white w-full sm:w-[240px] md:w-[220px] lg:w-[280px] 2xl:w-80 aspect-[320/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2 cursor-pointer transition-colors">
         <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-50">Strength</p>
         <p class="text-[18px] sm:text-[20px] md:text-[22px] 2xl:text-[24px]">髙橋の強み</p>
         <svg class="absolute top-1/2 -translate-y-1/2 right-5" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
           <path id="Color_Overlay" data-name="Color Overlay" d="M575,812a15,15,0,1,1-15,15A15,15,0,0,1,575,812Z" transform="translate(-560 -812)" fill="#f6f6f6" opacity="0.3" />
           <path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M579.539,825.265l-4.406,4.406-4.406-4.406" transform="translate(-560 -812)" fill="none" stroke="#fff" stroke-width="2" />
         </svg>
-      </div>
-      <div class="bg-secondary active:bg-primary text-white w-full sm:w-[240px] md:w-[220px] lg:w-[280px] 2xl:w-80 aspect-[320/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2 cursor-pointer transition-colors">
+      </a>
+      <a href="<?php echo esc_url($about_page_url . '#about-business'); ?>" class="bg-secondary hover:bg-primary active:bg-primary text-white w-full sm:w-[240px] md:w-[220px] lg:w-[280px] 2xl:w-80 aspect-[320/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2 cursor-pointer transition-colors">
         <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-50">Business</p>
         <p class="text-[18px] sm:text-[20px] md:text-[22px] 2xl:text-[24px]">事業について</p>
         <svg class="absolute top-1/2 -translate-y-1/2 right-5" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
           <path id="Color_Overlay" data-name="Color Overlay" d="M575,812a15,15,0,1,1-15,15A15,15,0,0,1,575,812Z" transform="translate(-560 -812)" fill="#f6f6f6" opacity="0.3" />
           <path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M579.539,825.265l-4.406,4.406-4.406-4.406" transform="translate(-560 -812)" fill="none" stroke="#fff" stroke-width="2" />
         </svg>
-      </div>
-      <div class="bg-secondary active:bg-primary text-white w-full sm:w-[240px] md:w-[220px] lg:w-[280px] 2xl:w-80 aspect-[320/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2 cursor-pointer transition-colors sm:col-span-2 sm:mx-auto md:col-span-1">
+      </a>
+      <a href="<?php echo esc_url($about_page_url . '#about-company'); ?>" class="bg-secondary hover:bg-primary active:bg-primary text-white w-full sm:w-[240px] md:w-[220px] lg:w-[280px] 2xl:w-80 aspect-[320/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2 cursor-pointer transition-colors sm:col-span-2 sm:mx-auto md:col-span-1">
         <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-50">Company</p>
         <p class="text-[18px] sm:text-[20px] md:text-[22px] 2xl:text-[24px]">会社案内</p>
         <svg class="absolute top-1/2 -translate-y-1/2 right-5" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
           <path id="Color_Overlay" data-name="Color Overlay" d="M575,812a15,15,0,1,1-15,15A15,15,0,0,1,575,812Z" transform="translate(-560 -812)" fill="#f6f6f6" opacity="0.3" />
           <path id="長方形_3_のコピー" data-name="長方形 3 のコピー" d="M579.539,825.265l-4.406,4.406-4.406-4.406" transform="translate(-560 -812)" fill="none" stroke="#fff" stroke-width="2" />
         </svg>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -67,7 +68,7 @@ $strength_item_2 = mytheme_img_asset("about/strength-2");
 $strength_item_3 = mytheme_img_asset("about/strength-3");
 $strength_item_4 = mytheme_img_asset("about/strength-4");
 ?>
-<section class="strength-section mt-[50px] sm:mt-[60px] md:mt-[70px] lg:mt-[80px] 2xl:mt-[90px] px-0">
+<section id="about-strength" class="strength-section mt-[50px] sm:mt-[60px] md:mt-[70px] lg:mt-[80px] 2xl:mt-[90px] px-0">
   <p class="text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] w-fit gap-[10px] sm:gap-[12px] md:gap-[14px] flex mx-auto text-secondary items-center">
     <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] 2xl:w-[30px] 2xl:h-[30px]" />
     Strength
@@ -385,7 +386,7 @@ $business_item_1 = mytheme_img_asset('about/business-1');
 $business_item_2 = mytheme_img_asset('about/business-2');
 $business_item_3 = mytheme_img_asset('about/business-3');
 ?>
-<section class="business-section px-4 sm:px-6 md:px-8 lg:px-0">
+<section id="about-business" class="business-section px-4 sm:px-6 md:px-8 lg:px-0">
   <p class="text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] w-fit gap-[10px] sm:gap-[12px] md:gap-[14px] flex mx-auto text-secondary items-center">
     <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] 2xl:w-[30px] 2xl:h-[30px]" />
     Business
@@ -422,7 +423,7 @@ $business_item_3 = mytheme_img_asset('about/business-3');
 $company_bg = mytheme_img_asset('about/company-bg');
 $company = mytheme_img_asset('about/company');
 ?>
-<section class="company-section mt-[60px] sm:mt-[70px] md:mt-[85px] lg:mt-[95px] 2xl:mt-[105px] px-4 sm:px-6 md:px-8 lg:px-0">
+<section id="about-company" class="company-section mt-[60px] sm:mt-[70px] md:mt-[85px] lg:mt-[95px] 2xl:mt-[105px] px-4 sm:px-6 md:px-8 lg:px-0">
   <div class="relative pt-20 sm:pt-24 md:pt-26 lg:pt-28 2xl:pt-30 pb-[60px] sm:pb-[75px] md:pb-[90px] lg:pb-[100px] 2xl:pb-[110px] w-full h-[200px] sm:h-[240px] md:h-[280px] lg:h-[310px] 2xl:h-[338px]">
     <img src="<?php echo esc_url($company_bg); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="-z-10 absolute top-0 left-0 w-full h-full object-cover" />
     <p class="text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] w-fit gap-[10px] sm:gap-[12px] md:gap-[14px] flex mx-auto text-secondary items-center">

@@ -59,13 +59,54 @@ add_action('after_setup_theme', 'mytheme_setup');
 
 
 /* ======================================================
+   Contact form (page-contact) — Contact Form 7
+====================================================== */
+
+/**
+ * Contact Form 7: form ID for the contact page.
+ * Install CF7, create a form, then set this to the form ID (e.g. 123).
+ * You can find the ID in WP Admin → Contact → edit the form (ID is in the shortcode or in the URL).
+ *
+ * Recommended form template (same fields as original UI; submit is moved after privacy by JS):
+ * <p><label>会社名 <span class="required">必須</span></label>[text* companyname]</p>
+ * <p><label>お名前 <span class="required">必須</span></label>[text* your-name]</p>
+ * <p><label>メールアドレス <span class="required">必須</span></label>[email* your-email]</p>
+ * <p><label>電話番号 <span class="required">必須</span></label>[tel* your-phone]</p>
+ * <p><label>お問い合わせの件名</label>[text your-subject]</p>
+ * <p><label>お問い合わせ内容</label>[textarea your-message]</p>
+ * [submit "内容を確認する"]
+ */
+if (!defined('MYTHEME_CF7_CONTACT_FORM_ID')) {
+  define('MYTHEME_CF7_CONTACT_FORM_ID', 'c8e4986');  /* CF7 form ID or hash from shortcode */
+}
+
+/**
+ * Contact Form 7: show success and error messages in Japanese.
+ */
+function mytheme_cf7_japanese_messages($message, $status) {
+  $messages = array(
+    'mail_sent_ok'      => 'お問い合わせありがとうございます。内容を確認のうえ、ご連絡いたします。',
+    'mail_sent_ng'      => '送信に失敗しました。しばらくしてから再度お試しください。',
+    'validation_error'  => '入力内容に誤りがあります。ご確認のうえ、再度お試しください。',
+    'spam'              => '送信に失敗しました。しばらくしてから再度お試しください。',
+    'accept_terms'      => '送信するには、利用規約に同意してください。',
+  );
+  if (isset($messages[$status])) {
+    return $messages[$status];
+  }
+  return $message;
+}
+add_filter('wpcf7_display_message', 'mytheme_cf7_japanese_messages', 10, 2);
+
+/* ======================================================
    News CMS: /news (list) and /news/:slug (single)
 ====================================================== */
 
 /**
  * Add rewrite rule so single posts are served at /news/post-slug.
  */
-function mytheme_news_rewrite_rules() {
+function mytheme_news_rewrite_rules()
+{
   add_rewrite_rule(
     '^news/([^/]+)/?$',
     'index.php?name=$matches[1]',
@@ -77,7 +118,8 @@ add_action('init', 'mytheme_news_rewrite_rules');
 /**
  * Make post permalinks use /news/slug when a "Posts page" is set.
  */
-function mytheme_news_post_link($permalink, $post, $leavename = false) {
+function mytheme_news_post_link($permalink, $post, $leavename = false)
+{
   if ($post->post_type !== 'post') {
     return $permalink;
   }
@@ -98,7 +140,8 @@ add_filter('post_link', 'mytheme_news_post_link', 10, 3);
 /**
  * Flush rewrite rules when theme is activated.
  */
-function mytheme_flush_rewrite_on_activation() {
+function mytheme_flush_rewrite_on_activation()
+{
   mytheme_news_rewrite_rules();
   flush_rewrite_rules();
 }
@@ -109,7 +152,8 @@ add_action('after_switch_theme', 'mytheme_flush_rewrite_on_activation');
    Support: Maintenance cases CMS (Custom Post Type)
 ====================================================== */
 
-function mytheme_register_maintenance_case_cpt() {
+function mytheme_register_maintenance_case_cpt()
+{
   register_post_type('maintenance_case', array(
     'labels'             => array(
       'name'               => __('メンテナンス事例', 'mytheme'),
@@ -138,7 +182,8 @@ add_action('init', 'mytheme_register_maintenance_case_cpt');
 define('MYTHEME_MAINTENANCE_BEFORE_META', '_maintenance_before_image');
 define('MYTHEME_MAINTENANCE_AFTER_META', '_maintenance_after_image');
 
-function mytheme_maintenance_case_meta_boxes() {
+function mytheme_maintenance_case_meta_boxes()
+{
   add_meta_box(
     'maintenance_before_image',
     __('Before 画像', 'mytheme'),
@@ -158,10 +203,11 @@ function mytheme_maintenance_case_meta_boxes() {
 }
 add_action('add_meta_boxes', 'mytheme_maintenance_case_meta_boxes');
 
-function mytheme_maintenance_before_image_cb($post) {
+function mytheme_maintenance_before_image_cb($post)
+{
   wp_nonce_field('maintenance_images_nonce', 'maintenance_images_nonce');
   $before_id = (int) get_post_meta($post->ID, MYTHEME_MAINTENANCE_BEFORE_META, true);
-  ?>
+?>
   <p>
     <input type="hidden" id="maintenance_before_image_id" name="maintenance_before_image_id" value="<?php echo esc_attr($before_id); ?>" />
     <button type="button" class="button" id="maintenance_before_image_select"><?php esc_html_e('画像を選択', 'mytheme'); ?></button>
@@ -172,12 +218,13 @@ function mytheme_maintenance_before_image_cb($post) {
       <?php echo wp_get_attachment_image($before_id, 'medium'); ?>
     <?php endif; ?>
   </div>
-  <?php
+<?php
 }
 
-function mytheme_maintenance_after_image_cb($post) {
+function mytheme_maintenance_after_image_cb($post)
+{
   $after_id = (int) get_post_meta($post->ID, MYTHEME_MAINTENANCE_AFTER_META, true);
-  ?>
+?>
   <p>
     <input type="hidden" id="maintenance_after_image_id" name="maintenance_after_image_id" value="<?php echo esc_attr($after_id); ?>" />
     <button type="button" class="button" id="maintenance_after_image_select"><?php esc_html_e('画像を選択', 'mytheme'); ?></button>
@@ -188,10 +235,11 @@ function mytheme_maintenance_after_image_cb($post) {
       <?php echo wp_get_attachment_image($after_id, 'medium'); ?>
     <?php endif; ?>
   </div>
-  <?php
+<?php
 }
 
-function mytheme_maintenance_case_save_meta($post_id) {
+function mytheme_maintenance_case_save_meta($post_id)
+{
   if (!isset($_POST['maintenance_images_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['maintenance_images_nonce'])), 'maintenance_images_nonce')) {
     return;
   }
@@ -210,7 +258,8 @@ function mytheme_maintenance_case_save_meta($post_id) {
 }
 add_action('save_post_maintenance_case', 'mytheme_maintenance_case_save_meta');
 
-function mytheme_maintenance_case_enqueue_admin_media($hook) {
+function mytheme_maintenance_case_enqueue_admin_media($hook)
+{
   if ($hook !== 'post.php' && $hook !== 'post-new.php') {
     return;
   }
@@ -253,7 +302,8 @@ add_action('admin_enqueue_scripts', 'mytheme_maintenance_case_enqueue_admin_medi
 /**
  * Add "Duplicate" row action to maintenance_case list.
  */
-function mytheme_maintenance_case_row_actions($actions, $post) {
+function mytheme_maintenance_case_row_actions($actions, $post)
+{
   if ($post->post_type !== 'maintenance_case' || $post->post_status === 'trash') {
     return $actions;
   }
@@ -272,7 +322,8 @@ add_filter('post_row_actions', 'mytheme_maintenance_case_row_actions', 10, 2);
 /**
  * Handle duplicate maintenance case: create a draft copy and redirect to edit it.
  */
-function mytheme_handle_duplicate_maintenance_case() {
+function mytheme_handle_duplicate_maintenance_case()
+{
   if (!isset($_GET['action']) || $_GET['action'] !== 'mytheme_duplicate_maintenance_case') {
     return;
   }
@@ -325,7 +376,8 @@ add_action('admin_init', 'mytheme_handle_duplicate_maintenance_case');
 /* ======================================================
    Product page Movie section CPT (稼働中動画)
 ====================================================== */
-function mytheme_register_product_movie_cpt() {
+function mytheme_register_product_movie_cpt()
+{
   register_post_type('product_movie', array(
     'labels'             => array(
       'name'               => __('稼働中動画', 'mytheme'),
@@ -354,7 +406,8 @@ add_action('init', 'mytheme_register_product_movie_cpt');
 define('MYTHEME_PRODUCT_MOVIE_VIDEO_URL_META', '_product_movie_video_url');
 define('MYTHEME_PRODUCT_MOVIE_THUMBNAIL_META', '_product_movie_thumbnail_id');
 
-function mytheme_product_movie_meta_boxes() {
+function mytheme_product_movie_meta_boxes()
+{
   add_meta_box(
     'product_movie_thumbnail',
     __('サムネイル画像', 'mytheme'),
@@ -372,10 +425,11 @@ function mytheme_product_movie_meta_boxes() {
 }
 add_action('add_meta_boxes', 'mytheme_product_movie_meta_boxes');
 
-function mytheme_product_movie_thumbnail_cb($post) {
+function mytheme_product_movie_thumbnail_cb($post)
+{
   wp_nonce_field('product_movie_meta_nonce', 'product_movie_meta_nonce');
   $thumb_id = (int) get_post_meta($post->ID, MYTHEME_PRODUCT_MOVIE_THUMBNAIL_META, true);
-  ?>
+?>
   <p class="description"><?php esc_html_e('製品ページの動画カードに表示する画像。未設定の場合はアイキャッチ画像を使用します。', 'mytheme'); ?></p>
   <p>
     <input type="hidden" id="product_movie_thumbnail_id" name="product_movie_thumbnail_id" value="<?php echo esc_attr($thumb_id); ?>" />
@@ -387,16 +441,18 @@ function mytheme_product_movie_thumbnail_cb($post) {
       <?php echo wp_get_attachment_image($thumb_id, 'medium'); ?>
     <?php endif; ?>
   </div>
-  <?php
+<?php
 }
 
-function mytheme_product_movie_video_url_cb($post) {
+function mytheme_product_movie_video_url_cb($post)
+{
   $val = get_post_meta($post->ID, MYTHEME_PRODUCT_MOVIE_VIDEO_URL_META, true);
   echo '<p class="description">' . esc_html__('YouTubeのURLを入力。製品ページの「当社製品の稼働中動画」でカードをクリックするとモーダルで再生されます。', 'mytheme') . '</p>';
   echo '<p><input type="url" name="product_movie_video_url" value="' . esc_attr($val) . '" class="widefat" placeholder="https://www.youtube.com/watch?v=xxxx" /></p>';
 }
 
-function mytheme_product_movie_save_meta($post_id) {
+function mytheme_product_movie_save_meta($post_id)
+{
   if (!isset($_POST['product_movie_meta_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['product_movie_meta_nonce'])), 'product_movie_meta_nonce')) {
     return;
   }
@@ -416,7 +472,8 @@ function mytheme_product_movie_save_meta($post_id) {
 }
 add_action('save_post_product_movie', 'mytheme_product_movie_save_meta');
 
-function mytheme_product_movie_enqueue_admin_media($hook) {
+function mytheme_product_movie_enqueue_admin_media($hook)
+{
   if ($hook !== 'post.php' && $hook !== 'post-new.php') {
     return;
   }
@@ -456,7 +513,8 @@ add_action('admin_enqueue_scripts', 'mytheme_product_movie_enqueue_admin_media')
 /**
  * Add "Duplicate" row action to product_movie list.
  */
-function mytheme_product_movie_row_actions($actions, $post) {
+function mytheme_product_movie_row_actions($actions, $post)
+{
   if ($post->post_type !== 'product_movie' || $post->post_status === 'trash') {
     return $actions;
   }
@@ -475,7 +533,8 @@ add_filter('post_row_actions', 'mytheme_product_movie_row_actions', 10, 2);
 /**
  * Handle duplicate product movie: create a draft copy and redirect to edit it.
  */
-function mytheme_handle_duplicate_product_movie() {
+function mytheme_handle_duplicate_product_movie()
+{
   if (!isset($_GET['action']) || $_GET['action'] !== 'mytheme_duplicate_product_movie') {
     return;
   }
@@ -529,7 +588,8 @@ add_action('admin_init', 'mytheme_handle_duplicate_product_movie');
  * @param string $url YouTube watch or youtu.be URL.
  * @return string Embed URL or empty if not recognized.
  */
-function mytheme_youtube_embed_url($url) {
+function mytheme_youtube_embed_url($url)
+{
   if (!is_string($url) || trim($url) === '') {
     return '';
   }
@@ -548,7 +608,8 @@ function mytheme_youtube_embed_url($url) {
    Product section CMS: /product/?id=existing|order|used
 ====================================================== */
 
-function mytheme_register_site_product_cpt() {
+function mytheme_register_site_product_cpt()
+{
   register_post_type('site_product', array(
     'labels'             => array(
       'name'               => __('製品一覧', 'mytheme'),
@@ -574,7 +635,8 @@ function mytheme_register_site_product_cpt() {
 }
 add_action('init', 'mytheme_register_site_product_cpt');
 
-function mytheme_register_product_list_type_taxonomy() {
+function mytheme_register_product_list_type_taxonomy()
+{
   register_taxonomy('product_list_type', 'site_product', array(
     'labels'            => array(
       'name'          => __('リスト種別', 'mytheme'),
@@ -592,7 +654,8 @@ function mytheme_register_product_list_type_taxonomy() {
 }
 add_action('init', 'mytheme_register_product_list_type_taxonomy');
 
-function mytheme_product_list_type_default_terms() {
+function mytheme_product_list_type_default_terms()
+{
   if (get_option('mytheme_product_list_type_terms') === 'done') {
     return;
   }
@@ -615,7 +678,8 @@ define('MYTHEME_PRODUCT_LOCATION_META', '_product_location');
 define('MYTHEME_PRODUCT_SPECS_META', '_product_specs');
 define('MYTHEME_PRODUCT_GALLERY_META', '_product_gallery');
 
-function mytheme_site_product_meta_boxes() {
+function mytheme_site_product_meta_boxes()
+{
   add_meta_box('site_product_category', __('カテゴリ（緑バッジ）', 'mytheme'), 'mytheme_site_product_category_cb', 'site_product', 'normal');
   add_meta_box('site_product_location', __('所在地・用途（スライドカード）', 'mytheme'), 'mytheme_site_product_location_cb', 'site_product', 'normal');
   add_meta_box('site_product_specs', __('仕様テーブル', 'mytheme'), 'mytheme_site_product_specs_cb', 'site_product', 'normal');
@@ -623,19 +687,22 @@ function mytheme_site_product_meta_boxes() {
 }
 add_action('add_meta_boxes', 'mytheme_site_product_meta_boxes');
 
-function mytheme_site_product_category_cb($post) {
+function mytheme_site_product_category_cb($post)
+{
   wp_nonce_field('site_product_meta_nonce', 'site_product_meta_nonce');
   $val = get_post_meta($post->ID, MYTHEME_PRODUCT_CATEGORY_META, true);
   echo '<p><input type="text" name="product_category" value="' . esc_attr($val) . '" class="widefat" placeholder="例: ダンボールスリッター機" /></p>';
 }
 
-function mytheme_site_product_location_cb($post) {
+function mytheme_site_product_location_cb($post)
+{
   $val = get_post_meta($post->ID, MYTHEME_PRODUCT_LOCATION_META, true);
   echo '<p class="description">' . esc_html__('トップページのスライドカードに表示されます。', 'mytheme') . '</p>';
   echo '<p><input type="text" name="product_location" value="' . esc_attr($val) . '" class="widefat" placeholder="例: 大阪府｜ネット通販生産" /></p>';
 }
 
-function mytheme_site_product_specs_cb($post) {
+function mytheme_site_product_specs_cb($post)
+{
   $val = get_post_meta($post->ID, MYTHEME_PRODUCT_SPECS_META, true);
   $rows = is_string($val) ? json_decode($val, true) : array();
   if (!is_array($rows)) {
@@ -659,7 +726,8 @@ function mytheme_site_product_specs_cb($post) {
   echo '<p><button type="button" class="button" id="product_specs_add_row">' . esc_html__('行を追加', 'mytheme') . '</button></p>';
 }
 
-function mytheme_site_product_gallery_cb($post) {
+function mytheme_site_product_gallery_cb($post)
+{
   $val = get_post_meta($post->ID, MYTHEME_PRODUCT_GALLERY_META, true);
   $ids = array_filter(array_map('absint', explode(',', $val)));
   echo '<p class="description">' . esc_html__('メイン画像は「アイキャッチ画像」。ここで追加した画像がサムネイル一覧に表示されます。', 'mytheme') . '</p>';
@@ -673,7 +741,8 @@ function mytheme_site_product_gallery_cb($post) {
   echo '</div>';
 }
 
-function mytheme_site_product_save_meta($post_id) {
+function mytheme_site_product_save_meta($post_id)
+{
   if (!isset($_POST['site_product_meta_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['site_product_meta_nonce'])), 'site_product_meta_nonce')) {
     return;
   }
@@ -692,7 +761,9 @@ function mytheme_site_product_save_meta($post_id) {
   if (isset($_POST['product_specs_label']) && is_array($_POST['product_specs_label'])) {
     $labels = array_map('sanitize_text_field', array_map('wp_unslash', $_POST['product_specs_label']));
     $values = isset($_POST['product_specs_value']) && is_array($_POST['product_specs_value'])
-      ? array_map(function ($v) { return sanitize_textarea_field(wp_unslash($v)); }, $_POST['product_specs_value'])
+      ? array_map(function ($v) {
+        return sanitize_textarea_field(wp_unslash($v));
+      }, $_POST['product_specs_value'])
       : array();
     $rows = array();
     $max = max(count($labels), count($values));
@@ -711,7 +782,8 @@ function mytheme_site_product_save_meta($post_id) {
 }
 add_action('save_post_site_product', 'mytheme_site_product_save_meta');
 
-function mytheme_site_product_enqueue_admin_media($hook) {
+function mytheme_site_product_enqueue_admin_media($hook)
+{
   if ($hook !== 'post.php' && $hook !== 'post-new.php') {
     return;
   }
@@ -764,7 +836,8 @@ add_action('admin_enqueue_scripts', 'mytheme_site_product_enqueue_admin_media');
 /**
  * Add "Duplicate" row action to site_product list.
  */
-function mytheme_site_product_row_actions($actions, $post) {
+function mytheme_site_product_row_actions($actions, $post)
+{
   if ($post->post_type !== 'site_product' || $post->post_status === 'trash') {
     return $actions;
   }
@@ -783,7 +856,8 @@ add_filter('post_row_actions', 'mytheme_site_product_row_actions', 10, 2);
 /**
  * Handle duplicate product: create a draft copy and redirect to edit it.
  */
-function mytheme_handle_duplicate_product() {
+function mytheme_handle_duplicate_product()
+{
   if (!isset($_GET['action']) || $_GET['action'] !== 'mytheme_duplicate_product') {
     return;
   }
@@ -834,7 +908,9 @@ function mytheme_handle_duplicate_product() {
 
   $terms = wp_get_object_terms($post_id, 'product_list_type');
   if (!is_wp_error($terms) && !empty($terms)) {
-    $term_ids = array_map(function ($t) { return (int) $t->term_id; }, $terms);
+    $term_ids = array_map(function ($t) {
+      return (int) $t->term_id;
+    }, $terms);
     wp_set_object_terms($new_id, $term_ids, 'product_list_type');
   }
 
@@ -850,7 +926,8 @@ add_action('admin_init', 'mytheme_handle_duplicate_product');
  * @param int    $limit     Max number of posts. Default 6.
  * @return array List of article arrays with keys: image, title, location, tag.
  */
-function mytheme_get_product_carousel_articles($term_slug, $limit = 6) {
+function mytheme_get_product_carousel_articles($term_slug, $limit = 6)
+{
   $product_placeholder = function_exists('mytheme_img_asset') ? mytheme_img_asset('top/prod-1') : '';
   $query = new WP_Query(array(
     'post_type'      => 'site_product',
@@ -917,6 +994,8 @@ function mytheme_enqueue_assets()
     file_exists($tailwind_path) ? filemtime($tailwind_path) : $theme_version
   );
 
+  wp_add_inline_style('mytheme-tailwind', 'html{scroll-behavior:smooth}');
+
   // Block editor styles on front so news content (blocks, colors) displays correctly.
   if (is_singular('post')) {
     wp_enqueue_style('wp-block-library');
@@ -943,6 +1022,49 @@ function mytheme_enqueue_assets()
     $script_ver,
     true
   );
+
+  wp_add_inline_script('mytheme-main', "
+    (function(){
+      function smoothScrollToId(id) {
+        if (!id) return;
+        var el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      function handleHashScroll() {
+        var hash = window.location.hash;
+        if (!hash || hash === '#') return;
+        var id = hash.slice(1);
+        var el = document.getElementById(id);
+        if (!el) return;
+        window.scrollTo(0, 0);
+        requestAnimationFrame(function(){
+          requestAnimationFrame(function(){ smoothScrollToId(id); });
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', handleHashScroll);
+      } else {
+        handleHashScroll();
+      }
+      document.addEventListener('click', function(e) {
+        var a = e.target && e.target.closest && e.target.closest('a[href*=\"#\"]');
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        var hashIdx = href.indexOf('#');
+        if (hashIdx === -1) return;
+        var id = href.slice(hashIdx + 1);
+        if (!id) return;
+        var target = document.getElementById(id);
+        if (!target) return;
+        var samePage = (a.pathname === window.location.pathname || (a.pathname === '/' && window.location.pathname === '') || a.getAttribute('href').indexOf('#') === 0);
+        if (samePage) {
+          e.preventDefault();
+          smoothScrollToId(id);
+          if (history.replaceState) history.replaceState(null, '', '#' + id);
+        }
+      });
+    })();
+  ", 'after');
 }
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_assets');
 

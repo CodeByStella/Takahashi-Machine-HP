@@ -29,7 +29,7 @@ $hero_mesh     = mytheme_img_asset('news/hero-mesh');
 					class="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-center" />
 				<div class="relative z-0 w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-[24px] sm:py-[30px] md:py-[36px] lg:py-[42px] 2xl:py-[46px]">
 					<p class="text-[11px] sm:text-[12px] md:text-[13px] 2xl:text-[14px] opacity-70 w-full text-right pr-0 md:pr-4 lg:pr-8 2xl:pr-12 truncate" title="TOP > お知らせ > <?php echo esc_attr(get_the_title()); ?>">
-						TOP > お知らせ > <span class="inline-block max-w-[60%] sm:max-w-[75%] truncate align-bottom"><?php the_title(); ?></span>
+						<a href="<?php echo esc_url(home_url('/')); ?>">TOP</a> &gt; <a href="<?php echo esc_url($news_url); ?>">お知らせ</a> &gt; <span class="inline-block max-w-[60%] sm:max-w-[75%] truncate align-bottom"><?php the_title(); ?></span>
 					</p>
 					<div class="w-full pt-[16px] sm:pt-[20px] md:pt-[24px]">
 						<div class="flex flex-wrap items-center gap-x-[12px] gap-y-2">
