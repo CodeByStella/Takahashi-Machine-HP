@@ -22,13 +22,13 @@ body {
   overflow-x: hidden;
 }
 html {
-  font-family: var(--font-noto), "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif !important;
+  font-family: "Ubuntu", var(--font-noto), "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif !important;
 }
 body {
   margin: 0;
   color: var(--mytheme-text);
   background: var(--mytheme-bg);
-  font-family: var(--font-noto), "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif !important;
+  font-family: "Ubuntu", var(--font-noto), "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif !important;
   line-height: 1.7;
 }
 img {

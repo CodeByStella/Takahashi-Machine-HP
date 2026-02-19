@@ -1014,9 +1014,9 @@ function mytheme_enqueue_assets()
     file_exists($font_override_path) ? filemtime($font_override_path) : $theme_version
   );
 
-  // Last possible CSS on the page so Noto Sans CJK JP always wins, no matter what style.css or WordPress injects.
+  // Last possible CSS so Ubuntu (Latin) + Noto (CJK) stack wins, no matter what style.css or WordPress injects.
   add_action('wp_footer', function () {
-    echo '<style id="mytheme-font-force">html,body{font-family:"Noto Sans CJK JP","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif!important}</style>';
+    echo '<style id="mytheme-font-force">html,body{font-family:"Ubuntu","Noto Sans CJK JP","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif!important}</style>';
   }, 9999);
 
   /**

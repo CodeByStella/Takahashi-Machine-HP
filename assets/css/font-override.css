@@ -1,5 +1,5 @@
-/* Loaded last so it wins over WordPress block/global styles. */
+/* Loaded last so it wins over WordPress block/global styles. Ubuntu for English, Noto for Japanese. */
 html,
 body {
-  font-family: "Noto Sans CJK JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif !important;
+  font-family: "Ubuntu", "Noto Sans CJK JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif !important;
 }
