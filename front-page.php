@@ -141,7 +141,7 @@ $product_bg = mytheme_img_asset('top/mesh');
 <section class="pb-[40px] sm:pb-[50px] md:pb-[60px] lg:pb-[80px] xl:pb-[90px] 2xl:pb-[100px]">
 	<div class="mx-auto w-full">
 		<div class="overflow-hidden">
-			<div class="relative aspect-[1330/990] sm:aspect-[1600/622] w-full">
+			<div class="relative aspect-[1330/990] sm:aspect-[1600/457] w-full">
 				<img class="absolute inset-0 h-full w-full object-contain" src="<?php echo esc_url($product_bg); ?>" alt="" loading="lazy">
 
 				<div class="relative z-10 h-full px-[20px] sm:px-[40px] md:px-[80px] lg:px-[150px] xl:px-[180px] 2xl:pl-[200px] pt-[30px] sm:pt-[50px] md:pt-[60px] lg:pt-[40px] xl:pt-[100px] 2xl:pt-[120px]">
@@ -284,45 +284,25 @@ $footer_asset = static function (string $base, string $fallback_rel): string {
 
 $facebook_icon = $footer_asset('facebook-blue', '/assets/img/hero-placeholder.svg');
 $instagram_icon = $footer_asset('instagram', '/assets/img/footer/instagram-icon.svg');
-
-$banner = mytheme_img_asset('top/banner');
-$blog_banner = mytheme_img_asset('top/blog-banner');
 $item = mytheme_img_asset('top/item');
-$tsicon = mytheme_img_asset('top/ts-icon');
 ?>
 <section class="section pt-[40px] sm:pt-[50px] md:pt-[60px] lg:pt-[70px] xl:pt-[80px] 2xl:pt-[90px] pb-[60px] sm:pb-[70px] md:pb-[80px] lg:pb-[100px] xl:pb-[115px] 2xl:pb-[130px]">
 
 	<div class="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] 2xl:w-[75%] mx-auto px-4 sm:px-0">
 		<p class="text-[32px] sm:text-[38px] md:text-[44px] lg:text-[50px] xl:text-[55px] 2xl:text-[60px] w-full text-[#6EBA38] text-center mb-[20px] sm:mb-[24px] md:mb-[28px] lg:mb-[32px] 2xl:mb-[36px] font-bold"><?php esc_html_e('Follow us !', 'mytheme'); ?></p>
-		<div class="pt-[30px] sm:pt-[40px] md:pt-[50px] 2xl:pt-[60px] pb-[40px] sm:pb-[50px] md:pb-[60px] 2xl:pb-[70px] px-[20px] sm:px-[30px] md:px-[50px] lg:px-[65px] 2xl:px-[80px] bg-white rounded-[8px] md:rounded-[10px] 2xl:rounded-[12px] flex flex-col lg:flex-row justify-between gap-[30px] md:gap-[40px] lg:gap-[30px]">
+		<div class="pt-[30px] sm:pt-[40px] md:pt-[50px] 2xl:pt-[60px] pb-[40px] sm:pb-[50px] md:pb-[60px] 2xl:pb-[70px] px-[20px] sm:px-[30px] md:px-[50px] lg:px-[65px] 2xl:px-[80px] bg-white rounded-[8px] md:rounded-[10px] 2xl:rounded-[12px] flex flex-col lg:flex-row justify-between gap-[30px] md:gap-[40px] lg:gap-[30px] justify-center">
 			<div class="w-full lg:w-[48%] 2xl:w-[464px]">
 				<div class="flex mb-[12px] sm:mb-[15px] 2xl:mb-[20px] gap-[8px] md:gap-[10px] 2xl:gap-[12px]">
 					<img src="<?php echo esc_url($facebook_icon); ?>" alt="" class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] 2xl:w-[30px] 2xl:h-[30px] aspect-square object-cover rounded-full">
 					<p class="text-[16px] sm:text-[18px] 2xl:text-[20px] text-[#1F1C1A] text-center font-bold"><?php esc_html_e('Facebook', 'mytheme'); ?></p>
 				</div>
-				<div class="w-full relative aspect-[464/109] p-[8px] sm:p-[10px] 2xl:p-[12px] flex gap-[8px] sm:gap-[10px] 2xl:gap-[12px] border border-[#70707090]">
-					<img src="<?php echo esc_url($banner); ?>" alt="" class="z-0 absolute top-0 left-0 bottom-0 right-0 w-full h-full object-cover">
-					<img src="<?php echo esc_url($tsicon); ?>" alt="" class="z-10 w-[45px] h-[45px] sm:w-[55px] sm:h-[55px] 2xl:w-[65px] 2xl:h-[65px] aspect-square object-cover">
-					<p class="text-[12px] sm:text-[14px] 2xl:text-[16px] text-white z-10 font-regular"> <?php esc_html_e('株式会社 髙橋製作所 / ダンボール機械の設計製作', 'mytheme'); ?></p>
-				</div>
-				<div class="max-h-[250px] sm:max-h-[280px] 2xl:max-h-[312px] p-[8px] sm:p-[9px] 2xl:p-[10px] overflow-y-auto bg-[#F5F6F7]">
-					<div class="w-full h-fit bg-white">
-						<img src="<?php echo esc_url($blog_banner); ?>" alt="" class="w-full object-cover" />
-						<div class="p-[8px] sm:p-[10px] 2xl:p-[12px]">
-							<div class="flex items-center gap-[8px] sm:gap-[10px] 2xl:gap-[12px]">
-								<img src="<?php echo esc_url($tsicon); ?>" alt="" class="z-10 rounded-full w-[36px] h-[36px] sm:w-[38px] sm:h-[38px] 2xl:w-[42px] 2xl:h-[42px] aspect-square object-cover">
-								<p class="text-[10px] sm:text-[11px] 2xl:text-[12px] font-regular"> <?php esc_html_e('株式会社 髙橋製作所 / ダンボール機械の設計製作', 'mytheme'); ?></p>
-							</div>
-							<div class="flex flex-col gap-[8px] sm:gap-[10px] 2xl:gap-[12px]">
-								<p class="text-[10px] sm:text-[11px] 2xl:text-[12px] font-regular">ダンボール（B段.E段.G段）カットする</p>
-								<p class="text-[10px] sm:text-[11px] 2xl:text-[12px] font-regular">オートスリッターを製作納品致しました</p>
-								<p class="text-[10px] sm:text-[11px] 2xl:text-[12px] font-regular">厚み薄いものは中々難しいかったです</p>
-							</div>
-						</div>
+				<div class="w-full min-h-[200px]">
+					<div class="fb-page" data-href="https://www.facebook.com/1541995299351955" data-show-posts="true" data-width="480" data-height="460" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+						<blockquote cite="https://www.facebook.com/1541995299351955" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/1541995299351955">株式会社 髙橋製作所 / ダンボール機械の設計製作</a></blockquote>
 					</div>
 				</div>
 			</div>
-			<div class="w-full lg:w-[48%] 2xl:w-[490px]">
+			<!-- <div class="w-full lg:w-[48%] 2xl:w-[490px]">
 				<div class="flex mb-[12px] sm:mb-[15px] 2xl:mb-[20px] gap-[8px] md:gap-[10px] 2xl:gap-[12px]">
 					<img src="<?php echo esc_url($instagram_icon); ?>" alt="" class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] 2xl:w-[30px] 2xl:h-[30px] aspect-square object-cover rounded-full">
 					<p class="text-[16px] sm:text-[18px] 2xl:text-[20px] text-[#1F1C1A] text-center font-bold"><?php esc_html_e('Instagram', 'mytheme'); ?></p>
@@ -338,7 +318,7 @@ $tsicon = mytheme_img_asset('top/ts-icon');
 					<img src="<?php echo esc_url($item); ?>" alt="" class="w-full object-cover">
 					<img src="<?php echo esc_url($item); ?>" alt="" class="w-full object-cover">
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section>
