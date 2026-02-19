@@ -21,7 +21,7 @@
 					height="50"
 					loading="lazy">
 
-				<address class="not-italic text-[12px] sm:text-[13px] md:text-[14px] text-black/70 leading-[1.8] mt-[30px] sm:mt-[35px] md:mt-[40px] lg:mt-[49px]">
+				<address class="not-italic text-[12px] sm:text-[13px] md:text-[14px] text-black/70 leading-[1.8] mt-[30px] sm:mt-[35px] md:mt-[40px] lg:mt-[49px] font-medium">
 					<p class="m-0"><?php esc_html_e('〒578-0983', 'mytheme'); ?></p>
 					<p class="m-0"><?php esc_html_e('大阪府東大阪市吉田下島14番25号', 'mytheme'); ?></p>
 				</address>
@@ -32,15 +32,15 @@
 						href="https://www.google.com/maps?q=%E3%80%92578-0983+%E5%A4%A7%E9%98%AA%E5%BA%9C%E6%9D%B1%E5%A4%A7%E9%98%AA%E5%B8%82%E5%90%89%E7%94%B0%E4%B8%8B%E5%B3%B614-25"
 						target="_blank"
 						rel="noopener noreferrer">
-						<span class="w-full text-center text-[14px] sm:text-[15px] md:text-[16px]"><?php esc_html_e('Google Map で見る', 'mytheme'); ?></span>
+						<span class="w-full text-center text-[14px] sm:text-[15px] md:text-[16px] font-medium"><?php esc_html_e('Google Map で見る', 'mytheme'); ?></span>
 					</a>
 
 					<a class="cta-pill cta-pill--phone w-full sm:w-[180px] md:w-[190px] lg:w-[200px] h-[36px] sm:h-[38px] md:h-[40px] rounded-full" href="tel:0729619975">
-						<span class="w-full text-center text-[14px] sm:text-[15px] md:text-[16px]">072-961-9975</span>
+						<span class="w-full text-center text-[14px] sm:text-[15px] md:text-[16px] font-medium">072-961-9975</span>
 					</a>
 				</div>
 
-				<p class="text-[11px] sm:text-[11px] md:text-[12px] text-black/50 mt-[8px] sm:mt-[9px] md:mt-[10px] mb-0 w-full sm:w-[180px] md:w-[190px] lg:w-[200px] text-center">
+				<p class="text-[11px] sm:text-[11px] md:text-[12px] text-black/50 mt-[8px] sm:mt-[9px] md:mt-[10px] mb-0 w-full sm:w-[180px] md:w-[190px] lg:w-[200px] text-center font-regular">
 					<?php esc_html_e('平日 9:00〜18:00', 'mytheme'); ?>
 				</p>
 			</div>
@@ -60,7 +60,7 @@
 			?>
 			<div class="flex flex-col items-start lg:items-end">
 				<nav class="footer-nav w-full" aria-label="<?php esc_attr_e('Footer menu', 'mytheme'); ?>">
-					<ul id="footer-menu" class="footer-menu grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[205px_205px] gap-x-[15px] sm:gap-x-[20px] md:gap-x-[10px] gap-y-[12px] sm:gap-y-[15px] md:gap-y-[20px] text-[13px] sm:text-[13px] md:text-[14px] text-black/70 list-none m-0 p-0">
+					<ul id="footer-menu" class="footer-menu grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[205px_205px] gap-x-[15px] sm:gap-x-[20px] md:gap-x-[10px] gap-y-[12px] sm:gap-y-[15px] md:gap-y-[20px] text-[13px] sm:text-[13px] md:text-[14px] text-black/70 list-none m-0 p-0 font-medium">
 						<li class="flex flex-col gap-y-[12px] sm:gap-y-[15px] md:gap-y-[18px] [&>a]:block">
 							<a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('トップページ', 'mytheme'); ?></a>
 							<a href="<?php echo esc_url(home_url('/about/')); ?>"><?php esc_html_e('高橋製作所について', 'mytheme'); ?></a>
@@ -99,7 +99,7 @@
 				</a>
 			</div>
 
-			<p class="text-[12px] m-0 text-left lg:text-right text-[#1F1C1A] opacity-50">
+			<p class="text-[12px] m-0 text-left lg:text-right text-[#1F1C1A] opacity-50 font-regular">
 				<?php echo esc_html('Copyright © TAKAHASHI PACKAGING MACHINES All rights reserved.'); ?>
 			</p>
 		</div>
