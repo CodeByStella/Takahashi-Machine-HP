@@ -7,7 +7,7 @@
  */
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> style="font-family: 'Noto Sans CJK JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif !important">
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -15,7 +15,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> style="font-family: 'Noto Sans CJK JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif !important">
 	<?php wp_body_open(); ?>
 
 	<header class="site-header lg:h-[140px] pt-2 lg:pt-0">

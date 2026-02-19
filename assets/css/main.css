@@ -9,6 +9,8 @@
   --mytheme-radius: 14px;
   --mytheme-container: 1120px;
   --flow-item-width: 350px;
+  --font-ubuntu: "Ubuntu", sans-serif;
+  --font-noto: "Noto Sans CJK JP", sans-serif;
 }
 
 * {
@@ -19,29 +21,20 @@ body {
   height: 100%;
   overflow-x: hidden;
 }
+html {
+  font-family: var(--font-noto), "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif !important;
+}
 body {
   margin: 0;
   color: var(--mytheme-text);
   background: var(--mytheme-bg);
-  font-family:
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    "Noto Sans JP",
-    "Meiryo",
-    sans-serif;
+  font-family: var(--font-noto), "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif !important;
   line-height: 1.7;
 }
 img {
-  // max-width: 100%;
-  // height: auto;
   display: block;
 }
 a {
-  // color: inherit;
   text-decoration: none;
 }
 
@@ -192,7 +185,6 @@ a {
   appearance: none;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: #fff;
-  // border-radius: 12px;
   padding: 10px 12px;
   line-height: 0;
 }
@@ -899,12 +891,15 @@ a {
     max-height: calc(100vh - 200px);
     overflow-y: auto;
     z-index: 1000;
-    
+
     /* Animation properties */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s;
     pointer-events: none;
   }
 
@@ -926,7 +921,9 @@ a {
   .primary-nav .menu > ul > li {
     opacity: 0;
     transform: translateX(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
   }
 
   .primary-nav.is-open .primary-menu > li,

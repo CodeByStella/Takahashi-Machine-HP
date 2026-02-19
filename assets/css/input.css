@@ -1,5 +1,17 @@
 @config "../../tailwind.config.js";
 
+/* Ubuntu font (Latin) — .font-ubuntu or var(--font-ubuntu) */
+@import "./fonts-ubuntu.css";
+
+/* Noto Sans CJK JP variable font — .font-noto or var(--font-noto), weights 400/500/700 */
+@import "./fonts-noto.css";
+
+/* Tailwind v4: make Noto Sans CJK JP the default sans font (html, utilities) */
+@theme {
+  --font-sans: "Noto Sans CJK JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  --default-font-family: var(--font-sans);
+}
+
 /* Page-specific styles (imported BEFORE Tailwind so Tailwind utilities override them) */
 @import "./pages/front-page.css";
 @import "./pages/about.css";
@@ -12,6 +24,20 @@
 /* Tailwind imports last for highest priority */
 @import "tailwindcss";
 
+/* Noto Sans CJK JP site-wide — !important beats WordPress/block theme overrides */
+html {
+  font-family: var(--font-noto), "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif !important;
+}
+body {
+  font-family: var(--font-noto), "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif !important;
+}
+
 /* your reusable components go here */
 @layer components {
+  .font-ubuntu {
+    font-family: "Ubuntu", sans-serif;
+  }
+  .font-noto {
+    font-family: "Noto Sans CJK JP", sans-serif;
+  }
 }

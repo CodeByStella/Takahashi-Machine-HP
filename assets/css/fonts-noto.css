@@ -1,0 +1,11 @@
+/**
+ * Noto Sans CJK JP Variable Font — weights 400 (Regular), 500 (Medium), 700 (Bold).
+ * Single VF file; use .font-noto or var(--font-noto). Weights 100–900 supported.
+ */
+@font-face {
+  font-family: 'Noto Sans CJK JP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(../fonts/NotoSansCJKjp-VF.woff2) format('woff2-variations');
+}

@@ -1004,6 +1004,22 @@ function mytheme_enqueue_assets()
   }
 
   /**
+   * Font override: loads after Tailwind so Noto Sans CJK JP wins over body font in style.css / Block/global-styles.
+   */
+  $font_override_path = get_template_directory() . '/assets/css/font-override.css';
+  wp_enqueue_style(
+    'mytheme-font-override',
+    get_template_directory_uri() . '/assets/css/font-override.css',
+    array('mytheme-tailwind'),
+    file_exists($font_override_path) ? filemtime($font_override_path) : $theme_version
+  );
+
+  // Last possible CSS on the page so Noto Sans CJK JP always wins, no matter what style.css or WordPress injects.
+  add_action('wp_footer', function () {
+    echo '<style id="mytheme-font-force">html,body{font-family:"Noto Sans CJK JP","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif!important}</style>';
+  }, 9999);
+
+  /**
    * Main JS (bundled)
    */
   $bundle_js_path = get_template_directory() . '/assets/js/bundle.js';

@@ -45,20 +45,37 @@
 				</p>
 			</div>
 
+			<?php
+			$footer_news_url = '';
+			$posts_page_id   = (int) get_option('page_for_posts');
+			if ($posts_page_id) {
+				$footer_news_url = get_permalink($posts_page_id);
+			} else {
+				$footer_news_url = home_url('/news/');
+			}
+			$footer_privacy_url = get_privacy_policy_url();
+			if (! $footer_privacy_url) {
+				$footer_privacy_url = home_url('/privacy-policy/');
+			}
+			?>
 			<div class="flex flex-col items-start lg:items-end">
 				<nav class="footer-nav w-full" aria-label="<?php esc_attr_e('Footer menu', 'mytheme'); ?>">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'footer',
-							'container' => false,
-							'menu_id' => 'footer-menu',
-							'menu_class' => 'footer-menu grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[205px_205px] gap-x-[15px] sm:gap-x-[20px] md:gap-x-[30px] gap-y-[12px] sm:gap-y-[15px] md:gap-y-[20px] text-[13px] sm:text-[13px] md:text-[14px] text-black/70',
-							'walker' => new Mytheme_Walker_Footer_Nav_Menu(),
-							'fallback_cb' => '__return_false',
-						)
-					);
-					?>
+					<ul id="footer-menu" class="footer-menu grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[205px_205px] gap-x-[15px] sm:gap-x-[20px] md:gap-x-[10px] gap-y-[12px] sm:gap-y-[15px] md:gap-y-[20px] text-[13px] sm:text-[13px] md:text-[14px] text-black/70 list-none m-0 p-0">
+						<li class="flex flex-col gap-y-[12px] sm:gap-y-[15px] md:gap-y-[18px] [&>a]:block">
+							<a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('トップページ', 'mytheme'); ?></a>
+							<a href="<?php echo esc_url(home_url('/about/')); ?>"><?php esc_html_e('高橋製作所について', 'mytheme'); ?></a>
+							<a href="<?php echo esc_url(home_url('/product/')); ?>"><?php esc_html_e('制作事例一覧', 'mytheme'); ?></a>
+							<a href="<?php echo esc_url(home_url('/product/?id=existing')); ?>"><?php esc_html_e('既存製品一覧', 'mytheme'); ?></a>
+							<a href="<?php echo esc_url(home_url('/product/?id=order')); ?>"><?php esc_html_e('オーダー製品一覧', 'mytheme'); ?></a>
+							<a href="<?php echo esc_url(home_url('/product/?id=used')); ?>"><?php esc_html_e('中古製品一覧', 'mytheme'); ?></a>
+						</li>
+						<li class="flex flex-col gap-y-[12px] sm:gap-y-[15px] md:gap-y-[18px] [&>a]:block">
+							<a href="<?php echo esc_url($footer_news_url); ?>"><?php esc_html_e('お知らせ', 'mytheme'); ?></a>
+							<a href="<?php echo esc_url(home_url('/support/')); ?>"><?php esc_html_e('サポートについて', 'mytheme'); ?></a>
+							<a href="<?php echo esc_url(home_url('/contact/')); ?>"><?php esc_html_e('お問い合せ', 'mytheme'); ?></a>
+							<a href="<?php echo esc_url($footer_privacy_url); ?>"><?php esc_html_e('プライバシーポリシー', 'mytheme'); ?></a>
+						</li>
+					</ul>
 				</nav>
 			</div>
 		</div>

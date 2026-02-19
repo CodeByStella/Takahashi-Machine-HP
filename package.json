@@ -8,7 +8,9 @@
     "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --watch",
     "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --minify",
     "dev:js": "esbuild ./assets/js/main.js --bundle --format=iife --outfile=./assets/js/bundle.js --sourcemap --watch",
-    "build:js": "esbuild ./assets/js/main.js --bundle --format=iife --outfile=./assets/js/bundle.js --minify"
+    "build:js": "esbuild ./assets/js/main.js --bundle --format=iife --outfile=./assets/js/bundle.js --minify",
+    "copyfonts": "node scripts/copy-ubuntu-fonts.cjs",
+    "postinstall": "node scripts/copy-ubuntu-fonts.cjs"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,8 @@
     "@tailwindcss/cli": "^4.1.18",
     "esbuild": "^0.25.12",
     "tailwindcss": "^4.1.18"
+  },
+  "dependencies": {
+    "@fontsource/ubuntu": "^5.2.8"
   }
 }
