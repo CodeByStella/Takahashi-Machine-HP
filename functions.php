@@ -89,6 +89,35 @@ function mytheme_check_filetype_ico($data, $file, $filename, $mimes)
 }
 add_filter('wp_check_filetype_and_ext', 'mytheme_check_filetype_ico', 10, 4);
 
+/**
+ * Allow image uploads even when the server cannot generate responsive sizes
+ * (e.g. WebP/HEIC, or JPEG/PNG when GD/Imagick fail). The full-size image is
+ * still stored and used; thumbnail/medium/large variants may be missing.
+ * Hook on rest_api_init so we run after plugins and our callback wins.
+ */
+function mytheme_allow_uploads_without_responsive_sizes($prevent, $mime_type = null)
+{
+  return false;
+}
+add_filter('wp_prevent_unsupported_mime_type_uploads', 'mytheme_allow_uploads_without_responsive_sizes', PHP_INT_MAX, 2);
+add_action('rest_api_init', function () {
+  remove_filter('wp_prevent_unsupported_mime_type_uploads', 'mytheme_allow_uploads_without_responsive_sizes', PHP_INT_MAX);
+  add_filter('wp_prevent_unsupported_mime_type_uploads', 'mytheme_allow_uploads_without_responsive_sizes', PHP_INT_MAX, 2);
+}, PHP_INT_MAX);
+
+/**
+ * Allow WebP/AVIF/HEIC in the classic media uploader (plupload); otherwise
+ * the browser blocks them with "cannot generate responsive image sizes".
+ */
+function mytheme_plupload_allow_unsupported_image_types($defaults)
+{
+  $defaults['webp_upload_error'] = false;
+  $defaults['avif_upload_error'] = false;
+  $defaults['heic_upload_error'] = false;
+  return $defaults;
+}
+add_filter('plupload_default_settings', 'mytheme_plupload_allow_unsupported_image_types', 10, 1);
+
 
 /* ======================================================
    Download file (Customizer) — PDF, image, etc.
