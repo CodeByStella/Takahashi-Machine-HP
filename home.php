@@ -96,7 +96,7 @@ if ($filter_category) {
 											<?php echo esc_html($category_name); ?>
 										</span>
 									</div>
-									<span class="min-w-0 flex-1 truncate text-[14px] sm:text-[15px] 2xl:text-[16px] text-primary sm:pl-0">
+									<span class="min-w-0 flex-1 truncate text-[14px] sm:text-[15px] 2xl:text-[16px] text-primary sm:pl-0 font-bold">
 										<?php the_title(); ?>
 									</span>
 								</a>
@@ -112,7 +112,7 @@ if ($filter_category) {
 			</div>
 		</div>
 		<div class="w-full lg:w-[240px] xl:w-[260px] 2xl:w-[280px] flex-shrink-0 order-2">
-			<div class="flex flex-row gap-[10px] 2xl:gap-[12px]">
+			<div class="flex flex-row gap-[10px] 2xl:gap-[12px] flex items-center">
 				<img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"
 					class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] 2xl:w-[30px] 2xl:h-[30px]" />
 				<p class="text-[22px] sm:text-[26px] 2xl:text-[30px] font-bold text-[#6EBA38]">Category</p>
@@ -180,7 +180,7 @@ if ($filter_category) {
 
 			<!-- Archive -->
 			<div class="mt-[28px] sm:mt-[34px] 2xl:mt-[40px] w-full 2xl:w-[280px]">
-				<div class="flex flex-row gap-[10px] 2xl:gap-[12px]">
+				<div class="flex flex-row gap-[10px] 2xl:gap-[12px] flex items-center">
 					<img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"
 						class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] 2xl:w-[30px] 2xl:h-[30px]" />
 					<p class="text-[22px] sm:text-[26px] 2xl:text-[30px] font-bold text-[#6EBA38]">Archive</p>

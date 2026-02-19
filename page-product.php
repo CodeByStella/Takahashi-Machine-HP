@@ -149,11 +149,11 @@ $product_categories_for_filter = array();
           </div>
           <div class="w-full min-w-0">
             <?php if ($card_category) : ?>
-              <div class="text-[11px] sm:text-[12px] text-white bg-secondary px-3 sm:px-4 w-fit">
+              <div class="text-[11px] sm:text-[12px] text-white bg-secondary px-3 sm:px-4 w-fit font-medium">
                 <?php echo esc_html($card_category); ?>
               </div>
             <?php endif; ?>
-            <div class="text-primary text-[18px] sm:text-[20px] md:text-[22px] 2xl:text-[24px] mt-3 2xl:mt-4">
+            <div class="text-primary text-[18px] sm:text-[20px] md:text-[22px] 2xl:text-[24px] mt-3 2xl:mt-4 font-bold">
               <?php echo esc_html($card_title); ?>
             </div>
 
@@ -167,8 +167,8 @@ $product_categories_for_filter = array();
                       $rvalue = isset($row['value']) ? $row['value'] : '';
                       ?>
                       <tr>
-                        <td class="border bg-[#E4F2DA] border-[#8F8D8C] px-3 sm:px-4 py-2 w-[90px] sm:w-[110px] 2xl:w-[140px] whitespace-nowrap"><?php echo esc_html($rlabel); ?></td>
-                        <td class="border border-[#8F8D8C] px-3 sm:px-4 py-2">
+                        <td class="border bg-[#E4F2DA] border-[#8F8D8C] px-3 sm:px-4 py-2 w-[90px] sm:w-[110px] 2xl:w-[140px] whitespace-nowrap font-medium"><?php echo esc_html($rlabel); ?></td>
+                        <td class="border border-[#8F8D8C] px-3 sm:px-4 py-2 font-regular">
                           <?php echo nl2br(esc_html($rvalue)); ?>
                         </td>
                       </tr>
@@ -213,10 +213,10 @@ $movie_query = new WP_Query(array(
 <section id="product-movie-section" class="movie-section pt-[40px] sm:pt-[55px] md:pt-[65px] 2xl:pt-[80px] pb-[60px] sm:pb-[100px] 2xl:pb-[146px] px-4 sm:px-6 md:px-10 lg:px-16 xl:px-[120px] 2xl:px-[200px] relative overflow-hidden">
   <img src="<?php echo esc_url($movie_mesh); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-0 left-1/2 -translate-x-1/2 w-[94%] h-auto object-cover -z-10" />
   <p class="text-[14px] sm:text-[16px] md:text-[18px] 2xl:text-[20px] w-fit gap-[10px] sm:gap-[12px] 2xl:gap-[14px] flex items-center text-secondary">
-    <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] 2xl:w-[30px] 2xl:h-[30px]" />
+    <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] 2xl:w-[30px] 2xl:h-[30px] font-bold" />
     Movie
   </p>
-  <h1 class="text-[24px] sm:text-[30px] md:text-[36px] lg:text-[40px] 2xl:text-[44px] text-primary w-fit mt-3 sm:mt-4 2xl:mt-5">当社製品の稼働中動画</h1>
+  <h1 class="text-[24px] sm:text-[30px] md:text-[36px] lg:text-[40px] 2xl:text-[44px] text-primary w-fit mt-3 sm:mt-4 2xl:mt-5 font-bold">当社製品の稼働中動画</h1>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 sm:gap-y-8 md:gap-y-10 2xl:gap-y-[40px] gap-x-4 sm:gap-x-6 md:gap-x-10 lg:gap-x-12 2xl:gap-x-[75px] mt-[32px] sm:mt-[44px] 2xl:mt-[60px]">
     <?php
     if ($movie_query->have_posts()) :
@@ -249,7 +249,7 @@ $movie_query = new WP_Query(array(
               </span>
             </span>
           </div>
-          <p class="mt-[12px] sm:mt-[14px] 2xl:mt-[18px] text-[14px] sm:text-[16px] 2xl:text-[18px] text-primary -tracking-[0.06em]"><?php the_title(); ?></p>
+          <p class="mt-[12px] sm:mt-[14px] 2xl:mt-[18px] text-[14px] sm:text-[16px] 2xl:text-[18px] text-primary -tracking-[0.06em] font-bold"><?php the_title(); ?></p>
         </a>
     <?php
       endwhile;

@@ -40,4 +40,8 @@ body {
   .font-noto {
     font-family: "Noto Sans CJK JP", sans-serif;
   }
+  /* font-regular = weight 400 (same as font-normal) for small/tip text */
+  .font-regular {
+    font-weight: 400;
+  }
 }

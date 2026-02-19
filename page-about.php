@@ -74,7 +74,7 @@ $strength_item_4 = mytheme_img_asset("about/strength-4");
     Strength
   </p>
   <h2 class="mt-4 sm:mt-4 md:mt-5 text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] 2xl:text-[44px] text-primary w-fit mx-auto text-center font-bold">髙橋の強み</h2>
-  <div class="aspect-[375/200] sm:aspect-[768/250] md:aspect-[1024/280] lg:aspect-[1440/320] 2xl:aspect-[1600/333] relative w-full px-4 sm:px-8 md:px-20 lg:px-30 2xl:px-50 py-4 sm:py-5 md:py-6 flex flex-col justify-center items-start text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] 2xl:text-[36px] text-white mt-[30px] sm:mt-[35px] md:mt-[40px] lg:mt-[45px] 2xl:mt-[50px]">
+  <div class="aspect-[375/200] sm:aspect-[768/250] md:aspect-[1024/280] lg:aspect-[1440/320] 2xl:aspect-[1600/333] relative w-full px-4 sm:px-8 md:px-20 lg:px-30 2xl:px-50 py-4 sm:py-5 md:py-6 flex flex-col justify-center items-start text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] 2xl:text-[36px] text-white mt-[30px] sm:mt-[35px] md:mt-[40px] lg:mt-[45px] 2xl:mt-[50px] font-bold">
     <img src="<?php echo esc_url($strength_bg); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="-z-10 absolute inset-0 h-full w-full object-cover" />
     <p class="leading-tight">
       現場に合わせた<span class="bg-secondary px-1">オーダーメイド</span>の
@@ -115,16 +115,16 @@ $strength_item_4 = mytheme_img_asset("about/strength-4");
         <div class="relative w-full md:w-[380px] lg:w-[450px] 2xl:w-[510px] aspect-[510/357] flex-shrink-0">
           <div class="w-10 sm:w-12 md:w-14 lg:w-15 aspect-square bg-secondary absolute -translate-x-1/2 top-0 -translate-y-1/2 -z-10"></div>
           <img src="<?php echo esc_url($item['image']); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="inset-0 h-full w-full object-cover" />
-          <p class="[writing-mode:vertical-rl] text-secondary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] top-0 left-0 absolute -translate-x-[24px] sm:-translate-x-[30px] md:-translate-x-[36px] translate-y-[30px] sm:translate-y-[35px] md:translate-y-[40px]">
+          <p class="[writing-mode:vertical-rl] text-secondary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] top-0 left-0 absolute -translate-x-[24px] sm:-translate-x-[30px] md:-translate-x-[36px] translate-y-[30px] sm:translate-y-[35px] md:translate-y-[40px] font-bold">
             STRENGTH
           </p>
         </div>
         <div class="w-full md:w-[320px] lg:w-[420px] 2xl:w-[500px]">
-          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] -ml-[20px] sm:-ml-[26px] md:-ml-[30px] 2xl:-ml-[34px] -mt-[20px] sm:-mt-[28px] md:-mt-[34px] 2xl:-mt-[38px]"><?php echo esc_html(sprintf('%02d', $index + 1)); ?></h1>
-          <p class="text-primary text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] 2xl:text-[25px] -tracking-[0.12em] mt-5 sm:mt-6 md:mt-7 2xl:mt-8 font-bold">
+          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] -ml-[20px] sm:-ml-[26px] md:-ml-[30px] 2xl:-ml-[34px] -mt-[20px] sm:-mt-[28px] md:-mt-[34px] 2xl:-mt-[38px] font-bold"><?php echo esc_html(sprintf('%02d', $index + 1)); ?></h1>
+          <p class="text-primary text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] 2xl:text-[25px] mt-5 sm:mt-6 md:mt-7 2xl:mt-8 font-bold">
             <?php echo wp_kses($item['title'], array('br' => array())); ?>
           </p>
-          <p class="text-primary text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] 2xl:text-[18px] opacity-70 mt-[40px] sm:mt-[48px] md:mt-[56px] 2xl:mt-[64px] -tracking-[0.06em] font-medium"><?php echo esc_html($item['body']); ?></p>
+          <p class="text-primary text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] 2xl:text-[18px] opacity-70 mt-[40px] sm:mt-[48px] md:mt-[56px] 2xl:mt-[64px] -tracking-[0.06em] font-regular"><?php echo esc_html($item['body']); ?></p>
         </div>
       </div>
     <?php endforeach; ?>
@@ -173,14 +173,14 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
     <img src="<?php echo esc_url($flow_decoration_2); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute translate-x-1/2 right-[10%] w-[260px] sm:w-[320px] md:w-[360px] lg:w-[390px] 2xl:w-[424px] h-auto " />
   </div>
   <div class="w-full sm:w-[90%] md:w-[85%] lg:w-[80%] 2xl:w-[75%] mx-auto relative">
-    <p class="text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] w-fit gap-[10px] sm:gap-[12px] md:gap-[14px] flex text-secondary items-center">
-      <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] 2xl:w-[30px] 2xl:h-[30px]" />
+    <p class="text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] w-fit gap-[10px] sm:gap-[12px] md:gap-[14px] flex text-secondary items-center font-bold">
+      <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] 2xl:w-[30px] 2xl:h-[30px] " />
       Flow
     </p>
     <h1 class="mt-4 sm:mt-5 md:mt-6 text-primary text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] 2xl:text-[44px] font-bold">
       製作の流れ
     </h1>
-    <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] mt-6 sm:mt-7 md:mt-8 2xl:mt-9 leading-relaxed font-medium">
+    <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] mt-6 sm:mt-7 md:mt-8 2xl:mt-9 leading-relaxed font-regular">
       「こうしたい」というイメージから、<br />
       お客様の現場やご要望に合わせた機械づくりを行います。<br />
       ゼロから製作することも可能ですし、既製品をセミオーダーで<br class="hidden sm:inline" />
@@ -193,7 +193,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <img src="<?php echo esc_url($flow_item_1); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[150px] sm:w-[170px] md:w-[200px] lg:w-[225px] 2xl:w-[250px] h-auto object-cover bottom-0 left-[20px] sm:left-[24px] md:left-[26px] lg:left-[28px] 2xl:left-[30px]" />
           <div class="w-[8px] sm:w-[9px] md:w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] bottom-[40px] sm:bottom-[48px] md:bottom-[52px] lg:bottom-[55px] 2xl:bottom-[57px] translate-x-1/2"></div>
           <div class="w-[2px] h-[40px] sm:h-[48px] md:h-[52px] lg:h-[55px] 2xl:h-[57px] bg-primary absolute -right-[2px] bottom-0"></div>
-          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-16 sm:bottom-20 md:bottom-22 lg:bottom-23 2xl:bottom-24 right-0 translate-x-1/2">01</h1>
+          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-16 sm:bottom-20 md:bottom-22 lg:bottom-23 2xl:bottom-24 right-0 translate-x-1/2 font-bold font-bold">01</h1>
         </div>
         <div class="h-full md:pl-[40px] lg:pl-[54px] 2xl:pl-[68px]">
           <div class="flex items-start gap-4 mb-4 md:hidden">
@@ -205,7 +205,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <p class="text-primary text-[18px] sm:text-[20px] md:text-[22px] lg:text-[23px] 2xl:text-[24px] -tracking-[0.12em] mt-0 md:mt-16 lg:mt-20 2xl:mt-22 font-bold">
             お問い合わせ・お聞き取り
           </p>
-          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed font-medium">
+          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed font-regular">
             メール・FAX・電話でお問い合せください。<br />
             ご希望の機械概要（⼨法・形状・材料など）やイメージ画像などがあればお⾒せください。
           </p>
@@ -221,7 +221,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <div class="w-[2px] h-[60px] sm:h-[70px] md:h-[76px] lg:h-[82px] 2xl:h-[90px] bg-primary absolute right-0 top-0"></div>
           <div class="w-[8px] sm:w-[9px] md:w-[10px] aspect-square rounded-full bg-primary absolute right-[1px] bottom-[80px] sm:bottom-[95px] md:bottom-[100px] lg:bottom-[110px] 2xl:bottom-[120px] translate-x-1/2"></div>
           <div class="w-[2px] h-[80px] sm:h-[95px] md:h-[100px] lg:h-[110px] 2xl:h-[120px] bg-primary absolute right-0 bottom-0"></div>
-          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-32 sm:bottom-36 md:bottom-37 lg:bottom-38 2xl:bottom-39 right-0 translate-x-0 md:translate-x-1/2">02</h1>
+          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-32 sm:bottom-36 md:bottom-37 lg:bottom-38 2xl:bottom-39 right-0 translate-x-0 md:translate-x-1/2 font-bold">02</h1>
         </div>
         <div class="h-full md:pl-[40px] lg:pl-[54px] 2xl:pl-[68px] mt-0 md:mt-0">
           <div class="flex items-start gap-4 mb-4 md:hidden">
@@ -233,7 +233,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <p class="text-primary text-[18px] sm:text-[20px] md:text-[22px] lg:text-[23px] 2xl:text-[24px] -tracking-[0.12em] mt-0 md:mt-28 lg:mt-32 2xl:mt-34 font-bold">
             概算・お⾒積もりの提出
           </p>
-          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.08em] leading-relaxed font-medium">
+          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.08em] leading-relaxed font-regular">
             ラフスケッチと概算⾒積をお伝えします。
           </p>
         </div>
@@ -248,7 +248,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <div class="w-[2px] h-[40px] sm:h-[48px] md:h-[52px] lg:h-[55px] 2xl:h-[57px] bg-primary absolute -right-[2px] top-0"></div>
           <div class="w-[8px] sm:w-[9px] md:w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] bottom-[40px] sm:bottom-[48px] md:bottom-[52px] lg:bottom-[55px] 2xl:bottom-[57px] translate-x-1/2"></div>
           <div class="w-[2px] h-[40px] sm:h-[48px] md:h-[52px] lg:h-[55px] 2xl:h-[57px] bg-primary absolute -right-[2px] bottom-0"></div>
-          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-16 sm:bottom-20 md:bottom-22 lg:bottom-23 2xl:bottom-24 right-0 translate-x-1/2">03</h1>
+          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-16 sm:bottom-20 md:bottom-22 lg:bottom-23 2xl:bottom-24 right-0 translate-x-1/2 font-bold">03</h1>
         </div>
         <div class="h-full md:pl-[40px] lg:pl-[54px] 2xl:pl-[68px]">
           <div class="flex items-start gap-4 mb-4 md:hidden">
@@ -260,7 +260,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <p class="text-primary text-[18px] sm:text-[20px] md:text-[22px] lg:text-[23px] 2xl:text-[24px] -tracking-[0.12em] mt-0 md:mt-16 lg:mt-20 2xl:mt-22 font-bold">
             お打合せ
           </p>
-          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed font-medium">
+          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed font-regular">
             詳細と仕上材を打合せで決定後、正式なお⾒積りを提出します。
           </p>
         </div>
@@ -274,7 +274,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <div class="w-[2px] h-[60px] sm:h-[70px] md:h-[76px] lg:h-[82px] 2xl:h-[90px] bg-primary absolute right-0 top-0"></div>
           <div class="w-[8px] sm:w-[9px] md:w-[10px] aspect-square rounded-full bg-primary absolute right-[1px] bottom-[80px] sm:bottom-[95px] md:bottom-[100px] lg:bottom-[110px] 2xl:bottom-[120px] translate-x-1/2"></div>
           <div class="w-[2px] h-[80px] sm:h-[95px] md:h-[100px] lg:h-[110px] 2xl:h-[120px] bg-primary absolute right-0 bottom-0"></div>
-          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-32 sm:bottom-36 md:bottom-37 lg:bottom-38 2xl:bottom-39 right-0 translate-x-0 md:translate-x-1/2">04</h1>
+          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-32 sm:bottom-36 md:bottom-37 lg:bottom-38 2xl:bottom-39 right-0 translate-x-0 md:translate-x-1/2 font-bold">04</h1>
         </div>
         <div class="h-full md:pl-[40px] lg:pl-[54px] 2xl:pl-[68px] w-auto min-w-0 flex-1 mt-0 md:mt-0">
           <div class="flex items-start gap-4 mb-4 md:hidden">
@@ -286,7 +286,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <p class="text-primary text-[18px] sm:text-[20px] md:text-[22px] lg:text-[23px] 2xl:text-[24px] -tracking-[0.12em] mt-0 md:mt-28 lg:mt-32 2xl:mt-34 font-bold">
             最終確認・発注
           </p>
-          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.06em] break-words leading-relaxed font-medium">
+          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.06em] break-words leading-relaxed font-regular">
             最終確認として図⾯・⼨法・材料・⾊・形状・納期のご確認をしてもらい、注⽂書を作成して正式発注となります。
           </p>
         </div>
@@ -301,7 +301,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <div class="w-[2px] h-[40px] sm:h-[48px] md:h-[52px] lg:h-[55px] 2xl:h-[57px] bg-primary absolute -right-[2px] top-0"></div>
           <div class="w-[8px] sm:w-[9px] md:w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] bottom-[40px] sm:bottom-[48px] md:bottom-[52px] lg:bottom-[55px] 2xl:bottom-[57px] translate-x-1/2"></div>
           <div class="w-[2px] h-[40px] sm:h-[48px] md:h-[52px] lg:h-[55px] 2xl:h-[57px] bg-primary absolute -right-[2px] bottom-0"></div>
-          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-16 sm:bottom-20 md:bottom-22 lg:bottom-23 2xl:bottom-24 right-0 translate-x-1/2">05</h1>
+          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-16 sm:bottom-20 md:bottom-22 lg:bottom-23 2xl:bottom-24 right-0 translate-x-1/2 font-bold">05</h1>
         </div>
         <div class="h-full md:pl-[40px] lg:pl-[54px] 2xl:pl-[68px]">
           <div class="flex items-start gap-4 mb-4 md:hidden">
@@ -313,7 +313,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <p class="text-primary text-[18px] sm:text-[20px] md:text-[22px] lg:text-[23px] 2xl:text-[24px] -tracking-[0.12em] mt-0 md:mt-16 lg:mt-20 2xl:mt-22 font-bold">
             製作
           </p>
-          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed font-medium">
+          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed font-regular">
             製作に取りかかります。
           </p>
         </div>
@@ -327,7 +327,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <div class="w-[2px] h-[60px] sm:h-[70px] md:h-[76px] lg:h-[82px] 2xl:h-[90px] bg-primary absolute right-0 top-0"></div>
           <div class="w-[8px] sm:w-[9px] md:w-[10px] aspect-square rounded-full bg-primary absolute right-[1px] bottom-[80px] sm:bottom-[95px] md:bottom-[100px] lg:bottom-[110px] 2xl:bottom-[120px] translate-x-1/2"></div>
           <div class="w-[2px] h-[80px] sm:h-[95px] md:h-[100px] lg:h-[110px] 2xl:h-[120px] bg-primary absolute right-0 bottom-0"></div>
-          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-32 sm:bottom-36 md:bottom-37 lg:bottom-38 2xl:bottom-39 right-0 translate-x-0 md:translate-x-1/2">06</h1>
+          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-32 sm:bottom-36 md:bottom-37 lg:bottom-38 2xl:bottom-39 right-0 translate-x-0 md:translate-x-1/2 font-bold">06</h1>
         </div>
         <div class="h-full md:pl-[40px] lg:pl-[54px] 2xl:pl-[68px] w-auto min-w-0 flex-1 mt-0 md:mt-0">
           <div class="flex items-start gap-4 mb-4 md:hidden">
@@ -339,7 +339,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <p class="text-primary text-[18px] sm:text-[20px] md:text-[22px] lg:text-[23px] 2xl:text-[24px] -tracking-[0.12em] mt-0 md:mt-28 lg:mt-32 2xl:mt-34 font-bold">
             製品の発送・納品
           </p>
-          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.06em] break-words leading-relaxed font-medium">
+          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.06em] break-words leading-relaxed font-regular">
             単品機械の場合、梱包して運送会社で送れる物は全国対応致します。<br />
             弊社規定の地域は直接納品致します。
           </p>
@@ -354,7 +354,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <img src="<?php echo esc_url($flow_item_7); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute w-[150px] sm:w-[170px] md:w-[200px] lg:w-[225px] 2xl:w-[250px] h-auto object-cover bottom-0 left-[20px] sm:left-[24px] md:left-[26px] lg:left-[28px] 2xl:left-[30px]" />
           <div class="w-[8px] sm:w-[9px] md:w-[10px] aspect-square rounded-full bg-primary absolute -right-[1px] top-[40px] sm:top-[48px] md:top-[52px] lg:top-[55px] 2xl:top-[57px] translate-x-1/2"></div>
           <div class="w-[2px] h-[40px] sm:h-[48px] md:h-[52px] lg:h-[55px] 2xl:h-[57px] bg-primary absolute -right-[2px] top-0"></div>
-          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-16 sm:bottom-20 md:bottom-22 lg:bottom-23 2xl:bottom-24 right-0 translate-x-1/2">07</h1>
+          <h1 class="text-secondary text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] 2xl:text-[60px] leading-[1] absolute bottom-16 sm:bottom-20 md:bottom-22 lg:bottom-23 2xl:bottom-24 right-0 translate-x-1/2 font-bold">07</h1>
         </div>
         <div class="h-full md:pl-[40px] lg:pl-[54px] 2xl:pl-[68px]">
           <div class="flex items-start gap-4 mb-4 md:hidden">
@@ -366,7 +366,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
           <p class="text-primary text-[18px] sm:text-[20px] md:text-[22px] lg:text-[23px] 2xl:text-[24px] -tracking-[0.12em] mt-0 md:mt-16 lg:mt-20 2xl:mt-22 font-bold">
             納品・アフターサービス
           </p>
-          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed font-medium">
+          <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed font-regular">
             設置後、納品完了となります。<br />
             また、納品後のメンテナンスや修理もお受けしております。
           </p>
@@ -387,8 +387,8 @@ $business_item_2 = mytheme_img_asset('about/business-2');
 $business_item_3 = mytheme_img_asset('about/business-3');
 ?>
 <section id="about-business" class="business-section px-4 sm:px-6 md:px-8 lg:px-0">
-  <p class="text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] w-fit gap-[10px] sm:gap-[12px] md:gap-[14px] flex mx-auto text-secondary items-center font-medium">
-    <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] 2xl:w-[30px] 2xl:h-[30px]" />
+  <p class="text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] w-fit gap-[10px] sm:gap-[12px] md:gap-[14px] flex mx-auto text-secondary items-center font-bold">
+    <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] 2xl:w-[30px] 2xl:h-[30px] " />
     Business
   </p>
   <h1 class="mx-auto w-fit text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] 2xl:text-[44px] text-primary text-center mt-4 sm:mt-4 md:mt-5 font-bold">
@@ -399,19 +399,19 @@ $business_item_3 = mytheme_img_asset('about/business-3');
       <div class="w-10 sm:w-12 md:w-14 lg:w-15 aspect-square bg-secondary absolute -translate-x-1/2 top-0 -translate-y-1/2 -z-10"></div>
       <img src="<?php echo esc_url($business_item_1); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="h-auto w-full object-cover aspect-[340/238]" />
       <p class="text-[22px] sm:text-[24px] md:text-[25px] lg:text-[27px] 2xl:text-[28px] mt-[16px] sm:mt-[18px] md:mt-[20px] lg:mt-[22px] 2xl:mt-[23px] w-full text-center -tracking-[0.06em] font-bold">既製品販売</p>
-      <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-[14px] sm:mt-[16px] 2xl:mt-[18px] w-full text-left -tracking-[0.06em] leading-relaxed font-medium">⼩⼝から⼤⼝まで、スペースを考慮した様々な製品を取り揃え、全国の⼯場で幅広くご愛⽤頂いております。</p>
+      <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-[14px] sm:mt-[16px] 2xl:mt-[18px] w-full text-left -tracking-[0.06em] leading-relaxed font-regular">⼩⼝から⼤⼝まで、スペースを考慮した様々な製品を取り揃え、全国の⼯場で幅広くご愛⽤頂いております。</p>
     </div>
     <div class="relative flex flex-col w-full sm:w-[280px] md:w-[240px] lg:w-[300px] 2xl:w-[340px]">
       <div class="w-10 sm:w-12 md:w-14 lg:w-15 aspect-square bg-secondary absolute -translate-x-1/2 top-0 -translate-y-1/2 -z-10"></div>
       <img src="<?php echo esc_url($business_item_2); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="h-auto w-full object-cover aspect-[340/238]" />
       <p class="text-[22px] sm:text-[24px] md:text-[25px] lg:text-[27px] 2xl:text-[28px] mt-[16px] sm:mt-[18px] md:mt-[20px] lg:mt-[22px] 2xl:mt-[23px] w-full text-center -tracking-[0.06em] font-bold">オリジナルオーダー</p>
-      <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-[14px] sm:mt-[16px] 2xl:mt-[18px] w-full text-left -tracking-[0.06em] leading-relaxed font-medium">ダンボールパレットプレス機、ダンボールフスマ断裁機、トムソンカス取り機等、必要な⽤途に応じて製作させていただきます。</p>
+      <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-[14px] sm:mt-[16px] 2xl:mt-[18px] w-full text-left -tracking-[0.06em] leading-relaxed font-regular">ダンボールパレットプレス機、ダンボールフスマ断裁機、トムソンカス取り機等、必要な⽤途に応じて製作させていただきます。</p>
     </div>
     <div class="relative flex flex-col w-full sm:w-[280px] md:w-[240px] lg:w-[300px] 2xl:w-[340px] sm:col-span-2 sm:mx-auto md:col-span-1">
       <div class="w-10 sm:w-12 md:w-14 lg:w-15 aspect-square bg-secondary absolute -translate-x-1/2 top-0 -translate-y-1/2 -z-10"></div>
       <img src="<?php echo esc_url($business_item_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="h-auto w-full object-cover aspect-[340/238]" />
       <p class="text-[22px] sm:text-[24px] md:text-[25px] lg:text-[27px] 2xl:text-[28px] mt-[16px] sm:mt-[18px] md:mt-[20px] lg:mt-[22px] 2xl:mt-[23px] w-full text-center -tracking-[0.06em] font-bold">中古品販売</p>
-      <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-[14px] sm:mt-[16px] 2xl:mt-[18px] w-full text-left -tracking-[0.06em] leading-relaxed font-medium">⾮常に良質な中古機器をご提供することにより、ランニングコストやメンテナンス等、コスト対策に貢献致します。</p>
+      <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-70 mt-[14px] sm:mt-[16px] 2xl:mt-[18px] w-full text-left -tracking-[0.06em] leading-relaxed font-regular">⾮常に良質な中古機器をご提供することにより、ランニングコストやメンテナンス等、コスト対策に貢献致します。</p>
     </div>
   </div>
 
@@ -426,7 +426,7 @@ $company = mytheme_img_asset('about/company');
 <section id="about-company" class="company-section mt-[60px] sm:mt-[70px] md:mt-[85px] lg:mt-[95px] 2xl:mt-[105px] px-4 sm:px-6 md:px-8 lg:px-0">
   <div class="relative pt-20 sm:pt-24 md:pt-26 lg:pt-28 2xl:pt-30 pb-[60px] sm:pb-[75px] md:pb-[90px] lg:pb-[100px] 2xl:pb-[110px] w-full h-[200px] sm:h-[240px] md:h-[280px] lg:h-[310px] 2xl:h-[338px]">
     <img src="<?php echo esc_url($company_bg); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="-z-10 absolute top-0 left-0 w-full h-full object-cover" />
-    <p class="text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] w-fit gap-[10px] sm:gap-[12px] md:gap-[14px] flex mx-auto text-secondary items-center font-medium">
+    <p class="text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] w-fit gap-[10px] sm:gap-[12px] md:gap-[14px] flex mx-auto text-secondary items-center font-bold">
       <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] 2xl:w-[30px] 2xl:h-[30px]" />
       Company
     </p>
@@ -436,16 +436,16 @@ $company = mytheme_img_asset('about/company');
   </div>
   <div class="w-full sm:w-[90%] md:w-[85%] lg:w-[80%] 2xl:w-[75%] mx-auto">
     <h2 class="text-primary text-[22px] sm:text-[24px] md:text-[26px] 2xl:text-[28px] relative mt-[50px] sm:mt-[60px] md:mt-[70px] lg:mt-[80px] 2xl:mt-[87px]  pl-5 sm:pl-0 font-bold">
-      <div class="bg-secondary w-4 sm:w-4 md:w-5 aspect-square absolute -translate-x-5 sm:-translate-x-5 md:-translate-x-6 top-0 -translate-y-1/2 -z-10"></div>
+      <div class="bg-secondary w-4 sm:w-4 md:w-5 aspect-square absolute -translate-x-5 sm:-translate-x-5 md:-translate-x-6 top-0 -translate-y-1/2 -z-10 font-bold"></div>
       ご挨拶
     </h2>
-    <p class="text-primary text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] 2xl:text-[18px] mt-[24px] sm:mt-[28px] md:mt-[34px] 2xl:mt-[40px] -tracking-[0.06em] leading-relaxed font-medium">
+    <p class="text-primary text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] 2xl:text-[18px] mt-[24px] sm:mt-[28px] md:mt-[34px] 2xl:mt-[40px] -tracking-[0.06em] leading-relaxed font-regular">
       弊社は創業以来ダンボール機械の製造、販売、設計を⼿掛けてまいりました。<br />
       今現在、⼿掛けている機械はもちろんのこと、お客差のご要望に応じた製品や、これから必要であろう新しい製品の設計製作をすることを⽇頃から考え取り組んだ製品作りを⾏っています。<br />
       また、⾃社、他社製品、⼟、⽇、祭⽇問わずアフターサービスにも努めております。<br />
     </p>
     <h2 class="text-primary text-[22px] sm:text-[24px] md:text-[26px] 2xl:text-[28px] relative mt-[55px] sm:mt-[65px] md:mt-[76px] lg:mt-[86px] 2xl:mt-[96px] pl-5 sm:pl-0 font-bold">
-      <div class="bg-secondary w-4 sm:w-4 md:w-5 aspect-square absolute -translate-x-5 sm:-translate-x-5 md:-translate-x-6 top-0 -translate-y-1/2 -z-10"></div>
+      <div class="bg-secondary w-4 sm:w-4 md:w-5 aspect-square absolute -translate-x-5 sm:-translate-x-5 md:-translate-x-6 top-0 -translate-y-1/2 -z-10 font-bold"></div>
       会社概要
     </h2>
     <?php
@@ -516,7 +516,7 @@ $company = mytheme_img_asset('about/company');
                 <td class="w-[100px] sm:w-[120px] md:w-[140px] lg:w-[150px] 2xl:w-[170px] whitespace-nowrap pt-2 pb-3 sm:pb-4 align-top font-medium">
                   <?php echo esc_html($row['label']); ?>
                 </td>
-                <td class="pt-2 pb-3 sm:pb-4 align-top leading-[1.7] sm:leading-[1.8]">
+                <td class="pt-2 pb-3 sm:pb-4 align-top leading-[1.7] sm:leading-[1.8] font-regular">
                   <?php if (is_array($row['value'])) : ?>
                     <?php foreach ($row['value'] as $line_index => $line) : ?>
                       <?php if ($line_index > 0) : ?><br><?php endif; ?>
@@ -538,7 +538,7 @@ $company = mytheme_img_asset('about/company');
       </div>
     </div>
     <h2 class="text-primary text-[22px] sm:text-[24px] md:text-[26px] 2xl:text-[28px] relative mt-[55px] sm:mt-[65px] md:mt-[76px] lg:mt-[86px] 2xl:mt-[96px]  pl-5 sm:pl-0 font-bold">
-      <div class="bg-secondary w-4 sm:w-4 md:w-5 aspect-square absolute -translate-x-5 sm:-translate-x-5 md:-translate-x-6 top-0 -translate-y-1/2 -z-10"></div>
+      <div class="bg-secondary w-4 sm:w-4 md:w-5 aspect-square absolute -translate-x-5 sm:-translate-x-5 md:-translate-x-6 top-0 -translate-y-1/2 -z-10 font-bold"></div>
       アクセス
     </h2>
     <div class="w-full aspect-[375/250] sm:aspect-[768/300] md:aspect-[1024/320] lg:aspect-[115/30] mt-[30px] sm:mt-[35px] md:mt-[40px] 2xl:mt-[45px] relative">
@@ -551,7 +551,7 @@ $company = mytheme_img_asset('about/company');
         allowfullscreen>
       </iframe>
       <a
-        class="absolute right-0 sm:right-2 md:right-0 -bottom-16 sm:-bottom-18 md:-bottom-20 2xl:-bottom-22 inline-flex items-center justify-center bg-secondary !text-white text-[12px] sm:text-[13px] md:text-[14px] px-6 sm:px-7 md:px-8 2xl:px-9 py-[8px] sm:py-[9px] md:py-[10px] rounded-[20px] leading-[1.2] z-10 hover:bg-opacity-90 transition-all"
+        class="absolute right-0 sm:right-2 md:right-0 -bottom-16 sm:-bottom-18 md:-bottom-20 2xl:-bottom-22 inline-flex items-center justify-center bg-secondary !text-white text-[12px] sm:text-[13px] md:text-[14px] px-6 sm:px-7 md:px-8 2xl:px-9 py-[8px] sm:py-[9px] md:py-[10px] rounded-[20px] leading-[1.2] z-10 hover:bg-opacity-90 transition-all font-medium"
         href="https://www.google.com/maps?q=%E3%80%92578-0983+%E5%A4%A7%E9%98%AA%E5%BA%9C%E6%9D%B1%E5%A4%A7%E9%98%AA%E5%B8%82%E5%90%89%E7%94%B0%E4%B8%8B%E5%B3%B614-25"
         target="_blank"
         rel="noopener noreferrer">
@@ -563,19 +563,19 @@ $company = mytheme_img_asset('about/company');
       <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-[300px] sm:top-[350px] md:top-[390px] lg:top-[420px] 2xl:top-[445px] translate-x-1/2 -right-[0%] w-[120px] sm:w-[150px] md:w-[180px] lg:w-[190px] 2xl:w-[200px] h-auto -z-10 hidden md:block" />
       <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-[210px] sm:top-[245px] md:top-[275px] lg:top-[295px] 2xl:top-[315px] translate-x-1/2 -right-[10%] w-[120px] sm:w-[150px] md:w-[180px] lg:w-[190px] 2xl:w-[200px] h-auto hidden md:block" />
       <img src="<?php echo esc_url($flow_decoration_3); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="absolute top-[210px] sm:top-[245px] md:top-[275px] lg:top-[295px] 2xl:top-[315px] translate-x-1/2 right-[10%] w-[120px] sm:w-[150px] md:w-[180px] lg:w-[190px] 2xl:w-[200px] h-auto hidden md:block" />
-      <h2 class="text-secondary text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] pl-[30px] sm:pl-[40px] md:pl-[48px] 2xl:pl-[55px] mt-[40px] sm:mt-[48px] md:mt-[54px] 2xl:mt-[60px]">所在地</h2>
-      <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed">
+      <h2 class="text-secondary text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] pl-[30px] sm:pl-[40px] md:pl-[48px] 2xl:pl-[55px] mt-[40px] sm:mt-[48px] md:mt-[54px] 2xl:mt-[60px] font-bold">所在地</h2>
+      <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed font-regular">
         〒578-0983　大阪府東大阪市吉田下島14番25号<br>
         TEL：072-961-9975<br>
       </p>
-      <h2 class="text-secondary text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] pl-[30px] sm:pl-[40px] md:pl-[48px] 2xl:pl-[55px] mt-[34px] sm:mt-[38px] md:mt-[42px] 2xl:mt-[44px]">電⾞でお越しの場合</h2>
-      <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed">
+      <h2 class="text-secondary text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] pl-[30px] sm:pl-[40px] md:pl-[48px] 2xl:pl-[55px] mt-[34px] sm:mt-[38px] md:mt-[42px] 2xl:mt-[44px] font-bold">電⾞でお越しの場合</h2>
+      <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed font-regular">
         新⼤阪駅・⼤阪駅から<br>
         地下鉄御堂筋線、中百⾆⿃⽅⾯⾏きに乗り「本町駅」下⾞<br>
         地下鉄中央線、⽣駒⽅⾯に乗り換え「吉⽥駅」で下⾞
       </p>
-      <h2 class="text-secondary text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] pl-[30px] sm:pl-[40px] md:pl-[48px] 2xl:pl-[55px] mt-[34px] sm:mt-[38px] md:mt-[42px] 2xl:mt-[44px]">⾞でお越しの場合</h2>
-      <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed">
+      <h2 class="text-secondary text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] 2xl:text-[20px] pl-[30px] sm:pl-[40px] md:pl-[48px] 2xl:pl-[55px] mt-[34px] sm:mt-[38px] md:mt-[42px] 2xl:mt-[44px] font-bold">⾞でお越しの場合</h2>
+      <p class="text-primary text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] mt-3 md:mt-4 -tracking-[0.06em] leading-relaxed font-regular">
         阪神⾼速 東⼤阪線 中野I.Cより5分
       </p>
     </div>

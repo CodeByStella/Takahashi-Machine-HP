@@ -50,7 +50,7 @@ $ancill_decoration = mytheme_img_asset('support/ancill-decoration');
   </div>
 
   <p class="text-[14px] sm:text-[16px] md:text-[18px] 2xl:text-[20px] w-fit gap-[10px] sm:gap-[12px] 2xl:gap-[14px] flex text-secondary items-center font-medium">
-    <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] 2xl:w-[30px] 2xl:h-[30px]" />
+    <img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-[22px] h-[22px] sm:w-[26px] sm:h-[26px] 2xl:w-[30px] 2xl:h-[30px] font-bold" />
     Ancillary construction
   </p>
   <h2 class="mt-3 sm:mt-4 2xl:mt-5 text-[24px] sm:text-[28px] md:text-[34px] lg:text-[40px] 2xl:text-[44px] text-primary w-fit tracking-[-0.06em] font-bold">付帯工事、メンテナンス</h2>
@@ -107,7 +107,7 @@ $maintenance_example = mytheme_img_asset('support/maintenance-example');
 ?>
 <section class="">
   <div class="w-full pt-[32px] sm:pt-[44px] md:pt-[56px] 2xl:pt-[68px] pb-[32px] sm:pb-[44px] md:pb-[52px] 2xl:pb-[61px] bg-[#E4F2D9] px-4 sm:px-6 md:px-8">
-    <h2 class="text-[22px] sm:text-[28px] md:text-[36px] lg:text-[42px] 2xl:text-[47px] text-primary text-center w-full max-w-[320px] sm:max-w-none mx-auto -tracking-[0.06em] font-bold">メンテナンスBefore Afterの工事内容について</h2>
+    <h2 class="text-[22px] sm:text-[28px] md:text-[36px] lg:text-[42px] 2xl:text-[47px] text-primary text-center w-full max-w-[320px] sm:max-w-none mx-auto -tracking-[0.06em] font-medium">メンテナンスBefore Afterの工事内容について</h2>
     <div class="flex flex-col sm:flex-row gap-4 sm:gap-[14px] md:gap-[18px] 2xl:gap-[22px] justify-center w-full max-w-[320px] sm:max-w-none mx-auto mt-[32px] sm:mt-[44px] md:mt-[56px] 2xl:mt-[68px]">
       <div class="w-full sm:w-[180px] md:w-[260px] lg:w-[340px] 2xl:w-[411px]">
         <img src="<?php echo esc_url($maintenance_1) ?>" class="w-full aspect-[411/317]" alt="<?php echo esc_attr(get_the_title()) ?>" />
@@ -156,19 +156,19 @@ $maintenance_example = mytheme_img_asset('support/maintenance-example');
         <div class="w-full py-[28px] sm:py-[40px] 2xl:py-[58px] border-b border-[#707070] flex flex-col md:flex-row gap-6 md:gap-[32px] 2xl:gap-[46px]<?php echo $maintenance_index === 0 ? ' border-t' : ''; ?>">
           <div class="w-full min-w-0">
             <h2 class="text-[18px] sm:text-[22px] md:text-[25px] 2xl:text-[28px] text-secondary w-fit -tracking-[0.06em] mt-0 2xl:mt-[20px] font-bold"><?php echo esc_html($case_title); ?></h2>
-            <p class="text-[13px] sm:text-[14px] 2xl:text-[16px] text-primary w-full -tracking-[0.08em] mt-[16px] sm:mt-[24px] 2xl:mt-[35px] font-medium">
+            <p class="text-[13px] sm:text-[14px] 2xl:text-[16px] text-primary w-full -tracking-[0.08em] mt-[16px] sm:mt-[24px] 2xl:mt-[35px] font-regular">
               <?php echo esc_html($case_text); ?>
             </p>
           </div>
           <div class="w-full md:w-fit flex flex-row md:flex-col gap-2 md:gap-3 2xl:gap-0 flex-shrink-0">
             <div class="flex-1 min-w-0 md:flex-none md:w-[200px] lg:w-[220px] 2xl:w-[250px] aspect-[250/163] relative overflow-hidden">
-              <div class="absolute top-0 left-0 bg-white text-primary px-4 sm:px-6 2xl:px-9 text-[11px] sm:text-[12px] 2xl:text-[13px] z-10 font-regular">
+              <div class="absolute top-0 left-0 bg-white text-primary px-4 sm:px-6 2xl:px-9 text-[11px] sm:text-[12px] 2xl:text-[13px] z-10 font-medium">
                 before
               </div>
               <img src="<?php echo esc_url($before_url); ?>" class="w-full h-full object-cover absolute inset-0" alt="<?php echo esc_attr($case_title); ?>" />
             </div>
             <div class="flex-1 min-w-0 md:flex-none md:w-[200px] lg:w-[220px] 2xl:w-[250px] aspect-[250/163] relative overflow-hidden">
-              <div class="absolute top-0 left-0 bg-white text-primary px-4 sm:px-6 2xl:px-9 text-[11px] sm:text-[12px] 2xl:text-[13px] z-10 font-regular">
+              <div class="absolute top-0 left-0 bg-white text-primary px-4 sm:px-6 2xl:px-9 text-[11px] sm:text-[12px] 2xl:text-[13px] z-10 font-medium">
                 after
               </div>
               <img src="<?php echo esc_url($after_url); ?>" class="w-full h-full object-cover absolute inset-0" alt="<?php echo esc_attr($case_title); ?>" />
