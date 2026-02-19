@@ -31,9 +31,9 @@ $articles = isset($args['articles']) && is_array($args['articles']) ? $args['art
 							<img class="h-full w-full object-cover" src="<?php echo esc_url($image); ?>" alt="" loading="lazy">
 						</div>
 						<div class="p-[20px] sm:p-[24px] md:p-[28px_30px_40px]">
-							<h3 class="mb-[12px] sm:mb-[14px] md:mb-[16px] text-[16px] sm:text-[18px] md:text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a]"><?php echo esc_html($title); ?></h3>
-							<p class="mb-[18px] sm:mb-[22px] md:mb-[25px] text-[11px] sm:text-[11px] md:text-[12px] text-[rgba(31,28,26,0.55)]"><?php echo esc_html($location); ?></p>
-							<span class="inline-flex h-[18px] sm:h-[19px] md:h-[20px] items-center bg-[#6eba38] px-[8px] sm:px-[9px] md:px-[10px] text-[11px] sm:text-[11px] md:text-[12px] font-bold text-white"><?php echo esc_html($tag); ?></span>
+							<h3 class="mb-[12px] sm:mb-[14px] md:mb-[16px] text-[16px] sm:text-[18px] md:text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a] font-bold"><?php echo esc_html($title); ?></h3>
+							<p class="mb-[18px] sm:mb-[22px] md:mb-[25px] text-[11px] sm:text-[11px] md:text-[12px] text-[rgba(31,28,26,0.55)] font-medium"><?php echo esc_html($location); ?></p>
+							<span class="inline-flex h-[18px] sm:h-[19px] md:h-[20px] items-center bg-[#6eba38] px-[8px] sm:px-[9px] md:px-[10px] text-[11px] sm:text-[11px] md:text-[12px] font-medium text-white"><?php echo esc_html($tag); ?></span>
 						</div>
 					</article>
 				<?php endforeach; ?>
