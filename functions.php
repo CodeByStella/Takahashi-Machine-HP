@@ -43,6 +43,8 @@ function mytheme_setup()
     )
   );
 
+  add_theme_support('site-icon');
+
   register_nav_menus(
     array(
       'primary' => __('Primary Menu', 'mytheme'),
@@ -57,6 +59,80 @@ function mytheme_setup()
 }
 add_action('after_setup_theme', 'mytheme_setup');
 
+/**
+ * Allow .ico (favicon) uploads in Media Library and Site Icon.
+ */
+function mytheme_allow_ico_upload($mimes)
+{
+  $mimes['ico'] = 'image/x-icon';
+  return $mimes;
+}
+add_filter('upload_mimes', 'mytheme_allow_ico_upload');
+
+/**
+ * So WordPress accepts .ico during file validation (wp_check_filetype_and_ext).
+ */
+function mytheme_check_filetype_ico($data, $file, $filename, $mimes)
+{
+  if (!empty($data['ext']) && !empty($data['type'])) {
+    return $data;
+  }
+  $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+  if ($ext !== 'ico') {
+    return $data;
+  }
+  return array(
+    'ext'             => 'ico',
+    'type'            => 'image/x-icon',
+    'proper_filename' => $filename,
+  );
+}
+add_filter('wp_check_filetype_and_ext', 'mytheme_check_filetype_ico', 10, 4);
+
+
+/* ======================================================
+   Download file (Customizer) — PDF, image, etc.
+====================================================== */
+
+/**
+ * Register Customizer setting for the download file (PDF, image, etc.).
+ */
+function mytheme_customize_register_download($wp_customize)
+{
+  $wp_customize->add_section('mytheme_download', array(
+    'title'    => __('資料ダウンロード / Download File', 'mytheme'),
+    'priority' => 130,
+  ));
+
+  $wp_customize->add_setting('mytheme_download_file_id', array(
+    'default'           => 0,
+    'sanitize_callback' => 'absint',
+    'transport'         => 'refresh',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'mytheme_download_file_id', array(
+    'label'       => __('Download file (PDF, image, etc.)', 'mytheme'),
+    'description' => __('Select or upload the file that visitors can download from the header and enquiry section. Leave empty to link to the product page instead.', 'mytheme'),
+    'section'     => 'mytheme_download',
+    'mime_type'   => '', // Allow any file type (PDF, images, etc.)
+  )));
+}
+add_action('customize_register', 'mytheme_customize_register_download');
+
+/**
+ * Return the download URL. If a file is set in Customizer, returns its URL; otherwise fallback (e.g. product page).
+ */
+function mytheme_get_download_url()
+{
+  $attachment_id = (int) get_theme_mod('mytheme_download_file_id', 0);
+  if ($attachment_id > 0) {
+    $url = wp_get_attachment_url($attachment_id);
+    if ($url) {
+      return $url;
+    }
+  }
+  return home_url('/product/#product-movie-section');
+}
 
 /* ======================================================
    Contact form (page-contact) — Contact Form 7

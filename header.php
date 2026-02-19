@@ -56,7 +56,7 @@
 									<span class="text-[16px] leading-none font-medium">072-961-9975</span>
 								</a>
 
-								<a class="cta-pill cta-pill--download lg:w-[200px] lg:h-[40px] lg:rounded-full" href="<?php echo esc_url(home_url('/product/#product-movie-section')); ?>">
+								<a class="cta-pill cta-pill--download lg:w-[200px] lg:h-[40px] lg:rounded-full" href="<?php echo esc_url(mytheme_get_download_url()); ?>"<?php echo ( get_theme_mod('mytheme_download_file_id', 0) > 0 ) ? ' download' : ''; ?>>
 									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" viewBox="0 0 15 15">
 										<defs>
 											<clipPath id="clip-path">
