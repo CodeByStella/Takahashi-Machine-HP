@@ -303,7 +303,7 @@ $tsicon = mytheme_img_asset('top/ts-icon');
 				<div class="w-full relative aspect-[464/109] p-[8px] sm:p-[10px] 2xl:p-[12px] flex gap-[8px] sm:gap-[10px] 2xl:gap-[12px] border border-[#70707090]">
 					<img src="<?php echo esc_url($banner); ?>" alt="" class="z-0 absolute top-0 left-0 bottom-0 right-0 w-full h-full object-cover">
 					<img src="<?php echo esc_url($tsicon); ?>" alt="" class="z-10 w-[45px] h-[45px] sm:w-[55px] sm:h-[55px] 2xl:w-[65px] 2xl:h-[65px] aspect-square object-cover">
-					<p class="text-[12px] sm:text-[14px] 2xl:text-[16px] text-white z-10"> <?php esc_html_e('株式会社 髙橋製作所 / ダンボール機械の設計製作', 'mytheme'); ?></p>
+					<p class="text-[12px] sm:text-[14px] 2xl:text-[16px] text-white z-10 font-regular"> <?php esc_html_e('株式会社 髙橋製作所 / ダンボール機械の設計製作', 'mytheme'); ?></p>
 				</div>
 				<div class="max-h-[250px] sm:max-h-[280px] 2xl:max-h-[312px] p-[8px] sm:p-[9px] 2xl:p-[10px] overflow-y-auto bg-[#F5F6F7]">
 					<div class="w-full h-fit bg-white">
@@ -311,12 +311,12 @@ $tsicon = mytheme_img_asset('top/ts-icon');
 						<div class="p-[8px] sm:p-[10px] 2xl:p-[12px]">
 							<div class="flex items-center gap-[8px] sm:gap-[10px] 2xl:gap-[12px]">
 								<img src="<?php echo esc_url($tsicon); ?>" alt="" class="z-10 rounded-full w-[36px] h-[36px] sm:w-[38px] sm:h-[38px] 2xl:w-[42px] 2xl:h-[42px] aspect-square object-cover">
-								<p class="text-[10px] sm:text-[11px] 2xl:text-[12px]"> <?php esc_html_e('株式会社 髙橋製作所 / ダンボール機械の設計製作', 'mytheme'); ?></p>
+								<p class="text-[10px] sm:text-[11px] 2xl:text-[12px] font-regular"> <?php esc_html_e('株式会社 髙橋製作所 / ダンボール機械の設計製作', 'mytheme'); ?></p>
 							</div>
 							<div class="flex flex-col gap-[8px] sm:gap-[10px] 2xl:gap-[12px]">
-								<p class="text-[10px] sm:text-[11px] 2xl:text-[12px]">ダンボール（B段.E段.G段）カットする</p>
-								<p class="text-[10px] sm:text-[11px] 2xl:text-[12px]">オートスリッターを製作納品致しました</p>
-								<p class="text-[10px] sm:text-[11px] 2xl:text-[12px]">厚み薄いものは中々難しいかったです</p>
+								<p class="text-[10px] sm:text-[11px] 2xl:text-[12px] font-regular">ダンボール（B段.E段.G段）カットする</p>
+								<p class="text-[10px] sm:text-[11px] 2xl:text-[12px] font-regular">オートスリッターを製作納品致しました</p>
+								<p class="text-[10px] sm:text-[11px] 2xl:text-[12px] font-regular">厚み薄いものは中々難しいかったです</p>
 							</div>
 						</div>
 					</div>

@@ -20,13 +20,13 @@ $hero_mesh = mytheme_img_asset('contact/hero-mesh');
 		<div class=" w-full py-[46px]">
 			<div class="flex justify-end items-center w-full">
 				<div class="mr-[44px]">
-					<h1 class="text-[110px] leading-[1.1] text-[#6EBA38]">Contact</h1>
+					<h1 class="text-[110px] leading-[1.1] text-[#6EBA38] font-medium">Contact</h1>
 					<p class="text-[36px] font-bold">メール無料相談</p>
 				</div>
 				<img src="<?php echo esc_url($hero_image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"
 					class="h-auto w-[64%] object-cover" />
 			</div>
-			<p class="text-[14px] opacity-70 mt-[20px] w-full text-right pr-30"><a href="<?php echo esc_url(home_url('/')); ?>">TOP</a> &gt; メール無料相談</p>
+			<p class="text-[14px] opacity-70 mt-[20px] w-full text-right pr-30 font-regular"><a href="<?php echo esc_url(home_url('/')); ?>">TOP</a> &gt; メール無料相談</p>
 		</div>
 	</div>
 </section>
@@ -46,8 +46,8 @@ $use_cf7 = $cf7_form_id !== '' && $cf7_form_id !== 0 && function_exists('wpcf7_c
 				<?php if ($use_cf7) : ?>
 					<?php echo do_shortcode('[contact-form-7 id="' . $cf7_form_id . '"]'); ?>
 					<p class="text-[18px] font-medium text-center mt-10 mytheme-contact-privacy-intro">プライバシーポリシーをお読みいただき、同意の上送信してください。</p>
-					<div class="text-[14px] font-medium bg-white px-[60px] py-[15px] rounded-[4px] w-full h-[200px] overflow-scroll mt-5 mytheme-contact-privacy">
-						<p class="text-[14px] font-medium">
+					<div class="text-[14px] font-regular bg-white px-[60px] py-[15px] rounded-[4px] w-full h-[200px] overflow-scroll mt-5 mytheme-contact-privacy">
+						<p class="text-[14px] font-regular">
 							当社は、お客様からお預かりした個人情報を、以下の目的に限定して利用いたします。
 							・お問い合わせへのご回答
 							・お見積もりのご提案
@@ -75,20 +75,20 @@ $use_cf7 = $cf7_form_id !== '' && $cf7_form_id !== 0 && function_exists('wpcf7_c
 						</p>
 					</div>
 					<script>
-					(function(){
-						var wrap = document.querySelector('.mytheme-contact-cf7-wrap');
-						if (!wrap) return;
-						var form = wrap.querySelector('.wpcf7-form');
-						var privacy = wrap.querySelector('.mytheme-contact-privacy');
-						if (!form || !privacy) return;
-						var submitP = form.querySelector('p:last-child');
-						if (submitP && submitP.querySelector('input[type="submit"]')) {
-							privacy.parentNode.insertBefore(submitP, privacy.nextSibling);
-						}
-					})();
+						(function() {
+							var wrap = document.querySelector('.mytheme-contact-cf7-wrap');
+							if (!wrap) return;
+							var form = wrap.querySelector('.wpcf7-form');
+							var privacy = wrap.querySelector('.mytheme-contact-privacy');
+							if (!form || !privacy) return;
+							var submitP = form.querySelector('p:last-child');
+							if (submitP && submitP.querySelector('input[type="submit"]')) {
+								privacy.parentNode.insertBefore(submitP, privacy.nextSibling);
+							}
+						})();
 					</script>
 				<?php else : ?>
-					<p class="text-[16px] text-center">
+					<p class="text-[16px] text-center font-medium">
 						<?php if (!$cf7_form_id) : ?>
 							<?php esc_html_e('Contact Form 7 をインストールし、お問い合わせフォームを作成したら、functions.php で MYTHEME_CF7_CONTACT_FORM_ID にそのフォームのIDを設定してください。', 'mytheme'); ?>
 						<?php else : ?>

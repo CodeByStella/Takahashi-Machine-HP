@@ -25,7 +25,7 @@
 					<?php if (has_custom_logo()) : ?>
 						<?php the_custom_logo(); ?>
 					<?php else : ?>
-						<span class="hidden lg:block text-[12px] leading-none text-black mb-[18px]">
+						<span class="hidden lg:block text-[12px] leading-none text-black mb-[18px] font-medium">
 							<?php esc_html_e('段ボール機械 専門メーカー', 'mytheme'); ?>
 						</span>
 						<img
@@ -49,7 +49,7 @@
 									<path id="Path_5739" data-name="Path 5739" d="M1762.205,482.544v.005a.539.539,0,0,0,.482.536,4.329,4.329,0,0,1,3.822,3.822.54.54,0,0,0,.536.482h.005a.538.538,0,0,0,.536-.6,5.411,5.411,0,0,0-4.786-4.785.538.538,0,0,0-.6.536" transform="translate(-1750.905 -478.914)" fill="#fff" />
 								</svg>
 
-								<span class="text-[16px] leading-none">072-961-9975</span>
+								<span class="text-[16px] leading-none font-medium">072-961-9975</span>
 							</a>
 
 							<a class="cta-pill cta-pill--download lg:w-[200px] lg:h-[40px] lg:rounded-full" href="<?php echo esc_url(home_url('/product/#product-movie-section')); ?>">
@@ -74,7 +74,7 @@
 									</g>
 								</svg>
 
-								<span class="text-[16px] leading-none"><?php esc_html_e('資料ダウンロード', 'mytheme'); ?></span>
+								<span class="text-[16px] leading-none font-medium"><?php esc_html_e('資料ダウンロード', 'mytheme'); ?></span>
 							</a>
 
 							<a class="cta-pill cta-pill--mail lg:w-[200px] lg:h-[40px] lg:rounded-full" href="<?php echo esc_url(home_url('/contact/')); ?>">
@@ -93,7 +93,7 @@
 									</g>
 								</svg>
 
-								<span class="text-[16px] leading-none"><?php esc_html_e('メール無料相談', 'mytheme'); ?></span>
+								<span class="text-[16px] leading-none font-medium"><?php esc_html_e('メール無料相談', 'mytheme'); ?></span>
 							</a>
 						</div>
 

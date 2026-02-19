@@ -20,13 +20,13 @@ $hero_mesh = mytheme_img_asset('news/hero-mesh');
 		<div class="w-full py-[24px] sm:py-[30px] md:py-[36px] lg:py-[42px] 2xl:py-[46px]">
 			<div class="flex flex-col md:flex-row justify-center md:justify-end items-center w-full gap-4 md:gap-0">
 				<div class="text-center md:text-left md:mr-[56px] xl:mr-44 2xl:mr-56 order-2 md:order-1">
-					<h1 class="text-[48px] sm:text-[60px] md:text-[75px] lg:text-[90px] 2xl:text-[110px] leading-[1.1] text-[#6EBA38]">News</h1>
+					<h1 class="text-[48px] sm:text-[60px] md:text-[75px] lg:text-[90px] 2xl:text-[110px] leading-[1.1] text-[#6EBA38] font-medium">News</h1>
 					<p class="text-[18px] sm:text-[22px] md:text-[28px] lg:text-[32px] 2xl:text-[36px] font-bold">お知らせ</p>
 				</div>
 				<img src="<?php echo esc_url($hero_image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"
 					class="h-auto w-full max-w-[340px] md:w-[58%] md:max-w-none lg:w-[62%] 2xl:w-[64%] object-cover order-1 md:order-2 rounded-[20px] sm:rounded-none" />
 			</div>
-			<p class="text-[11px] sm:text-[12px] md:text-[13px] 2xl:text-[14px] opacity-70 mt-[12px] sm:mt-[16px] md:mt-[20px] w-full text-center md:text-right pr-0 md:pr-15 lg:pr-20 2xl:pr-30"><a href="<?php echo esc_url(home_url('/')); ?>">TOP</a> &gt; お知らせ</p>
+			<p class="text-[11px] sm:text-[12px] md:text-[13px] 2xl:text-[14px] opacity-70 mt-[12px] sm:mt-[16px] md:mt-[20px] w-full text-center md:text-right pr-0 md:pr-15 lg:pr-20 2xl:pr-30 font-regular"><a href="<?php echo esc_url(home_url('/')); ?>">TOP</a> &gt; お知らせ</p>
 		</div>
 	</div>
 </section>
@@ -74,7 +74,7 @@ if ($filter_category) {
 <section class="flow-section mt-[32px] sm:mt-[44px] md:mt-[54px] 2xl:mt-[67px] relative pb-[40px] sm:pb-[50px] 2xl:pb-[59px] px-4 sm:px-6 md:px-8">
 	<div class="mx-auto max-w-[1200px] w-full flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-[40px] 2xl:gap-[60px] flex-col-reverse">
 		<div class="w-full min-w-0 2xl:w-[860px] 2xl:max-w-[860px] order-1">
-			<p class="text-[20px] sm:text-[22px] md:text-[24px] 2xl:text-[28px] font-medium"><?php echo esc_html($list_heading); ?></p>
+			<p class="text-[20px] sm:text-[22px] md:text-[24px] 2xl:text-[28px] font-bold"><?php echo esc_html($list_heading); ?></p>
 			<div class="mt-[20px] sm:mt-[24px] 2xl:mt-[28px] border-t border-primary/20">
 				<?php if ($news_query->have_posts()) : ?>
 					<ul>
@@ -105,7 +105,7 @@ if ($filter_category) {
 					</ul>
 					<?php wp_reset_postdata(); ?>
 				<?php else : ?>
-					<p class="py-[14px] sm:py-[18px] text-[14px] sm:text-[16px] text-primary/60">
+					<p class="py-[14px] sm:py-[18px] text-[14px] sm:text-[16px] text-primary/60 font-regular">
 						<?php esc_html_e('No news yet.', 'mytheme'); ?>
 					</p>
 				<?php endif; ?>
@@ -115,7 +115,7 @@ if ($filter_category) {
 			<div class="flex flex-row gap-[10px] 2xl:gap-[12px]">
 				<img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"
 					class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] 2xl:w-[30px] 2xl:h-[30px]" />
-				<p class="text-[22px] sm:text-[26px] 2xl:text-[30px] font-medium text-[#6EBA38]">Category</p>
+				<p class="text-[22px] sm:text-[26px] 2xl:text-[30px] font-bold text-[#6EBA38]">Category</p>
 			</div>
 			<?php
 			// Sidebar categories: filter on same page via ?category=slug (no template change).
@@ -183,7 +183,7 @@ if ($filter_category) {
 				<div class="flex flex-row gap-[10px] 2xl:gap-[12px]">
 					<img src="<?php echo esc_url($decoration_icon); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"
 						class="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] 2xl:w-[30px] 2xl:h-[30px]" />
-					<p class="text-[22px] sm:text-[26px] 2xl:text-[30px] font-medium text-[#6EBA38]">Archive</p>
+					<p class="text-[22px] sm:text-[26px] 2xl:text-[30px] font-bold text-[#6EBA38]">Archive</p>
 				</div>
 
 				<?php

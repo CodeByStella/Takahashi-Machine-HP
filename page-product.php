@@ -39,25 +39,25 @@ $hero_subtitle = isset($hero_subtitles[$product_id]) ? $hero_subtitles[$product_
     <div class="w-full py-[24px] sm:py-[30px] md:py-[36px] lg:py-[42px] 2xl:py-[46px]">
       <div class="flex flex-col md:flex-row justify-center md:justify-end items-center w-full gap-4 md:gap-0">
         <div class="text-center md:text-left md:mr-[54px] xl:mr-[86px] order-2 md:order-1">
-          <h1 class="text-[48px] sm:text-[60px] md:text-[75px] lg:text-[90px] 2xl:text-[110px] leading-[1.1] text-[#6EBA38]">Product</h1>
+          <h1 class="text-[48px] sm:text-[60px] md:text-[75px] lg:text-[90px] 2xl:text-[110px] leading-[1.1] text-[#6EBA38] font-medium">Product</h1>
           <p class="text-[18px] sm:text-[22px] md:text-[28px] lg:text-[32px] 2xl:text-[36px] font-bold"><?php echo esc_html($hero_subtitle); ?></p>
         </div>
         <img src="<?php echo esc_url($hero_image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="h-auto w-full max-w-[340px] md:w-[58%] md:max-w-none lg:w-[62%] 2xl:w-[64%] object-cover order-1 md:order-2 rounded-[20px] sm:rounded-none" />
       </div>
-      <p class="text-[11px] sm:text-[12px] md:text-[13px] 2xl:text-[14px] opacity-70 mt-[12px] sm:mt-[16px] md:mt-[20px] w-full text-center md:text-right pr-0 md:pr-15 lg:pr-20 2xl:pr-30"><a href="<?php echo esc_url(home_url('/')); ?>">TOP</a> &gt; <a href="<?php echo esc_url($product_base_url); ?>">製品一覧</a> &gt; <?php echo esc_html($hero_subtitle); ?></p>
+      <p class="text-[11px] sm:text-[12px] md:text-[13px] 2xl:text-[14px] opacity-70 mt-[12px] sm:mt-[16px] md:mt-[20px] w-full text-center md:text-right pr-0 md:pr-15 lg:pr-20 2xl:pr-30 font-regular"><a href="<?php echo esc_url(home_url('/')); ?>">TOP</a> &gt; <a href="<?php echo esc_url($product_base_url); ?>">製品一覧</a> &gt; <?php echo esc_html($hero_subtitle); ?></p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-[20px] lg:gap-[25px] 2xl:gap-[30px] mx-auto max-w-[320px] sm:max-w-none w-full sm:w-fit px-4 sm:px-0 mt-[30px] sm:mt-[40px] lg:mt-[45px] 2xl:mt-[50px] pb-6 sm:pb-8 md:pb-0">
       <a href="<?php echo esc_url($url_existing); ?>" class="bg-secondary hover:bg-primary text-white w-full sm:w-[240px] md:w-[280px] lg:w-[340px] 2xl:w-[395px] aspect-[320/120] sm:aspect-[395/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2 cursor-pointer transition-colors outline-none focus:outline-none active:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2<?php echo $product_id === 'existing' ? ' ring-2 ring-white ring-offset-2' : ''; ?>">
-        <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-50">Product</p>
-        <p class="text-[18px] sm:text-[20px] md:text-[22px] 2xl:text-[24px] leading-[1]">既製品・セミオーダー</p>
+        <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-50 font-regular">Product</p>
+        <p class="text-[18px] sm:text-[20px] md:text-[22px] 2xl:text-[24px] leading-[1] font-bold">既製品・セミオーダー</p>
         <svg class="absolute top-1/2 -translate-y-1/2 right-5" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
           <path d="M575,812a15,15,0,1,1-15,15A15,15,0,0,1,575,812Z" transform="translate(-560 -812)" fill="#f6f6f6" opacity="0.3" />
           <path d="M579.539,825.265l-4.406,4.406-4.406-4.406" transform="translate(-560 -812)" fill="none" stroke="#fff" stroke-width="2" />
         </svg>
       </a>
       <a href="<?php echo esc_url($url_used); ?>" class="bg-secondary hover:bg-primary text-white w-full sm:w-[240px] md:w-[280px] lg:w-[340px] 2xl:w-[395px] aspect-[320/120] sm:aspect-[395/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2 cursor-pointer transition-colors outline-none focus:outline-none active:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2<?php echo $product_id === 'used' ? ' ring-2 ring-white ring-offset-2' : ''; ?>">
-        <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-50">Pre-owned</p>
-        <p class="text-[18px] sm:text-[20px] md:text-[22px] 2xl:text-[24px] leading-[1]">中古品</p>
+        <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-50 font-regular">Pre-owned</p>
+        <p class="text-[18px] sm:text-[20px] md:text-[22px] 2xl:text-[24px] leading-[1] font-bold">中古品</p>
         <svg class="absolute top-1/2 -translate-y-1/2 right-5" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
           <path d="M575,812a15,15,0,1,1-15,15A15,15,0,0,1,575,812Z" transform="translate(-560 -812)" fill="#f6f6f6" opacity="0.3" />
           <path d="M579.539,825.265l-4.406,4.406-4.406-4.406" transform="translate(-560 -812)" fill="none" stroke="#fff" stroke-width="2" />
@@ -102,7 +102,7 @@ $product_categories_for_filter = array();
     $product_query->rewind_posts();
     ?>
     <?php if (!empty($product_categories_for_filter)) : ?>
-      <div class="w-full bg-secondary text-[12px] sm:text-[14px] md:text-[16px] 2xl:text-[18px] text-white py-4 sm:py-5 2xl:py-6 leading-[1] flex flex-wrap gap-2 sm:gap-3 2xl:gap-4 justify-center px-4">
+      <div class="w-full bg-secondary text-[12px] sm:text-[14px] md:text-[16px] 2xl:text-[18px] text-white py-4 sm:py-5 2xl:py-6 leading-[1] flex flex-wrap gap-2 sm:gap-3 2xl:gap-4 justify-center px-4 font-medium">
         <?php foreach ($product_categories_for_filter as $i => $fc) : ?>
           <span><?php echo esc_html($fc); ?></span><?php echo $i < count($product_categories_for_filter) - 1 ? '/' : ''; ?>
         <?php endforeach; ?>
