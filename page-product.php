@@ -113,9 +113,6 @@ $product_categories_for_filter = array();
         <?php
         $product_query->the_post();
         $main_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-        if (!$main_url) {
-          $main_url = $product_placeholder;
-        }
         $gallery_ids = get_post_meta(get_the_ID(), '_product_gallery', true);
         $thumb_ids = array_filter(array_map('absint', explode(',', $gallery_ids)));
         $thumbnails = array();
@@ -124,6 +121,12 @@ $product_categories_for_filter = array();
           if ($u) {
             $thumbnails[] = $u;
           }
+        }
+        if (!$main_url && !empty($thumbnails)) {
+          $main_url = $thumbnails[0];
+        }
+        if (!$main_url) {
+          $main_url = $product_placeholder;
         }
         if (empty($thumbnails)) {
           $thumbnails = array_fill(0, 4, $main_url);
