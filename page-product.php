@@ -139,7 +139,7 @@ $product_categories_for_filter = array();
           $table_rows = array();
         }
         ?>
-        <div class="pt-[24px] sm:pt-[36px] 2xl:pt-[50px] pb-[28px] sm:pb-[44px] 2xl:pb-[60px] px-4 sm:px-6 md:px-10 lg:px-14 2xl:px-[70px] flex flex-col lg:flex-row justify-between gap-6 lg:gap-8 2xl:gap-[50px] bg-white drop-shadow-[0_5px_20px_rgba(0,0,0,0.1)]">
+        <div id="product-<?php echo esc_attr(get_the_ID()); ?>" class="pt-[24px] sm:pt-[36px] 2xl:pt-[50px] pb-[28px] sm:pb-[44px] 2xl:pb-[60px] px-4 sm:px-6 md:px-10 lg:px-14 2xl:px-[70px] flex flex-col lg:flex-row justify-between gap-6 lg:gap-8 2xl:gap-[50px] bg-white drop-shadow-[0_5px_20px_rgba(0,0,0,0.1)] scroll-mt-6">
           <div class="product-card-gallery w-full lg:max-w-[340px] 2xl:max-w-[380px] flex-shrink-0" data-selected-url="<?php echo esc_url($main_url); ?>">
             <img src="<?php echo esc_url($main_url); ?>" alt="<?php echo esc_attr($card_title); ?>" class="product-card-main w-full h-auto object-cover" />
             <div class="grid grid-cols-4 gap-x-[5px] sm:gap-x-[6px] 2xl:gap-x-[7px] gap-y-[4px] 2xl:gap-y-[5px] mt-[4px] 2xl:mt-[5px]">
@@ -379,6 +379,17 @@ $movie_query = new WP_Query(array(
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeModal();
       });
+    }
+
+    // Scroll to product when opening from carousel (hash #product-123)
+    var hash = window.location.hash;
+    if (hash && hash.indexOf('product-') === 1) {
+      var target = document.getElementById(hash.slice(1));
+      if (target) {
+        requestAnimationFrame(function() {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
     }
   })();
 </script>

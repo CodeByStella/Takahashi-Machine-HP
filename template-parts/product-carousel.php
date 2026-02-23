@@ -25,16 +25,30 @@ $articles = isset($args['articles']) && is_array($args['articles']) ? $args['art
 					$title = isset($article['title']) ? $article['title'] : '';
 					$location = isset($article['location']) ? $article['location'] : '';
 					$tag = isset($article['tag']) ? $article['tag'] : '';
+					$url = isset($article['url']) ? $article['url'] : '';
 					?>
 					<article class="w-full sm:w-[380px] sm:max-w-[380px] flex-shrink-0 overflow-hidden bg-white shadow-[0_12px_26px_rgba(0,0,0,0.12)]">
-						<div class="aspect-[190/133] overflow-hidden">
-							<img class="h-full w-full object-cover" src="<?php echo esc_url($image); ?>" alt="" loading="lazy">
-						</div>
-						<div class="p-[20px] sm:p-[24px] md:p-[28px_30px_40px]">
-							<h3 class="mb-[12px] sm:mb-[14px] md:mb-[16px] text-[16px] sm:text-[18px] md:text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a] font-bold"><?php echo esc_html($title); ?></h3>
-							<p class="mb-[18px] sm:mb-[22px] md:mb-[25px] text-[11px] sm:text-[11px] md:text-[12px] text-[rgba(31,28,26,0.55)] font-medium"><?php echo esc_html($location); ?></p>
-							<span class="inline-flex h-[18px] sm:h-[19px] md:h-[20px] items-center bg-[#6eba38] px-[8px] sm:px-[9px] md:px-[10px] text-[11px] sm:text-[11px] md:text-[12px] font-medium text-white"><?php echo esc_html($tag); ?></span>
-						</div>
+						<?php if ($url) : ?>
+							<a href="<?php echo esc_url($url); ?>" class="block group">
+								<div class="aspect-[190/133] overflow-hidden">
+									<img class="h-full w-full object-cover group-hover:opacity-90 transition-opacity" src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy">
+								</div>
+								<div class="p-[20px] sm:p-[24px] md:p-[28px_30px_40px]">
+									<h3 class="mb-[12px] sm:mb-[14px] md:mb-[16px] text-[16px] sm:text-[18px] md:text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a] font-bold"><?php echo esc_html($title); ?></h3>
+									<p class="mb-[18px] sm:mb-[22px] md:mb-[25px] text-[11px] sm:text-[11px] md:text-[12px] text-[rgba(31,28,26,0.55)] font-medium"><?php echo esc_html($location); ?></p>
+									<span class="inline-flex h-[18px] sm:h-[19px] md:h-[20px] items-center bg-[#6eba38] px-[8px] sm:px-[9px] md:px-[10px] text-[11px] sm:text-[11px] md:text-[12px] font-medium text-white"><?php echo esc_html($tag); ?></span>
+								</div>
+							</a>
+						<?php else : ?>
+							<div class="aspect-[190/133] overflow-hidden">
+								<img class="h-full w-full object-cover" src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy">
+							</div>
+							<div class="p-[20px] sm:p-[24px] md:p-[28px_30px_40px]">
+								<h3 class="mb-[12px] sm:mb-[14px] md:mb-[16px] text-[16px] sm:text-[18px] md:text-[20px] leading-[1.45] tracking-[-0.02em] text-[#1f1c1a] font-bold"><?php echo esc_html($title); ?></h3>
+								<p class="mb-[18px] sm:mb-[22px] md:mb-[25px] text-[11px] sm:text-[11px] md:text-[12px] text-[rgba(31,28,26,0.55)] font-medium"><?php echo esc_html($location); ?></p>
+								<span class="inline-flex h-[18px] sm:h-[19px] md:h-[20px] items-center bg-[#6eba38] px-[8px] sm:px-[9px] md:px-[10px] text-[11px] sm:text-[11px] md:text-[12px] font-medium text-white"><?php echo esc_html($tag); ?></span>
+							</div>
+						<?php endif; ?>
 					</article>
 				<?php endforeach; ?>
 			</div>
