@@ -102,9 +102,21 @@ $product_categories_for_filter = array();
     $product_query->rewind_posts();
     ?>
     <?php if (!empty($product_categories_for_filter)) : ?>
-      <div class="w-full bg-secondary text-[12px] sm:text-[14px] md:text-[16px] 2xl:text-[18px] text-white py-4 sm:py-5 2xl:py-6 leading-[1] flex flex-wrap gap-2 sm:gap-3 2xl:gap-4 justify-center px-4 font-medium">
-        <?php foreach ($product_categories_for_filter as $i => $fc) : ?>
-          <span><?php echo esc_html($fc); ?></span><?php echo $i < count($product_categories_for_filter) - 1 ? '/' : ''; ?>
+      <style>
+        [data-product-filter-bar] {
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+
+        [data-product-filter-bar]::-webkit-scrollbar {
+          display: none;
+        }
+      </style>
+      <div class="w-full bg-secondary text-[12px] sm:text-[14px] md:text-[16px] 2xl:text-[18px] text-white py-4 sm:py-5 2xl:py-6 leading-[1] flex flex-nowrap gap-2 items-center px-4 font-medium overflow-x-auto overflow-y-hidden cursor-grab touch-pan-x select-none justify-center" data-product-filter-bar role="tablist" aria-label="<?php esc_attr_e('製品カテゴリで絞り込み', 'mytheme'); ?>" style="-webkit-overflow-scrolling: touch;">
+        <button type="button" class="product-filter-btn shrink-0 rounded px-2 py-1 transition-colors hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary aria-selected=" true" data-filter-value="all" role="tab"><?php esc_html_e('すべて', 'mytheme'); ?></button>
+        <?php foreach ($product_categories_for_filter as $fc) : ?>
+          <span class="product-filter-sep shrink-0 text-white/80" aria-hidden="true">/</span>
+          <button type="button" class="product-filter-btn shrink-0 rounded px-3 py-1 transition-colors hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary aria-selected=" false" data-filter-value="<?php echo esc_attr($fc); ?>" role="tab"><?php echo esc_html($fc); ?></button>
         <?php endforeach; ?>
       </div>
     <?php endif; ?>
@@ -139,7 +151,7 @@ $product_categories_for_filter = array();
           $table_rows = array();
         }
         ?>
-        <div id="product-<?php echo esc_attr(get_the_ID()); ?>" class="pt-[24px] sm:pt-[36px] 2xl:pt-[50px] pb-[28px] sm:pb-[44px] 2xl:pb-[60px] px-4 sm:px-6 md:px-10 lg:px-14 2xl:px-[70px] flex flex-col lg:flex-row justify-between gap-6 lg:gap-8 2xl:gap-[50px] bg-white drop-shadow-[0_5px_20px_rgba(0,0,0,0.1)] scroll-mt-6">
+        <div id="product-<?php echo esc_attr(get_the_ID()); ?>" class="product-card pt-[24px] sm:pt-[36px] 2xl:pt-[50px] pb-[28px] sm:pb-[44px] 2xl:pb-[60px] px-4 sm:px-6 md:px-10 lg:px-14 2xl:px-[70px] flex flex-col lg:flex-row justify-between gap-6 lg:gap-8 2xl:gap-[50px] bg-white drop-shadow-[0_5px_20px_rgba(0,0,0,0.1)] scroll-mt-6" data-product-category="<?php echo esc_attr($card_category); ?>">
           <div class="product-card-gallery w-full lg:max-w-[340px] 2xl:max-w-[380px] flex-shrink-0" data-selected-url="<?php echo esc_url($main_url); ?>">
             <img src="<?php echo esc_url($main_url); ?>" alt="<?php echo esc_attr($card_title); ?>" class="product-card-main w-full h-auto object-cover" />
             <div class="grid grid-cols-4 gap-x-[5px] sm:gap-x-[6px] 2xl:gap-x-[7px] gap-y-[4px] 2xl:gap-y-[5px] mt-[4px] 2xl:mt-[5px]">
@@ -319,6 +331,101 @@ $movie_query = new WP_Query(array(
       });
     });
 
+    // Product category filter
+    var filterBar = document.querySelector('[data-product-filter-bar]');
+    var productCards = document.querySelectorAll('.product-card');
+    if (filterBar && productCards.length) {
+      var filterBtns = filterBar.querySelectorAll('.product-filter-btn');
+
+      function setActiveFilter(btn) {
+        filterBtns.forEach(function(b) {
+          var isActive = b === btn;
+          b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          b.classList.toggle('bg-white/20', isActive);
+        });
+      }
+
+      function applyFilter(value) {
+        productCards.forEach(function(card) {
+          var cat = (card.getAttribute('data-product-category') || '').trim();
+          var show = value === 'all' || cat === value;
+          card.style.display = show ? '' : 'none';
+        });
+      }
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var value = btn.getAttribute('data-filter-value') || 'all';
+          setActiveFilter(btn);
+          applyFilter(value);
+        });
+      });
+      setActiveFilter(filterBar.querySelector('[data-filter-value="all"]'));
+      applyFilter('all');
+
+      // If URL has #product-123, switch filter to that product's category so it is visible
+      var hash = window.location.hash;
+      if (hash && hash.indexOf('product-') === 1) {
+        var targetCard = document.getElementById(hash.slice(1));
+        if (targetCard && targetCard.classList.contains('product-card')) {
+          var targetCat = (targetCard.getAttribute('data-product-category') || '').trim();
+          if (targetCat) {
+            for (var i = 0; i < filterBtns.length; i++) {
+              if (filterBtns[i].getAttribute('data-filter-value') === targetCat) {
+                setActiveFilter(filterBtns[i]);
+                applyFilter(targetCat);
+                break;
+              }
+            }
+          }
+        }
+      }
+
+      // Horizontal drag-to-scroll (only when pressing on bar background, not on buttons)
+      var barStartX = 0;
+      var barStartScroll = 0;
+      var barDragging = false;
+      var barDidDrag = false;
+
+      function onBarPointerMove(e) {
+        if (!barDragging) return;
+        barDidDrag = true;
+        filterBar.classList.add('cursor-grabbing');
+        filterBar.classList.remove('cursor-grab');
+        var dx = e.clientX - barStartX;
+        filterBar.scrollLeft = barStartScroll - dx;
+        barStartX = e.clientX;
+        barStartScroll = filterBar.scrollLeft;
+      }
+
+      function onBarPointerUp() {
+        barDragging = false;
+        filterBar.classList.remove('cursor-grabbing');
+        filterBar.classList.add('cursor-grab');
+        document.removeEventListener('pointermove', onBarPointerMove);
+        document.removeEventListener('pointerup', onBarPointerUp);
+        document.removeEventListener('pointercancel', onBarPointerUp);
+      }
+
+      filterBar.addEventListener('pointerdown', function(e) {
+        if (e.target.closest('button')) return;
+        barDragging = true;
+        barDidDrag = false;
+        barStartX = e.clientX;
+        barStartScroll = filterBar.scrollLeft;
+        document.addEventListener('pointermove', onBarPointerMove);
+        document.addEventListener('pointerup', onBarPointerUp);
+        document.addEventListener('pointercancel', onBarPointerUp);
+      });
+
+      filterBar.addEventListener('click', function(e) {
+        if (barDidDrag && e.target.closest('button')) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        barDidDrag = false;
+      }, true);
+    }
+
     var modal = document.getElementById('product-movie-modal');
     var iframe = document.getElementById('product-movie-modal-iframe');
     var noVideoEl = document.getElementById('product-movie-modal-no-video');
@@ -387,7 +494,10 @@ $movie_query = new WP_Query(array(
       var target = document.getElementById(hash.slice(1));
       if (target) {
         requestAnimationFrame(function() {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         });
       }
     }
