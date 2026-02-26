@@ -156,7 +156,7 @@ if ($filter_category) {
 			<?php if (! empty($news_category_items)) : ?>
 				<ul class="mt-[16px] sm:mt-[20px] 2xl:mt-[22px] flex flex-col bg-white rounded-[12px] sm:rounded-[16px] 2xl:rounded-[20px] py-[12px] sm:py-[14px] 2xl:py-[15px]">
 					<?php foreach ($news_category_items as $item) : ?>
-						<li class="px-[14px] sm:px-[18px] 2xl:px-[20px] flex items-center justify-between">
+						<li class="px-[14px] sm:px-[18px] 2xl:px-[30px] flex items-center justify-between">
 							<?php if (! empty($item['enabled']) && ! empty($item['url'])) : ?>
 								<a href="<?php echo esc_url($item['url']); ?>"
 									class="flex items-center justify-left w-full text-[14px] sm:text-[15px] 2xl:text-[16px] py-1 <?php echo ! empty($item['active']) ? 'text-[#6EBA38] font-semibold' : 'text-primary/80 hover:text-primary'; ?>">
@@ -201,7 +201,7 @@ if ($filter_category) {
 				?>
 
 				<?php if (! empty($news_years)) : ?>
-					<ul class="mt-[16px] sm:mt-[20px] 2xl:mt-[22px] bg-white rounded-[12px] sm:rounded-[16px] 2xl:rounded-[20px] py-[18px] sm:py-[22px] 2xl:py-[26px] flex flex-col gap-[20px] sm:gap-[24px] 2xl:gap-[28px]">
+					<ul class="mt-[16px] sm:mt-[20px] 2xl:mt-[22px] bg-white rounded-[12px] sm:rounded-[16px] 2xl:rounded-[20px] py-[18px] sm:py-[22px] 2xl:py-[26px] flex flex-col ">
 						<?php foreach ($news_years as $y) : ?>
 							<?php $y = (int) $y; ?>
 							<?php $year_active = $filter_year === $y; ?>
@@ -209,7 +209,7 @@ if ($filter_category) {
 							<?php if ($filter_category) {
 								$year_url = add_query_arg('category', $filter_category, $year_url);
 							} ?>
-							<li class="px-[14px] sm:px-[18px] 2xl:px-[20px] flex items-center justify-between">
+							<li class="px-[14px] sm:px-[18px] 2xl:px-[30px] flex items-center justify-between">
 								<a href="<?php echo esc_url($year_url); ?>"
 									class="flex items-center justify-left w-full text-[14px] sm:text-[15px] 2xl:text-[16px] py-1 <?php echo $year_active ? 'text-[#6EBA38] font-semibold' : 'text-primary/80 hover:text-primary'; ?>">
 									<span class="text-[16px] sm:text-[18px] 2xl:text-[20px] font-medium w-[16px] sm:w-[18px] 2xl:w-[20px] text-[#6EBA38]">></span>

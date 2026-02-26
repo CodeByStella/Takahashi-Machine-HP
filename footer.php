@@ -53,10 +53,7 @@
 			} else {
 				$footer_news_url = home_url('/news/');
 			}
-			$footer_privacy_url = get_privacy_policy_url();
-			if (! $footer_privacy_url) {
-				$footer_privacy_url = home_url('/privacy-policy/');
-			}
+			$footer_privacy_url = home_url('/contact/#privacy');
 			?>
 			<div class="flex flex-col items-start lg:items-end">
 				<nav class="footer-nav w-full" aria-label="<?php esc_attr_e('Footer menu', 'mytheme'); ?>">
