@@ -43,7 +43,7 @@ $ancill_2 = mytheme_img_asset('support/ancill-2');
 $ancill_decoration = mytheme_img_asset('support/ancill-decoration');
 ?>
 <section class="ancillary-section pt-[40px] sm:pt-[50px] md:pt-[60px] lg:pt-[75px] 2xl:pt-[90px] pb-[60px] sm:pb-[80px] md:pb-[100px] lg:pb-[140px] 2xl:pb-[180px] px-4 sm:px-6 md:px-8 lg:px-12 xl:pl-[120px] xl:pr-[60px] 2xl:pl-[200px] 2xl:pr-[100px] relative overflow-hidden">
-  <img src="<?php echo esc_url($ancill_decoration) ?>" class="w-[280px] sm:w-[400px] md:w-[520px] lg:w-[720px] 2xl:w-[960px] -z-10 aspect-[960/600] top-[19px] right-0 absolute opacity-60 md:opacity-80 2xl:opacity-100" alt="<?php echo esc_attr(get_the_title()) ?>" />
+  <img src="<?php echo esc_url($ancill_decoration) ?>" style="width:calc(100% - 640px);" class="-z-10 aspect-[960/600] top-[19px] right-0 absolute opacity-60 md:opacity-80 2xl:opacity-100" alt="<?php echo esc_attr(get_the_title()) ?>" />
   <div class="absolute left-0 top-[120px] sm:top-[160px] md:top-[200px] lg:top-[220px] 2xl:top-[258px] hidden md:flex flex-col">
     <img src="<?php echo esc_url($ancill_1) ?>" class="w-[200px] sm:w-[280px] md:w-[380px] lg:w-[520px] 2xl:w-[640px] -z-10 aspect-[640/368]" alt="<?php echo esc_attr(get_the_title()) ?>" />
     <img src="<?php echo esc_url($ancill_2) ?>" class="w-[200px] sm:w-[280px] md:w-[380px] lg:w-[520px] 2xl:w-[640px] -z-10 aspect-[640/368]" alt="<?php echo esc_attr(get_the_title()) ?>" />
@@ -54,25 +54,25 @@ $ancill_decoration = mytheme_img_asset('support/ancill-decoration');
     Ancillary construction
   </p>
   <h2 class="mt-3 sm:mt-4 2xl:mt-5 text-[24px] sm:text-[28px] md:text-[34px] lg:text-[40px] 2xl:text-[44px] text-primary w-fit tracking-[-0.06em] font-bold">付帯工事、メンテナンス</h2>
-  <div class="mt-[40px] sm:mt-[60px] md:mt-[80px] lg:mt-[110px] 2xl:mt-[140px] right-0 w-full md:w-fit ml-0 md:ml-auto flex flex-col items-center">
-    <p class="text-[18px] sm:text-[22px] md:text-[28px] lg:text-[32px] 2xl:text-[36px] text-primary text-center w-full 2xl:w-fit -tracking-[0.06em] font-bold">その他<span class="bg-secondary text-white px-2">ダンボール工場設備</span>に関する<br />付帯工事・メンテナンス</p>
+  <div class="mt-[40px] sm:mt-[60px] md:mt-[80px] lg:mt-[110px] 2xl:mt-[140px] right-0 w-full md:w-fit ml-0 md:m-auto flex flex-col items-center md:translate-x-[17%]">
+    <p class="text-[22px] sm:text-[22px] md:text-[28px] lg:text-[32px] 2xl:text-[36px] text-primary text-center w-full 2xl:w-fit  -tracking-[0.1em] leading-[1.8] md:-tracking-[0.06em] font-bold">その他<span class="bg-secondary text-white px-2">ダンボール工場設備</span>に関する<br />付帯工事・メンテナンス</p>
     <div class="mt-[24px] sm:mt-[30px] 2xl:mt-[43px] flex flex-col sm:flex-row gap-4 sm:gap-[12px] w-full max-w-[320px] sm:max-w-none sm:w-fit">
       <div class="bg-secondary pt-[24px] sm:pt-[30px] 2xl:pt-[38px] flex flex-col items-center gap-[16px] sm:gap-[20px] 2xl:gap-[28px] w-full sm:w-[140px] md:w-100 2xl:w-120 min-h-[280px] sm:min-h-0 sm:h-[320px] md:h-[360px] lg:h-[380px] 2xl:h-[409px] px-4 sm:px-2 pb-6 sm:pb-[38px]">
         <img src="<?php echo esc_url($icon_1) ?>" class="w-[64px] sm:w-[80px] 2xl:w-[105px] aspect-square flex-shrink-0" alt="<?php echo esc_attr(get_the_title()) ?>" />
         <div class="text-center flex flex-col items-center gap-[6px] sm:gap-[7px] -tracking-[0.06em]">
-          <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">シート運搬等のローラコンベア設置</div>
+          <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">シート運搬等のローラコンベア設置</div>
           <div class="flex flex-wrap gap-[6px] sm:gap-[7px] justify-center">
-            <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">テーブルリフター設置</div>
-            <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">安全柵（フェンス）</div>
+            <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">テーブルリフター設置</div>
+            <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">安全柵（フェンス）</div>
           </div>
           <div class="flex flex-wrap gap-[6px] sm:gap-[7px] justify-center">
-            <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">手摺設備工事</div>
-            <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">ステップ台</div>
+            <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">手摺設備工事</div>
+            <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">ステップ台</div>
           </div>
-          <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">階段等製作設置工事</div>
+          <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">階段等製作設置工事</div>
           <div class="flex flex-wrap gap-[6px] sm:gap-[7px] justify-center">
-            <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">コンプレッサー設置</div>
-            <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">エア配管</div>
+            <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">コンプレッサー設置</div>
+            <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">エア配管</div>
           </div>
         </div>
       </div>
@@ -80,16 +80,16 @@ $ancill_decoration = mytheme_img_asset('support/ancill-decoration');
         <img src="<?php echo esc_url($icon_2) ?>" class="w-[64px] sm:w-[80px] 2xl:w-[105px] aspect-square flex-shrink-0" alt="<?php echo esc_attr(get_the_title()) ?>" />
         <div class="text-center flex flex-col items-center gap-[6px] sm:gap-[7px] -tracking-[0.06em]">
           <div class="flex flex-wrap gap-[6px] sm:gap-[7px] justify-center">
-            <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">ダンボール製品</div>
-            <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">検品台</div>
+            <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">ダンボール製品</div>
+            <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">検品台</div>
           </div>
           <div class="flex flex-wrap gap-[6px] sm:gap-[7px] justify-center">
-            <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">機械等安全カバー</div>
-            <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">トムソン木型棚</div>
+            <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">機械等安全カバー</div>
+            <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">トムソン木型棚</div>
           </div>
-          <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">トムソン面板棚製作</div>
-          <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">送風機設置工事</div>
-          <div class="text-primary text-[11px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">紙粉・紙片除去装置ブロアー</div>
+          <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">トムソン面板棚製作</div>
+          <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">送風機設置工事</div>
+          <div class="text-primary text-[14px] sm:text-[12px] 2xl:text-[14px] px-3 sm:px-4 rounded-full bg-white w-fit font-medium">紙粉・紙片除去装置ブロアー</div>
         </div>
       </div>
     </div>
@@ -111,18 +111,18 @@ $maintenance_example = mytheme_img_asset('support/maintenance-example');
     <div class="flex flex-col sm:flex-row gap-4 sm:gap-[14px] md:gap-[18px] 2xl:gap-[22px] justify-center w-full max-w-[320px] sm:max-w-none mx-auto mt-[32px] sm:mt-[44px] md:mt-[56px] 2xl:mt-[68px]">
       <div class="w-full sm:w-[180px] md:w-[260px] lg:w-[340px] 2xl:w-[411px]">
         <img src="<?php echo esc_url($maintenance_1) ?>" class="w-full aspect-[411/317]" alt="<?php echo esc_attr(get_the_title()) ?>" />
-        <p class="text-[14px] sm:text-[16px] 2xl:text-[20px] mt-[6px] 2xl:mt-[8px] text-primary w-fit -tracking-[0.06em] font-bold">Before</p>
-        <p class="text-[12px] sm:text-[14px] md:text-[16px] 2xl:text-[18px] mt-[6px] 2xl:mt-[10px] text-primary w-full 2xl:w-fit -tracking-[0.06em] leading-[1.2] font-medium">コルゲートのペーパーガイドロールの軸が摩耗している状態</p>
+        <p class="text-[18px] sm:text-[16px] 2xl:text-[20px] mt-[6px] 2xl:mt-[8px] text-primary w-fit -tracking-[0.06em] font-bold">Before</p>
+        <p class="text-[15px] sm:text-[14px] md:text-[16px] 2xl:text-[18px] mt-[6px] 2xl:mt-[10px] text-primary w-full 2xl:w-fit -tracking-[0.06em] leading-[1.2] font-medium">コルゲートのペーパーガイドロールの軸が摩耗している状態</p>
       </div>
       <div class="w-full sm:w-[180px] md:w-[260px] lg:w-[340px] 2xl:w-[411px]">
         <img src="<?php echo esc_url($maintenance_2) ?>" class="w-full aspect-[411/317]" alt="<?php echo esc_attr(get_the_title()) ?>" />
-        <p class="text-[14px] sm:text-[16px] 2xl:text-[20px] mt-[6px] 2xl:mt-[8px] text-primary w-fit -tracking-[0.06em] font-bold">途中経過</p>
-        <p class="text-[12px] sm:text-[14px] md:text-[16px] 2xl:text-[18px] mt-[6px] 2xl:mt-[10px] text-primary w-full 2xl:w-fit -tracking-[0.06em] leading-[1.2] font-medium">肉盛りした状態</p>
+        <p class="text-[18px] sm:text-[16px] 2xl:text-[20px] mt-[6px] 2xl:mt-[8px] text-primary w-fit -tracking-[0.06em] font-bold">途中経過</p>
+        <p class="text-[15px] sm:text-[14px] md:text-[16px] 2xl:text-[18px] mt-[6px] 2xl:mt-[10px] text-primary w-full 2xl:w-fit -tracking-[0.06em] leading-[1.2] font-medium">肉盛りした状態</p>
       </div>
       <div class="w-full sm:w-[180px] md:w-[260px] lg:w-[340px] 2xl:w-[411px]">
         <img src="<?php echo esc_url($maintenance_3) ?>" class="w-full aspect-[411/317]" alt="<?php echo esc_attr(get_the_title()) ?>" />
-        <p class="text-[14px] sm:text-[16px] 2xl:text-[20px] mt-[6px] 2xl:mt-[8px] text-primary w-fit -tracking-[0.06em] font-bold">After</p>
-        <p class="text-[12px] sm:text-[14px] md:text-[16px] 2xl:text-[18px] mt-[6px] 2xl:mt-[10px] text-primary w-full 2xl:w-fit -tracking-[0.06em] leading-[1.2] font-medium">肉盛り後旋盤加工し完成</p>
+        <p class="text-[18px] sm:text-[16px] 2xl:text-[20px] mt-[6px] 2xl:mt-[8px] text-primary w-fit -tracking-[0.06em] font-bold">After</p>
+        <p class="text-[15px] sm:text-[14px] md:text-[16px] 2xl:text-[18px] mt-[6px] 2xl:mt-[10px] text-primary w-full 2xl:w-fit -tracking-[0.06em] leading-[1.2] font-medium">肉盛り後旋盤加工し完成</p>
       </div>
     </div>
   </div>
@@ -153,7 +153,7 @@ $maintenance_example = mytheme_img_asset('support/maintenance-example');
         $case_title  = get_the_title();
         $case_text   = wp_strip_all_tags(get_the_content(null, false, get_the_ID()));
         ?>
-        <div class="w-full py-[28px] sm:py-[40px] 2xl:py-[58px] border-b border-[#707070] flex flex-col md:flex-row gap-6 md:gap-[32px] 2xl:gap-[46px]<?php echo $maintenance_index === 0 ? ' border-t' : ''; ?>">
+        <div class="w-full max-w-[1300px] mx-auto py-[28px] sm:py-[40px] 2xl:py-[58px] border-b border-[#707070] flex flex-col md:flex-row gap-6 md:gap-[32px] 2xl:gap-[46px]<?php echo $maintenance_index === 0 ? ' border-t' : ''; ?>">
           <div class="w-full min-w-0">
             <h2 class="text-[18px] sm:text-[22px] md:text-[25px] 2xl:text-[28px] text-secondary w-fit -tracking-[0.06em] mt-0 2xl:mt-[20px] font-bold"><?php echo esc_html($case_title); ?></h2>
             <p class="text-[13px] sm:text-[14px] 2xl:text-[16px] text-primary w-full -tracking-[0.08em] mt-[16px] sm:mt-[24px] 2xl:mt-[35px] font-regular">

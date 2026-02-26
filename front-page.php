@@ -138,7 +138,7 @@ $product_bg_sp = mytheme_img_asset('top/machine-sp');
 $product_bg = mytheme_img_asset('top/mesh');
 ?>
 
-<section class="pb-[40px] sm:pb-[50px] md:pb-[60px] lg:pb-[80px] xl:pb-[90px] 2xl:pb-[100px]">
+<section class="pb-[70px] sm:pb-[50px] md:pb-[60px] lg:pb-[80px] xl:pb-[90px] 2xl:pb-[100px]">
 	<div class="mx-auto w-full">
 		<div class="overflow-hidden">
 			<div class="relative aspect-[1330/990] sm:aspect-[1600/457] w-full">
@@ -213,7 +213,7 @@ $person5 = mytheme_img_asset('top/person5');
 			);
 			?>
 			<div class="text-center mt-[46px] sm:mt-[120px] md:mt-[160px] xl:mt-[210px] 2xl:mt-[230px] px-4">
-				<p class="text-[18px] sm:text-[22px] md:text-[28px] lg:text-[32px] xl:text-[36px] 2xl:text-[40px] text-primary leading-[1.4] md:leading-[1.6] lg:leading-[2] 2xl:leading-[3.5rem] font-bold">
+				<p class="text-[22px] -tracking-[0.06em] sm:text-[28px] lg:text-[32px] xl:text-[36px] 2xl:text-[40px] text-primary leading-[1.4] md:leading-[1.6] lg:leading-[2] 2xl:leading-[3.5rem] font-bold">
 					<?php esc_html_e('現場の⽣産性を上げる', 'mytheme'); ?><br>
 					<?php esc_html_e('ダンボール加⼯機械をご提供します', 'mytheme'); ?>
 				</p>
@@ -226,36 +226,36 @@ $person5 = mytheme_img_asset('top/person5');
 
 		<ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 justify-items-center gap-[0px] sm:gap-[25px] md:gap-[30px] lg:gap-[35px] 2xl:gap-[40px] mt-[40px] 2xl:-mt-[100px] px-4 sm:px-6 md:px-8 lg:px-54">
 			<li class="flex flex-col items-center">
-				<img src="<?php echo esc_url($person1); ?>" alt="" loading="lazy" class="aspect-square h-[100px] w-[100px] sm:h-[120px] sm:w-[120px] md:h-[150px] md:w-[150px] lg:h-[180px] lg:w-[180px] 2xl:h-[200px] 2xl:w-[200px] rounded-full object-cover">
-				<p class="mt-[10px] sm:mt-[12px] md:mt-[15px] 2xl:mt-[18px] w-[100px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] min-h-[50px] sm:min-h-[55px] md:min-h-[60px] lg:min-h-[70px] 2xl:h-[77px] text-[12px] sm:text-[13px] md:text-[15px] lg:text-[16px] 2xl:text-[18px] text-center -tracking-[0.08em] sm:tracking-none font-bold">
+				<img src="<?php echo esc_url($person1); ?>" alt="" loading="lazy" class="aspect-square w-[120px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] rounded-full object-cover">
+				<p class="mt-[10px] sm:mt-[12px] md:mt-[15px] 2xl:mt-[18px] w-[120px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] min-h-[50px] sm:min-h-[55px] md:min-h-[60px] lg:min-h-[70px] 2xl:h-[77px] text-[14px] sm:text-[13px] md:text-[15px] lg:text-[16px] 2xl:text-[18px] text-center -tracking-[0.08em] sm:tracking-none font-bold">
 					<?php esc_html_e('ダンボール加工', 'mytheme'); ?><br />
 					<?php esc_html_e('機械を探している', 'mytheme'); ?>
 				</p>
 			</li>
 			<li class="flex flex-col items-center">
-				<img src="<?php echo esc_url($person2); ?>" alt="" loading="lazy" class="aspect-square h-[100px] w-[100px] sm:h-[120px] sm:w-[120px] md:h-[150px] md:w-[150px] lg:h-[180px] lg:w-[180px] 2xl:h-[200px] 2xl:w-[200px] rounded-full object-cover">
-				<p class="mt-[10px] sm:mt-[12px] md:mt-[15px] 2xl:mt-[18px] w-[100px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] min-h-[50px] sm:min-h-[55px] md:min-h-[60px] lg:min-h-[70px] 2xl:h-[77px] text-[12px] sm:text-[13px] md:text-[15px] lg:text-[16px] 2xl:text-[18px] text-center -tracking-[0.08em] sm:tracking-none font-bold">
+				<img src="<?php echo esc_url($person2); ?>" alt="" loading="lazy" class="aspect-square w-[120px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] rounded-full object-cover">
+				<p class="mt-[10px] sm:mt-[12px] md:mt-[15px] 2xl:mt-[18px] w-[120px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] min-h-[50px] sm:min-h-[55px] md:min-h-[60px] lg:min-h-[70px] 2xl:h-[77px] text-[14px] sm:text-[13px] md:text-[15px] lg:text-[16px] 2xl:text-[18px] text-center -tracking-[0.08em] sm:tracking-none font-bold">
 					<?php esc_html_e('オリジナルの', 'mytheme'); ?><br />
 					<?php esc_html_e('装置を作りたい', 'mytheme'); ?>
 				</p>
 			</li>
 			<li class="flex flex-col items-center">
-				<img src="<?php echo esc_url($person3); ?>" alt="" loading="lazy" class="aspect-square h-[100px] w-[100px] sm:h-[120px] sm:w-[120px] md:h-[150px] md:w-[150px] lg:h-[180px] lg:w-[180px] 2xl:h-[200px] 2xl:w-[200px] rounded-full object-cover">
-				<p class="mt-[10px] sm:mt-[12px] md:mt-[15px] 2xl:mt-[18px] w-[100px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] min-h-[50px] sm:min-h-[55px] md:min-h-[60px] lg:min-h-[70px] 2xl:h-[77px] text-[12px] sm:text-[13px] md:text-[15px] lg:text-[16px] 2xl:text-[18px] text-center -tracking-[0.08em] sm:tracking-none font-bold">
+				<img src="<?php echo esc_url($person3); ?>" alt="" loading="lazy" class="aspect-square w-[120px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] rounded-full object-cover">
+				<p class="mt-[10px] sm:mt-[12px] md:mt-[15px] 2xl:mt-[18px] w-[120px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] min-h-[50px] sm:min-h-[55px] md:min-h-[60px] lg:min-h-[70px] 2xl:h-[77px] text-[14px] sm:text-[13px] md:text-[15px] lg:text-[16px] 2xl:text-[18px] text-center -tracking-[0.08em] sm:tracking-none font-bold">
 					<?php esc_html_e('アフターサービスを', 'mytheme'); ?><br />
 					<?php esc_html_e('しっかり頼みたい', 'mytheme'); ?>
 				</p>
 			</li>
 			<li class="flex flex-col items-center">
-				<img src="<?php echo esc_url($person4); ?>" alt="" loading="lazy" class="aspect-square h-[100px] w-[100px] sm:h-[120px] sm:w-[120px] md:h-[150px] md:w-[150px] lg:h-[180px] lg:w-[180px] 2xl:h-[200px] 2xl:w-[200px] rounded-full object-cover">
-				<p class="mt-[10px] sm:mt-[12px] md:mt-[15px] 2xl:mt-[18px] w-[100px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] min-h-[50px] sm:min-h-[55px] md:min-h-[60px] lg:min-h-[70px] 2xl:h-[77px] text-[12px] sm:text-[13px] md:text-[15px] lg:text-[16px] 2xl:text-[18px] text-center -tracking-[0.08em] sm:tracking-none font-bold">
+				<img src="<?php echo esc_url($person4); ?>" alt="" loading="lazy" class="aspect-square w-[120px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] rounded-full object-cover">
+				<p class="mt-[10px] sm:mt-[12px] md:mt-[15px] 2xl:mt-[18px] w-[120px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] min-h-[50px] sm:min-h-[55px] md:min-h-[60px] lg:min-h-[70px] 2xl:h-[77px] text-[14px] sm:text-[13px] md:text-[15px] lg:text-[16px] 2xl:text-[18px] text-center -tracking-[0.08em] sm:tracking-none font-bold">
 					<?php esc_html_e('適切なコストで', 'mytheme'); ?><br />
 					<?php esc_html_e('購入したい', 'mytheme'); ?>
 				</p>
 			</li>
 			<li class="flex flex-col items-center col-span-2 sm:col-span-1">
-				<img src="<?php echo esc_url($person5); ?>" alt="" loading="lazy" class="aspect-square h-[100px] w-[100px] sm:h-[120px] sm:w-[120px] md:h-[150px] md:w-[150px] lg:h-[180px] lg:w-[180px] 2xl:h-[200px] 2xl:w-[200px] rounded-full object-cover">
-				<p class="mt-[10px] sm:mt-[12px] md:mt-[15px] 2xl:mt-[18px] w-[100px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] min-h-[50px] sm:min-h-[55px] md:min-h-[60px] lg:min-h-[70px] 2xl:h-[77px] text-[12px] sm:text-[13px] md:text-[15px] lg:text-[16px] 2xl:text-[18px] text-center -tracking-[0.08em] sm:tracking-none font-bold">
+				<img src="<?php echo esc_url($person5); ?>" alt="" loading="lazy" class="aspect-square w-[120px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] rounded-full object-cover">
+				<p class="mt-[10px] sm:mt-[12px] md:mt-[15px] 2xl:mt-[18px] w-[120px] sm:w-[120px] md:w-[150px] lg:w-[180px] 2xl:w-[200px] min-h-[50px] sm:min-h-[55px] md:min-h-[60px] lg:min-h-[70px] 2xl:h-[77px] text-[14px] sm:text-[13px] md:text-[15px] lg:text-[16px] 2xl:text-[18px] text-center -tracking-[0.08em] sm:tracking-none font-bold">
 					<?php esc_html_e('他社製品だけど', 'mytheme'); ?><br />
 					<?php esc_html_e('修理や改造がしたい', 'mytheme'); ?>
 				</p>
