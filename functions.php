@@ -1068,6 +1068,17 @@ function mytheme_get_product_carousel_articles($term_slug, $limit = 6)
       $query->the_post();
       $img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
       if (!$img_url) {
+        $gallery_ids = get_post_meta(get_the_ID(), MYTHEME_PRODUCT_GALLERY_META, true);
+        $thumb_ids = array_filter(array_map('absint', explode(',', (string) $gallery_ids)));
+        foreach ($thumb_ids as $thumb_id) {
+          $gallery_url = wp_get_attachment_image_url($thumb_id, 'full');
+          if ($gallery_url) {
+            $img_url = $gallery_url;
+            break;
+          }
+        }
+      }
+      if (!$img_url) {
         $img_url = $product_placeholder;
       }
       $articles[] = array(
@@ -1075,6 +1086,7 @@ function mytheme_get_product_carousel_articles($term_slug, $limit = 6)
         'title'    => get_the_title(),
         'location' => get_post_meta(get_the_ID(), MYTHEME_PRODUCT_LOCATION_META, true) ?: '',
         'tag'      => get_post_meta(get_the_ID(), MYTHEME_PRODUCT_CATEGORY_META, true) ?: '',
+        'url'      => home_url('/product/?id=' . rawurlencode($term_slug) . '#product-' . get_the_ID()),
       );
     }
     wp_reset_postdata();
