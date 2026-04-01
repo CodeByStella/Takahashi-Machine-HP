@@ -27,11 +27,11 @@ if (!in_array($product_id, $allowed_ids, true)) {
 }
 
 $hero_subtitles = array(
-  'existing' => '既製品・セミオーダー一覧',
+  'existing' => '既製品・オーダー製品一覧',
   'order'    => 'オーダー一覧',
   'used'     => '中古品一覧',
 );
-$hero_subtitle = isset($hero_subtitles[$product_id]) ? $hero_subtitles[$product_id] : '既製品・セミオーダー一覧';
+$hero_subtitle = isset($hero_subtitles[$product_id]) ? $hero_subtitles[$product_id] : '既製品・オーダー製品一覧';
 ?>
 <section class="product-hero relative px-0">
   <div class="aspect-[375/600] sm:aspect-[768/600] md:aspect-[1024/500] lg:aspect-[1440/550] 2xl:aspect-[1600/577] relative w-full">
@@ -49,7 +49,7 @@ $hero_subtitle = isset($hero_subtitles[$product_id]) ? $hero_subtitles[$product_
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-[20px] lg:gap-[25px] 2xl:gap-[30px] mx-auto max-w-[320px] sm:max-w-none w-full sm:w-fit px-4 sm:px-0 mt-[30px] sm:mt-[40px] lg:mt-[45px] 2xl:mt-[50px] pb-6 sm:pb-8 md:pb-0">
       <a href="<?php echo esc_url($url_existing); ?>" class="bg-secondary hover:bg-primary text-white w-full sm:w-[240px] md:w-[280px] lg:w-[340px] 2xl:w-[395px] aspect-[320/120] sm:aspect-[395/120] relative rounded-[12px] flex flex-col justify-center items-center gap-2 cursor-pointer transition-colors outline-none focus:outline-none active:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2<?php echo $product_id === 'existing' ? ' ring-2 ring-white ring-offset-2' : ''; ?>">
         <p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] opacity-50 font-regular">Product</p>
-        <p class="text-[18px] sm:text-[20px] md:text-[22px] 2xl:text-[24px] leading-[1] font-bold">既製品・セミオーダー</p>
+        <p class="text-[18px] sm:text-[20px] md:text-[22px] 2xl:text-[24px] leading-[1] font-bold">既製品・オーダー製品</p>
         <svg class="absolute top-1/2 -translate-y-1/2 right-5" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
           <path d="M575,812a15,15,0,1,1-15,15A15,15,0,0,1,575,812Z" transform="translate(-560 -812)" fill="#f6f6f6" opacity="0.3" />
           <path d="M579.539,825.265l-4.406,4.406-4.406-4.406" transform="translate(-560 -812)" fill="none" stroke="#fff" stroke-width="2" />

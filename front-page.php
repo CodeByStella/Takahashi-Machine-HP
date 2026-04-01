@@ -93,7 +93,7 @@ $product_bg_sp = mytheme_img_asset('top/machine-sp');
 						<span class="text-[14px] sm:text-[16px] md:text-[18px] 2xl:text-[20px] text-[#6EBA38] font-bold"><?php esc_html_e('Existing Product', 'mytheme'); ?></span>
 					</p>
 					<h2 class="mb-[20px] sm:mb-[24px] md:mb-[16px] 2xl:mb-[34px] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] 2xl:text-[44px] font-bold leading-[1.35] tracking-[0.02em]">
-						<?php esc_html_e('既存製品一覧', 'mytheme'); ?><br>
+						<?php esc_html_e('既製品一覧', 'mytheme'); ?><br>
 					</h2>
 					<div class="flex flex-col sm:flex-row justify-between w-full gap-[16px] sm:gap-[20px] 2xl:gap-[24px] items-start sm:items-end">
 						<p class="text-[13px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] leading-[1.8] text-white opacity-30 font-regular">
@@ -348,7 +348,7 @@ $feature_cards = array(
 	array(
 		'image'  => $feature_3,
 		'eyebrow' => 'Existing Product',
-		'title'  => '既存製品',
+		'title'  => '既製品',
 		'url'    => home_url('/product/?id=existing'),
 	),
 	array(

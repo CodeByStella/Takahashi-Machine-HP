@@ -62,7 +62,7 @@
 							<a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('トップページ', 'mytheme'); ?></a>
 							<a href="<?php echo esc_url(home_url('/about/')); ?>"><?php esc_html_e('高橋製作所について', 'mytheme'); ?></a>
 							<a href="<?php echo esc_url(home_url('/product/')); ?>"><?php esc_html_e('制作事例一覧', 'mytheme'); ?></a>
-							<a href="<?php echo esc_url(home_url('/product/?id=existing')); ?>"><?php esc_html_e('既存製品一覧', 'mytheme'); ?></a>
+							<a href="<?php echo esc_url(home_url('/product/?id=existing')); ?>"><?php esc_html_e('既製品一覧', 'mytheme'); ?></a>
 							<a href="<?php echo esc_url(home_url('/product/?id=order')); ?>"><?php esc_html_e('オーダー製品一覧', 'mytheme'); ?></a>
 							<a href="<?php echo esc_url(home_url('/product/?id=used')); ?>"><?php esc_html_e('中古製品一覧', 'mytheme'); ?></a>
 						</li>

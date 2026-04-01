@@ -183,7 +183,7 @@ $flow_item_7 = mytheme_img_asset('about/flow-7');
     <p class="text-[15px] sm:text-[14px] md:text-[15px] 2xl:text-[16px] mt-6 sm:mt-7 md:mt-8 2xl:mt-9 leading-relaxed font-regular">
       「こうしたい」というイメージから、<br />
       お客様の現場やご要望に合わせた機械づくりを行います。<br />
-      ゼロから製作することも可能ですし、既製品をセミオーダーで<br class="hidden sm:inline" />
+      ゼロから製作することも可能ですし、既製品をオーダー製品<br class="hidden sm:inline" />
       カスタマイズすることも可能です。まずは一度ご相談くださいませ。<br />
     </p>
     <div class="flex flex-col mt-[30px] sm:mt-[36px] md:mt-[42px] lg:mt-[48px] 2xl:mt-[51px] gap-0">
